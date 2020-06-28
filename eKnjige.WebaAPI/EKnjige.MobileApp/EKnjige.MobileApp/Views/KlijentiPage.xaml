@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:EKnjige.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="EKnjige.MobileApp.Views.KlijentiPage">
+
+    <ContentPage.BindingContext>
+        <vm:KlijentiViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Klijenti"
+                                    />
+            <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding Naziv}"></Picker>  
+            <ListView ItemsSource="{Binding klijentilist}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <!--<StackLayout>
+                                    --><!--<Image Source="{Binding SlikaThumb, Converter={StaticResource imgConv}}"></Image>--><!--
+                                </StackLayout>-->
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Ime}" 
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="16" />
+                                 
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

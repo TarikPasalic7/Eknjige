@@ -1,0 +1,144 @@
+using System.Collections.Generic;
+
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using eKnjige.WebaAPI.Data;
+using eKnjige.WebaAPI.Services;
+
+using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Hosting;
+using eKnjige.WebaAPI.Help;
+
+namespace eKnjige.WebaAPI
+{
+    public class Startup
+    {
+
+        //public class BasicAuthDocumentFilter : IDocumentFilter
+        //{
+        //    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
+        //    {
+        //        var securityRequirements = new Dictionary<string, IEnumerable<string>>()
+        //{
+        //    { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
+        //};
+
+        //        swaggerDoc.Security = new[] { securityRequirements };
+        //    }
+        //}
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
+      
+
+
+            services.AddDbContext<AppContext>(options =>
+options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+                //c.AddSecurityDefinition("basic", new BasicAuthScheme() { Type = "basic" });
+                //c.DocumentFilter<BasicAuthDocumentFilter>();
+
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "basic"
+                                }
+                            },
+                            new string[] {}
+                    }
+                });
+
+            });
+
+            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+            services.AddScoped<IService<Model.Autor,object>, BaseService<Model.Autor,object,eKnjige.WebaAPI.Autor>>();
+            services.AddScoped<IService<Model.Administrator,object>,BaseService<Model.Administrator,object,eKnjige.WebaAPI.Administrator>>();
+            services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
+            services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
+            services.AddScoped<ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>, BaseCRUDService<Model.Kategorija, object, eKnjige.WebaAPI.Kategorija, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>>();
+            //services.AddScoped<ICRUDService<Model.Klijent, Model.Requests.KlijentiSearchRequest, Model.KlijentInsertRequest, Model.KlijentInsertRequest>, KlijentService>();
+            services.AddScoped<ICRUDService<Model.TipFajla, object, Model.TipFajla, Model.TipFajla>, BaseCRUDService<Model.TipFajla, object, eKnjige.WebaAPI.TipFajla, Model.TipFajla, Model.TipFajla>>();
+            services.AddScoped<IKlijentService, KlijentService>();
+
+            services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.Drzava>>();
+            services.AddScoped<IEKnjigaService, EKnjigaService>();
+        
+
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+           
+            app.UseAuthentication();
+             
+            //app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            
+           app.UseAuthorization();
+          
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+      
+            app.UseSwagger();
+           
+            
+           
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+               
+            });
+
+            
+
+        }
+    }
+}

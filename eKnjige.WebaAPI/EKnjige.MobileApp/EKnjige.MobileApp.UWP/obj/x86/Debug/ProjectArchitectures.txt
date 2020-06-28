@@ -1,0 +1,1 @@
+C:\Users\pc\source\repos\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\EKnjige.MobileApp.UWP.csproj;x86
