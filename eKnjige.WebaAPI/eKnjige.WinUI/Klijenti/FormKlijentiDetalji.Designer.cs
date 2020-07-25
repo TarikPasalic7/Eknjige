@@ -52,6 +52,8 @@
             this.textEmail = new System.Windows.Forms.TextBox();
             this.buttonGrad = new System.Windows.Forms.Button();
             this.dateDatum = new System.Windows.Forms.DateTimePicker();
+            this.cmbUloga = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,11 +251,32 @@
             this.dateDatum.Size = new System.Drawing.Size(200, 20);
             this.dateDatum.TabIndex = 22;
             // 
+            // cmbUloga
+            // 
+            this.cmbUloga.FormattingEnabled = true;
+            this.cmbUloga.Location = new System.Drawing.Point(224, 154);
+            this.cmbUloga.Name = "cmbUloga";
+            this.cmbUloga.Size = new System.Drawing.Size(121, 21);
+            this.cmbUloga.TabIndex = 23;
+            this.cmbUloga.SelectedIndexChanged += new System.EventHandler(this.cmbUloga_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(221, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Uloga";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // FormKlijentiDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 492);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbUloga);
             this.Controls.Add(this.dateDatum);
             this.Controls.Add(this.buttonGrad);
             this.Controls.Add(this.label1);
@@ -310,5 +333,7 @@
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Button buttonGrad;
         private System.Windows.Forms.DateTimePicker dateDatum;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbUloga;
     }
 }

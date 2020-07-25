@@ -19,38 +19,6 @@ namespace eKnjige.WebaAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("eKnjige.WebaAPI.Administrator", b =>
-                {
-                    b.Property<int>("AdministratorID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("GradID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Ime")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KorisnickoIme")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Lozinka")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Prezime")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AdministratorID");
-
-                    b.HasIndex("GradID");
-
-                    b.ToTable("Administratori");
-                });
-
             modelBuilder.Entity("eKnjige.WebaAPI.Autor", b =>
                 {
                     b.Property<int>("AutorID")
@@ -70,6 +38,24 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("AutorID");
 
                     b.ToTable("Autori");
+                });
+
+            modelBuilder.Entity("eKnjige.WebaAPI.Database.Uloga", b =>
+                {
+                    b.Property<int>("UlogaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Naziv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Opis")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UlogaId");
+
+                    b.ToTable("Uloge");
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Drzava", b =>
@@ -233,7 +219,7 @@ namespace eKnjige.WebaAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DatumRodjenja")
+                    b.Property<DateTime>("DatumRodenja")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -263,11 +249,16 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<int>("SpolID")
                         .HasColumnType("int");
 
+                    b.Property<int>("UlogaID")
+                        .HasColumnType("int");
+
                     b.HasKey("KlijentID");
 
                     b.HasIndex("GradID");
 
                     b.HasIndex("SpolID");
+
+                    b.HasIndex("UlogaID");
 
                     b.ToTable("Klijenti");
                 });
@@ -417,18 +408,9 @@ namespace eKnjige.WebaAPI.Migrations
                     b.ToTable("TipFajlova");
                 });
 
-            modelBuilder.Entity("eKnjige.WebaAPI.Administrator", b =>
-                {
-                    b.HasOne("eKnjige.WebaAPI.Grad", "Grad")
-                        .WithMany()
-                        .HasForeignKey("GradID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjiga", b =>
                 {
-                    b.HasOne("eKnjige.WebaAPI.Administrator", "Administrator")
+                    b.HasOne("eKnjige.WebaAPI.Klijent", "Administrator")
                         .WithMany()
                         .HasForeignKey("AdministratorID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -502,6 +484,12 @@ namespace eKnjige.WebaAPI.Migrations
                         .HasForeignKey("SpolID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("eKnjige.WebaAPI.Database.Uloga", "Uloga")
+                        .WithMany()
+                        .HasForeignKey("UlogaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcijena", b =>
@@ -551,7 +539,7 @@ namespace eKnjige.WebaAPI.Migrations
 
             modelBuilder.Entity("eKnjige.WebaAPI.PrijedlogKnjiga", b =>
                 {
-                    b.HasOne("eKnjige.WebaAPI.Administrator", "Administrator")
+                    b.HasOne("eKnjige.WebaAPI.Klijent", "Administrator")
                         .WithMany()
                         .HasForeignKey("AdministratorID")
                         .OnDelete(DeleteBehavior.Cascade)

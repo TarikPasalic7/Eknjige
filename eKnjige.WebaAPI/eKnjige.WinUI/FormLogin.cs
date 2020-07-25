@@ -22,14 +22,28 @@ namespace eKnjige.WinUI
         {
             APIService.username = textKorisnickoIme.Text;
             APIService.password = textLozinka.Text;
+            
             try
             {
-                await apiservice.get<dynamic>(null);
-                FormIndex form = new FormIndex();
-                form.Show();
+                APIService.PrijavljeniKorisnik = await apiservice.get<Model.Klijent>(null, "Profil");
+                //
+                if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Administrator")
+                {
+                    await apiservice.get<dynamic>(null);
+                    FormIndex form = new FormIndex();
+                    form.Show();
+                  
+
+                }
+                else
+                {
+                    throw new Exception("Unos nije ispravan");
+                }
+               
             }
             catch (Exception ex)
             {
+              MessageBox.Show(ex.Message, "Authentikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

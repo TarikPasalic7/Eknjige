@@ -11,8 +11,9 @@ namespace eKnjige.WinUI
    public class APIService
     {
         public static string username { get; set; }
-    public static string password{ get; set; }
-private string route = null;
+    public static string password { get; set; }
+        public static Klijent   PrijavljeniKorisnik { get; set; }
+        private string route = null;
         public APIService( string _route)
         {
 
@@ -21,20 +22,26 @@ private string route = null;
 
         }
 
-        public async Task<T> get<T>(object search)
+        public async Task<T> get<T>(object search, string actionName = "")
         {
            
             
             var url =  $"{Properties.Settings.Default.APIurl}/{route}";
 
-            if(search != null)
+            if (actionName != null)
+            {
+                url += "/";
+                url += actionName;
+            }
+
+            if (search != null)
             {
                 url += "?";
                 url += await search.ToQueryString();
 
             }
-            var result = await url.WithBasicAuth(username,password).GetJsonAsync<T>();
-            return result;
+             return await url.WithBasicAuth(username,password).GetJsonAsync<T>();
+            
         }
 
 

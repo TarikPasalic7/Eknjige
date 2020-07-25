@@ -32,8 +32,9 @@ namespace eKnjige.WebaAPI.Controllers
             return _service.Get(request);
         }
 
-       
+      
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public Model.Klijent Insert(Model.KlijentInsertRequest request)
         {
             return _service.Insert(request);
@@ -41,6 +42,7 @@ namespace eKnjige.WebaAPI.Controllers
 
        
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public Model.Klijent Update(int id, [FromBody]Model.KlijentInsertRequest request)
         {
             return _service.Update(id, request);
@@ -50,6 +52,13 @@ namespace eKnjige.WebaAPI.Controllers
         public Model.Klijent GetById(int id)
         {
             return _service.GetbyId(id);
+        }
+
+        [HttpGet("Profil")]
+        [Authorize]
+        public Model.Klijent Profil()
+        {
+            return _service.Profil();
         }
 
 

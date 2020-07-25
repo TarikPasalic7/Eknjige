@@ -17,15 +17,17 @@ namespace eKnjige.WebaAPI
         public string Naziv { get; set; }
 
 
-        [ForeignKey("Klijent")]
-        public int KlijentID { get; set; }
+     
+       
 
         public Klijent Klijent { get; set; }
+        public int KlijentID { get; set; }
 
 
-        [ForeignKey("Administrator")]
+        public Klijent Administrator { get; set; }
+
         public int AdministratorID { get; set; }
 
-        public Administrator Administrator { get; set; }
+       
     }
 }

@@ -3,6 +3,7 @@ using AutoMapper;
 using eKnjige.Model;
 using eKnjige.Model.Requests;
 using eKnjige.WebaAPI.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -72,7 +73,7 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.Klijent Authenticiraj(string username, string pass)
         {
-            var user = db.Klijenti.FirstOrDefault(x => x.KorisnickoIme == username);
+            var user = db.Klijenti.Include(x=>x.Uloga).Include(x=>x.Grad.Drzava).FirstOrDefault(x => x.KorisnickoIme == username);
 
             if (user != null)
             {
@@ -163,5 +164,20 @@ namespace eKnjige.WebaAPI.Services
 
         }
 
+        public Model.Klijent Profil()
+        {
+            var query = db.Klijenti.AsQueryable();
+
+
+            
+            query = query.Where(x => x.KlijentID==Security.BasicAuthenticationHandler.PrijavljeniKlijent.KlijentID);
+
+            query = query.Include(x => x.Grad.Drzava);
+            query = query.Include(x => x.Uloga);
+
+            var entity = query.FirstOrDefault();
+
+            return mapper.Map<Model.Klijent>(entity);
+        }
     }
 }

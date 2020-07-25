@@ -18,6 +18,8 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.Klijent Authenticiraj(string username, string pass);
 
+        public Model.Klijent Profil();
+
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace eKnjige.Model
@@ -37,9 +38,13 @@ namespace eKnjige.Model
 
         public int GradID { get; set; }
 
-       
+        public int UlogaId { get; set; }
 
-       
+        public Uloga  Uloga { get; set; }
+
+
+
+
 
     }
 }

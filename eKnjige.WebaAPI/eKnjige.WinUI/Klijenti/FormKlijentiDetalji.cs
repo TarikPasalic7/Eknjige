@@ -15,9 +15,11 @@ namespace eKnjige.WinUI.Klijenti
     public partial class FormKlijentiDetalji : Form
     {
 
-        private readonly APIService service=new APIService("klijenti");
+        private readonly APIService service=new APIService("Klijenti");
         private readonly APIService servicegrad = new APIService("Grad");
         private readonly APIService serviceSpol = new APIService("Spol");
+        private readonly APIService serviceUloga = new APIService("Uloga");
+
         private int? id = null;
         public FormKlijentiDetalji(int? klijentId =null)
         {
@@ -53,16 +55,19 @@ namespace eKnjige.WinUI.Klijenti
                 }
 
                 var idObj2 = cmbSpol.SelectedValue;
-                if (int.TryParse(idObj.ToString(), out int SpolID))
+                if (int.TryParse(idObj2.ToString(), out int SpolID))
                 {
                     request.SpolID = SpolID;
+                }
+                var idObj3 = cmbUloga.SelectedValue;
+
+                if (int.TryParse(idObj3.ToString(), out int UlogaID))
+                {
+                    request.UlogaId = UlogaID;
                 }
 
 
 
-
-
-            
 
                 if (id.HasValue)
                 {
@@ -132,6 +137,19 @@ namespace eKnjige.WinUI.Klijenti
             cmbSpol.DataSource = result;
         }
 
+        private async Task LoadUloga()
+        {
+
+
+            var result = await serviceSpol.get<List<Model.Uloga>>(null);
+            result.Insert(0, new Model.Uloga());
+            cmbUloga.DisplayMember = "Naziv";
+            cmbUloga.ValueMember = "UlogaID ";
+
+            cmbUloga.DataSource = result;
+        }
+
+
         private void textIme_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textIme.Text))
@@ -200,6 +218,16 @@ namespace eKnjige.WinUI.Klijenti
             FormDodajGrad form = new FormDodajGrad();
             form.Show();
 
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbUloga_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

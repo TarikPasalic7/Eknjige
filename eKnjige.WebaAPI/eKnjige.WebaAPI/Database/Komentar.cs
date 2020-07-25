@@ -13,9 +13,11 @@ namespace eKnjige.WebaAPI
 
        public  DateTime DatumKomentara { get; set; }
 
-        [ForeignKey("Klijent")]
-        public int KlijentID { get; set; }
+    
+    
         public Klijent Klijent { get; set; }
+
+        public int KlijentID { get; set; }
 
 
         [ForeignKey("EKnjiga")]

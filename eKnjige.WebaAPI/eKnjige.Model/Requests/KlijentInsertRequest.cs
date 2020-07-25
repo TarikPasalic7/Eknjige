@@ -35,7 +35,8 @@ namespace eKnjige.Model
         
         public int GradID { get; set; }
 
-        
+        public int UlogaId { get; set; }
+
 
     }
 }

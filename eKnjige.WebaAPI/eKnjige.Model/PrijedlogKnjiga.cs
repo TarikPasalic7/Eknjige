@@ -22,8 +22,10 @@ namespace eKnjige.Model
 
         
 
-        public int AdministratorID { get; set; }
+      
 
-        public Administrator Administrator { get; set; }
+        public Klijent Administrator { get; set; }
+
+        public int AdministratorID { get; set; }
     }
 }

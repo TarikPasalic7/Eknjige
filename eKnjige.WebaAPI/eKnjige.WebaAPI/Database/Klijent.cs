@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eKnjige.WebaAPI.Database;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,7 +22,7 @@ namespace eKnjige.WebaAPI
 
         public string Jmbg { get; set; }
 
-        public DateTime DatumRodjenja { get; set; }
+        public DateTime DatumRodenja { get; set; }
 
 
         [ForeignKey("Spol")]
@@ -34,7 +35,15 @@ namespace eKnjige.WebaAPI
 
         public Grad Grad { get; set; }
 
+
+        
        
+
+        public Uloga Uloga { get; set; }
+
+        public int UlogaID { get; set; }
+
+
 
     }
 }

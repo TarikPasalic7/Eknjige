@@ -1,8 +1,11 @@
-﻿using EKnjige.MobileApp.Views;
+﻿using eKnjige.Model;
+using EKnjige.MobileApp.Views;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Windows.Forms;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -45,12 +48,20 @@ namespace EKnjige.MobileApp.ViewModels
             try
             {
 
-                await _service.get<object>(null);
-                Application.Current.MainPage = new MainPage();
+                APIService.PrijavljeniKorisnik = await _service.get<Klijent>(null);
+                   if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Korisnik")
+                {
+                    Application.Current.MainPage = new MainPage();
+                }
+                else
+                {
+                    throw new Exception("Unos nije ispravan");
+                }
+                
             }
             catch(Exception ex)
             {
-
+                //System.Windows.Forms.MessageBox.Show(ex.Message, "Authentikacija", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
     }

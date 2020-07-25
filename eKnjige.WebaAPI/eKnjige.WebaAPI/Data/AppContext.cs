@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using eKnjige.Model;
+using eKnjige.WebaAPI.Database;
+using Microsoft.EntityFrameworkCore;
 
 using System;
 using System.Collections.Generic;
@@ -40,7 +42,7 @@ namespace eKnjige.WebaAPI.Data
         }
 
 
-        public DbSet<Administrator> Administratori { get; set; }
+       
         public DbSet<Autor> Autori { get; set; }
 
         public DbSet<Drzava> Drzave { get; set; }
@@ -59,6 +61,8 @@ namespace eKnjige.WebaAPI.Data
         public DbSet<TipFajla> TipFajlova { get; set; }
 
         public DbSet<Komentar> Komentari { get; set; }
+
+        public DbSet<Database.Uloga> Uloge { get; set; }
 
     }
 }

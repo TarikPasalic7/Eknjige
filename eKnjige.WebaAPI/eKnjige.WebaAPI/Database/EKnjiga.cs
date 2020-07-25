@@ -18,8 +18,9 @@ namespace eKnjige.WebaAPI
         public string PdfPath { get; set; }
         public string Opis { get; set; }
 
-        [ForeignKey("Administrator")]
+        
+       
+        public Klijent  Administrator { get; set; }
         public int AdministratorID { get; set; }
-        public Administrator Administrator { get; set; }
     }
 }

@@ -10,9 +10,12 @@ namespace EKnjige.MobileApp
 {
     public class APIService
     {
-
+        public static Klijent PrijavljeniKorisnik { get; set; }
         public static string username { get; set; }
         public static string password { get; set; }
+        public static string passwors{ get; set; }
+
+
         private readonly string route ;
 
 #if DEBUG

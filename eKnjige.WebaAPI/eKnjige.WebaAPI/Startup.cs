@@ -16,6 +16,8 @@ using eKnjige.WebaAPI.Services;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Hosting;
 using eKnjige.WebaAPI.Help;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using eKnjige.WebaAPI.Database;
 
 namespace eKnjige.WebaAPI
 {
@@ -54,6 +56,23 @@ namespace eKnjige.WebaAPI
             services.AddDbContext<AppContext>(options =>
 options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
 
+           
+
+          
+            services.AddScoped<IService<Model.Autor,object>, BaseService<Model.Autor,object,eKnjige.WebaAPI.Autor>>();
+           
+            services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
+            services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
+            services.AddScoped<ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>, BaseCRUDService<Model.Kategorija, object, eKnjige.WebaAPI.Kategorija, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>>();
+            //services.AddScoped<ICRUDService<Model.Klijent, Model.Requests.KlijentiSearchRequest, Model.KlijentInsertRequest, Model.KlijentInsertRequest>, KlijentService>();
+            services.AddScoped<ICRUDService<Model.TipFajla, object, Model.TipFajla, Model.TipFajla>, BaseCRUDService<Model.TipFajla, object, eKnjige.WebaAPI.TipFajla, Model.TipFajla, Model.TipFajla>>();
+            services.AddScoped<IKlijentService, KlijentService>();
+            services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
+            services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.Drzava>>();
+            services.AddScoped<IEKnjigaService, EKnjigaService>();
+            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -78,7 +97,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
                                 Reference = new OpenApiReference
                                 {
                                     Type = ReferenceType.SecurityScheme,
-                                    Id = "basic"
+                                    Id = "basicAuth"
                                 }
                             },
                             new string[] {}
@@ -87,19 +106,6 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
 
             });
 
-            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
-            services.AddScoped<IService<Model.Autor,object>, BaseService<Model.Autor,object,eKnjige.WebaAPI.Autor>>();
-            services.AddScoped<IService<Model.Administrator,object>,BaseService<Model.Administrator,object,eKnjige.WebaAPI.Administrator>>();
-            services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
-            services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
-            services.AddScoped<ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>, BaseCRUDService<Model.Kategorija, object, eKnjige.WebaAPI.Kategorija, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>>();
-            //services.AddScoped<ICRUDService<Model.Klijent, Model.Requests.KlijentiSearchRequest, Model.KlijentInsertRequest, Model.KlijentInsertRequest>, KlijentService>();
-            services.AddScoped<ICRUDService<Model.TipFajla, object, Model.TipFajla, Model.TipFajla>, BaseCRUDService<Model.TipFajla, object, eKnjige.WebaAPI.TipFajla, Model.TipFajla, Model.TipFajla>>();
-            services.AddScoped<IKlijentService, KlijentService>();
-
-            services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.Drzava>>();
-            services.AddScoped<IEKnjigaService, EKnjigaService>();
-        
 
         }
 

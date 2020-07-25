@@ -13,10 +13,12 @@ namespace eKnjige.WebaAPI
 
         public float Ocjena { get; set; }
 
-        [ForeignKey("Klijent")]
-        public int KlijentID { get; set; }
+    
+        
 
         public Klijent Klijent { get; set; }
+
+        public int KlijentID { get; set; }
 
         [ForeignKey("EKnjiga")]
 
