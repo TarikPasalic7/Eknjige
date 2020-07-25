@@ -56,9 +56,9 @@ namespace eKnjige.WebaAPI
             services.AddDbContext<AppContext>(options =>
 options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
 
-           
 
-          
+
+            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             services.AddScoped<IService<Model.Autor,object>, BaseService<Model.Autor,object,eKnjige.WebaAPI.Autor>>();
            
             services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
@@ -70,7 +70,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
             services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.Drzava>>();
             services.AddScoped<IEKnjigaService, EKnjigaService>();
-            services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+        
 
 
             services.AddSwaggerGen(c =>
@@ -97,7 +97,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
                                 Reference = new OpenApiReference
                                 {
                                     Type = ReferenceType.SecurityScheme,
-                                    Id = "basicAuth"
+                                    Id = "basic"
                                 }
                             },
                             new string[] {}
