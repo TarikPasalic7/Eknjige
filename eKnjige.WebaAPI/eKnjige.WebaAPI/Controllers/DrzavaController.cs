@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace eKnjige.WebaAPI.Controllers
 {
 
-    public class DrzavaController : BaseCRUDController<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>
+    public class DrzavaController : BaseCRUDController<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>
     {
-        public DrzavaController(ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava> _service) : base(_service)
+        public DrzavaController(ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest> _service) : base(_service)
         {
            
         }

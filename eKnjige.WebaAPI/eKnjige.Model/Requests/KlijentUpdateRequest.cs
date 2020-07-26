@@ -5,23 +5,22 @@ using System.Text;
 
 namespace eKnjige.Model
 {
-    public class KlijentInsertRequest
+    public class KlijentUpdateRequest
     {
+
 
         public int KlijentID { get; set; }
 
-        [Required]
         public string Ime { get; set; }
 
-        [Required]
+        
         public string Prezime { get; set; }
 
-        [Required]
+       
         public string KorisnickoIme { get; set; }
-        public string LozinkaHash { get; set; }
-        public string LozinkaProvjera { get; set; }
 
-        [Required]
+      
+
         public string Email { get; set; }
 
         public string Jmbg { get; set; }

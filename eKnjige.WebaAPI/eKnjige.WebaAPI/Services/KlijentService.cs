@@ -150,13 +150,25 @@ namespace eKnjige.WebaAPI.Services
 
         //***************************************//
 
-        public Model.Klijent Update(int id, KlijentInsertRequest request)
+        public Model.Klijent Update(int id, KlijentUpdateRequest request)
         {
             var k = db.Klijenti.Find(id);
-            k = mapper.Map<Klijent>(request);
 
 
+            //db.Klijenti.Attach(k);
+            //db.Klijenti.Update(k);
 
+            //mapper.Map(k, request);
+            k.Ime = request.Ime;
+            k.KorisnickoIme = request.KorisnickoIme;
+            k.Prezime = request.Prezime;
+            k.SpolID = request.SpolID;
+            k.GradID = request.GradID;
+            k.UlogaID = request.UlogaId;
+            k.Jmbg = request.Jmbg;
+            k.Email = request.Email;
+            
+            //k = mapper.Map<Klijent>(request);
 
 
             db.SaveChanges();

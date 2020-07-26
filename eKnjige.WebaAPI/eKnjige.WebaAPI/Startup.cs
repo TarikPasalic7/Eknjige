@@ -15,9 +15,10 @@ using eKnjige.WebaAPI.Services;
 
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Hosting;
-using eKnjige.WebaAPI.Help;
+
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using eKnjige.WebaAPI.Database;
+using eKnjige.WebaAPI.Security;
 
 namespace eKnjige.WebaAPI
 {
@@ -68,7 +69,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.TipFajla, object, Model.TipFajla, Model.TipFajla>, BaseCRUDService<Model.TipFajla, object, eKnjige.WebaAPI.TipFajla, Model.TipFajla, Model.TipFajla>>();
             services.AddScoped<IKlijentService, KlijentService>();
             services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
-            services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.Drzava>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.Drzava>>();
+            services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.DrzavaRequest>>();
             services.AddScoped<IEKnjigaService, EKnjigaService>();
         
 

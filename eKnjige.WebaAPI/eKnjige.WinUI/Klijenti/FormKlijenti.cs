@@ -20,6 +20,7 @@ namespace eKnjige.WinUI.Klijenti
         public FormKlijenti()
         {
             InitializeComponent();
+            dgvKlijenti.AutoGenerateColumns = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

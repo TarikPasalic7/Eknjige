@@ -42,8 +42,8 @@ namespace eKnjige.WebaAPI.Controllers
 
        
         [HttpPut("{id}")]
-        [Authorize(Roles = "Administrator")]
-        public Model.Klijent Update(int id, [FromBody]Model.KlijentInsertRequest request)
+        
+        public Model.Klijent Update(int id, [FromBody]Model.KlijentUpdateRequest request)
         {
             return _service.Update(id, request);
         }

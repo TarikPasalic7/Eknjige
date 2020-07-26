@@ -217,6 +217,7 @@
             this.cmbGradovi.Name = "cmbGradovi";
             this.cmbGradovi.Size = new System.Drawing.Size(121, 21);
             this.cmbGradovi.TabIndex = 17;
+            this.cmbGradovi.SelectedIndexChanged += new System.EventHandler(this.cmbGradovi_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -246,10 +247,12 @@
             // 
             // dateDatum
             // 
+            this.dateDatum.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dateDatum.Location = new System.Drawing.Point(12, 301);
             this.dateDatum.Name = "dateDatum";
             this.dateDatum.Size = new System.Drawing.Size(200, 20);
             this.dateDatum.TabIndex = 22;
+            this.dateDatum.Value = new System.DateTime(2020, 7, 25, 0, 0, 0, 0);
             // 
             // cmbUloga
             // 

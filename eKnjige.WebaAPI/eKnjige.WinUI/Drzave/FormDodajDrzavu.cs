@@ -20,12 +20,12 @@ namespace eKnjige.WinUI.Drzave
 
         private async void buttonDrzavaSnimi_Click(object sender, EventArgs e)
         {
-            var insert = new Model.Drzava()
+            var insert = new Model.DrzavaRequest()
             {
                 Naziv = textDrzavaNaziv.Text
             };
 
-            await service.Insert<Model.Drzava>(insert);
+            await service.Insert<Model.DrzavaRequest>(insert);
                 
                 
                 

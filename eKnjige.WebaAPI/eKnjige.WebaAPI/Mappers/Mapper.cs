@@ -20,11 +20,13 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<Uloga, Model.Uloga>().ReverseMap();
             CreateMap<Uloga, Model.UlogeRequest>().ReverseMap();
             CreateMap<Klijent, Model.KlijentInsertRequest>().ReverseMap();
+            CreateMap<Klijent, Model.KlijentUpdateRequest>().ReverseMap();
             CreateMap<Autor, Model.Autor>().ReverseMap();
             CreateMap<EKnjiga, Model.EKnjiga>().ReverseMap();
             CreateMap<EKnjiga, Model.Requests.EKnjigaInsertRequest>().ReverseMap();
             CreateMap<Grad, Model.Grad>().ReverseMap();
             CreateMap<Spol, Model.Spol>();
+            CreateMap<Drzava, Model.DrzavaRequest>().ReverseMap();
             CreateMap<Drzava, Model.Drzava>().ReverseMap();
             CreateMap<EKnjiga, Model.Requests.eKnjigeSearchRequest>().ReverseMap();
             

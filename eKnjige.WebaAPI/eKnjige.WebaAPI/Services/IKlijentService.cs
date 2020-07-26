@@ -14,7 +14,7 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.Klijent Insert(Model.KlijentInsertRequest request);
 
-        public Model.Klijent Update(int id, Model.KlijentInsertRequest request);
+        public Model.Klijent Update(int id, Model.KlijentUpdateRequest request);
 
         public Model.Klijent Authenticiraj(string username, string pass);
 

@@ -33,6 +33,9 @@
             this.btnPrikazi = new System.Windows.Forms.Button();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.KlijentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jmbg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -57,6 +60,9 @@
             this.dgvKlijenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKlijenti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.KlijentID,
+            this.Jmbg,
+            this.Email,
+            this.KorisnickoIme,
             this.Ime,
             this.Prezime});
             this.dgvKlijenti.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,6 +98,27 @@
             this.KlijentID.Name = "KlijentID";
             this.KlijentID.ReadOnly = true;
             this.KlijentID.Visible = false;
+            // 
+            // Jmbg
+            // 
+            this.Jmbg.DataPropertyName = "Jmbg";
+            this.Jmbg.HeaderText = "Jmbg";
+            this.Jmbg.Name = "Jmbg";
+            this.Jmbg.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // KorisnickoIme
+            // 
+            this.KorisnickoIme.DataPropertyName = "KorisnickoIme";
+            this.KorisnickoIme.HeaderText = "KorisnickoIme";
+            this.KorisnickoIme.Name = "KorisnickoIme";
+            this.KorisnickoIme.ReadOnly = true;
             // 
             // Ime
             // 
@@ -131,6 +158,9 @@
         private System.Windows.Forms.Button btnPrikazi;
         private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.DataGridViewTextBoxColumn KlijentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jmbg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
     }

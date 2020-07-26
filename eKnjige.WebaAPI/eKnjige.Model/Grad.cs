@@ -10,6 +10,6 @@ namespace eKnjige.Model
 
       
         public int DrzavaId { get; set; }
-        public Drzava Drzava { get; set; }
+        public DrzavaRequest Drzava { get; set; }
     }
 }

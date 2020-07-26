@@ -42,29 +42,32 @@ namespace eKnjige.WinUI.Klijenti
                 request.Prezime = textPrezime.Text;
                 request.KorisnickoIme = textKorisnickoIme.Text;
                 request.Email = textEmail.Text;
-                request.DatumRodjenja = DateTime.Now;
+                //request.DatumRodenja = DateTime.Now;
                 request.LozinkaHash = textPassword.Text;
                 request.LozinkaProvjera = textPasswordPotvrda.Text;
-                request.DatumRodjenja = dateDatum.Value;
+                request.DatumRodenja = dateDatum.Value;
                 request.Jmbg=textJmbg.Text;
-                    var idObj = cmbGradovi.SelectedValue;
+                request.GradID = (cmbGradovi.SelectedItem as Model.Grad).Id;
+                request.SpolID = (cmbSpol.SelectedItem as Model.Spol).SpolID;
+                request.UlogaId = (cmbUloga.SelectedItem as Model.Uloga).UlogaId;
+                //    var idObj = cmbGradovi.SelectedValue;
               
-                if (int.TryParse(idObj.ToString(), out int GradID))
-                {
-                    request.GradID=GradID;
-                }
+                //if (int.TryParse(idObj.ToString(), out int GradID))
+                //{
+                //    request.GradID=GradID;
+                //}
 
-                var idObj2 = cmbSpol.SelectedValue;
-                if (int.TryParse(idObj2.ToString(), out int SpolID))
-                {
-                    request.SpolID = SpolID;
-                }
-                var idObj3 = cmbUloga.SelectedValue;
-
-                if (int.TryParse(idObj3.ToString(), out int UlogaID))
-                {
-                    request.UlogaId = UlogaID;
-                }
+                //var idObj2 = cmbSpol.SelectedValue;
+                //if (int.TryParse(idObj2.ToString(), out int SpolID))
+                //{
+                //    request.SpolID = SpolID;
+                //}
+                //var idObj3 = cmbUloga.SelectedValue;
+                
+                //if (int.TryParse(idObj3.ToString(), out int UlogaId))
+                //{
+                //    request.UlogaId = UlogaId;
+                //}
 
 
 
@@ -96,16 +99,54 @@ namespace eKnjige.WinUI.Klijenti
                 textKorisnickoIme.Text = klijent.KorisnickoIme;
                 textIme.Text = klijent.Ime;
                 textPrezime.Text = klijent.Prezime;
-                textJmbg.Text = klijent.Email;
-                dateDatum.Value = klijent.DatumRodjenja;
-               
+                textJmbg.Text = klijent.Jmbg;
+                textEmail.Text = klijent.Email;
+
+                // var result =await servicegrad.get<List<Model.Grad>>(null);
+                //cmbGradovi.SelectedItem = klijent.GradID;
+                ////dateDatum.Value = klijent.DatumRodjenja;
+                //cmbGradovi.SelectedValue = klijent.GradID;
                 //await LoadSpol(klijent.SpolID);
                 //await LoadGradovi(klijent.GradID);
+                await LoadSpol();
+                await LoadGradovi();
+                await LoadUloga();
+
+                foreach (Model.Grad item in cmbGradovi.Items)
+                {
+                    if (item.Id == klijent.GradID)
+                        cmbGradovi.SelectedItem = item;
+
+                }
+                foreach (Model.Uloga item in cmbUloga.Items)
+                {
+                    if (item.UlogaId == klijent.UlogaId)
+                        cmbUloga.SelectedItem = item;
+
+                }
+                foreach (Model.Spol item in cmbSpol.Items)
+                {
+                    if (item.SpolID == klijent.SpolID)
+                        cmbSpol.SelectedItem = item;
+
+                }
+
+            }
+            else
+            {
+
+                await LoadSpol();
+                await LoadGradovi();
+                await LoadUloga();
+
+
 
             }
 
-            await LoadSpol();
-            await LoadGradovi();
+
+
+
+
         }
 
         private async Task LoadGradovi()
@@ -141,10 +182,10 @@ namespace eKnjige.WinUI.Klijenti
         {
 
 
-            var result = await serviceSpol.get<List<Model.Uloga>>(null);
+            var result = await serviceUloga.get<List<Model.Uloga>>(null);
             result.Insert(0, new Model.Uloga());
             cmbUloga.DisplayMember = "Naziv";
-            cmbUloga.ValueMember = "UlogaID ";
+            cmbUloga.ValueMember = "UlogaId ";
 
             cmbUloga.DataSource = result;
         }
@@ -227,6 +268,11 @@ namespace eKnjige.WinUI.Klijenti
         }
 
         private void cmbUloga_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbGradovi_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
