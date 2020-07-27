@@ -13,7 +13,7 @@ namespace eKnjige.WebaAPI.Controllers
     [ApiController]
     public class KategorijaController : BaseCRUDController<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>
     {
-        public KategorijaController(ICRUDService<Model.Kategorija, object,Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest> _service) : base(_service)
+        public KategorijaController(ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest> _service) : base(_service)
         {
         }
     }

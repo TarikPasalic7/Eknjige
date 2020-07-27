@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIService.cs" />
+    <Compile Include="Autori\FormDodajAutora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autori\FormDodajAutora.Designer.cs">
+      <DependentUpon>FormDodajAutora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drzave\FormDodajDrzavu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     <Compile Include="Gradovi\FormDodajGrad.Designer.cs">
       <DependentUpon>FormDodajGrad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kategorije\FormDodajKategoriju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorije\FormDodajKategoriju.Designer.cs">
+      <DependentUpon>FormDodajKategoriju.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klijenti\FormKlijenti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +108,11 @@
     <Compile Include="Klijenti\FormKlijentiDetalji.Designer.cs">
       <DependentUpon>FormKlijentiDetalji.cs</DependentUpon>
     </Compile>
-    <Compile Include="Knjige\FormEKnjigeDetalji.cs">
+    <Compile Include="Knjige\FormEknjigeDodaj.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Knjige\FormEKnjigeDetalji.Designer.cs">
-      <DependentUpon>FormEKnjigeDetalji.cs</DependentUpon>
+    <Compile Include="Knjige\FormEknjigeDodaj.Designer.cs">
+      <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
     </Compile>
     <Compile Include="Knjige\FormKnjige.cs">
       <SubType>Form</SubType>
@@ -110,6 +122,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipFajla\FormSnimiTipFajla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipFajla\FormSnimiTipFajla.Designer.cs">
+      <DependentUpon>FormSnimiTipFajla.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Autori\FormDodajAutora.resx">
+      <DependentUpon>FormDodajAutora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Drzave\FormDodajDrzavu.resx">
       <DependentUpon>FormDodajDrzavu.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,14 +143,17 @@
     <EmbeddedResource Include="Gradovi\FormDodajGrad.resx">
       <DependentUpon>FormDodajGrad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kategorije\FormDodajKategoriju.resx">
+      <DependentUpon>FormDodajKategoriju.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klijenti\FormKlijenti.resx">
       <DependentUpon>FormKlijenti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Klijenti\FormKlijentiDetalji.resx">
       <DependentUpon>FormKlijentiDetalji.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Knjige\FormEKnjigeDetalji.resx">
-      <DependentUpon>FormEKnjigeDetalji.cs</DependentUpon>
+    <EmbeddedResource Include="Knjige\FormEknjigeDodaj.resx">
+      <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Knjige\FormKnjige.resx">
       <DependentUpon>FormKnjige.cs</DependentUpon>
@@ -143,6 +167,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TipFajla\FormSnimiTipFajla.resx">
+      <DependentUpon>FormSnimiTipFajla.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

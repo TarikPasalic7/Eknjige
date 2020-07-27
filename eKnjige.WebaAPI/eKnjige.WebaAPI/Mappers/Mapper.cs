@@ -22,6 +22,7 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<Klijent, Model.KlijentInsertRequest>().ReverseMap();
             CreateMap<Klijent, Model.KlijentUpdateRequest>().ReverseMap();
             CreateMap<Autor, Model.Autor>().ReverseMap();
+            CreateMap<Autor, Model.AutorSearchRequest>().ReverseMap();
             CreateMap<EKnjiga, Model.EKnjiga>().ReverseMap();
             CreateMap<EKnjiga, Model.Requests.EKnjigaInsertRequest>().ReverseMap();
             CreateMap<Grad, Model.Grad>().ReverseMap();

@@ -31,6 +31,7 @@
             this.buttonPrikazi = new System.Windows.Forms.Button();
             this.textPrikazi = new System.Windows.Forms.TextBox();
             this.dgveknjige = new System.Windows.Forms.DataGridView();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.EKnjigaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +72,16 @@
             this.dgveknjige.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgveknjige.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgveknjige_MouseDoubleClick);
             // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(535, 29);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnDodaj.TabIndex = 3;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
             // EKnjigaID
             // 
             this.EKnjigaID.DataPropertyName = "EKnjigaID";
@@ -101,6 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dgveknjige);
             this.Controls.Add(this.textPrikazi);
             this.Controls.Add(this.buttonPrikazi);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Button buttonPrikazi;
         private System.Windows.Forms.TextBox textPrikazi;
         private System.Windows.Forms.DataGridView dgveknjige;
+        private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.DataGridViewTextBoxColumn EKnjigaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;

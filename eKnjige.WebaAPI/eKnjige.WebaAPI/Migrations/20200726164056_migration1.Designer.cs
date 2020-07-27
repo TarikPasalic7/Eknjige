@@ -10,8 +10,8 @@ using eKnjige.WebaAPI.Data;
 namespace eKnjige.WebaAPI.Migrations
 {
     [DbContext(typeof(Data.AppContext))]
-    [Migration("20200723220308_migration3")]
-    partial class migration3
+    [Migration("20200726164056_migration1")]
+    partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,8 +88,8 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<float>("Cijena")
                         .HasColumnType("real");
 
-                    b.Property<string>("Mp3Path")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Mp3file")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
@@ -100,11 +100,11 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PdfPath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Pdffile")
+                        .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("Slika")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Slika")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("EKnjigaID");
 

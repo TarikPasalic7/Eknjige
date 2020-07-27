@@ -15,7 +15,9 @@ namespace eKnjige.WinUI.Knjige
         private readonly APIService _apiservice = new APIService("eknjiga");
         public FormKnjige()
         {
+            
             InitializeComponent();
+            dgveknjige.AutoGenerateColumns = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,8 +38,16 @@ namespace eKnjige.WinUI.Knjige
         {
             var id = dgveknjige.SelectedRows[0].Cells[0].Value;
              
-        FormEKnjigeDetalji form = new FormEKnjigeDetalji(int.Parse(id.ToString()));
+        FormEknjigeDodaj form = new FormEknjigeDodaj(int.Parse(id.ToString()));
             form.Show();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            FormEknjigeDodaj form = new FormEknjigeDodaj();
+            form.Show();
+            
+
         }
     }
 }

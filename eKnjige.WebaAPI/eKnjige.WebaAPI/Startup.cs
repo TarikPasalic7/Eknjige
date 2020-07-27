@@ -60,7 +60,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
 
 
             services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
-            services.AddScoped<IService<Model.Autor,object>, BaseService<Model.Autor,object,eKnjige.WebaAPI.Autor>>();
+          
            
             services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
             services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
@@ -71,6 +71,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
             services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.DrzavaRequest>>();
             services.AddScoped<IEKnjigaService, EKnjigaService>();
+            services.AddScoped<ICRUDService<Model.Autor, Model.AutorSearchRequest, Model.Autor, Model.Autor>, BaseCRUDService<Model.Autor, Model.AutorSearchRequest, Autor, Model.Autor, Model.Autor>>();
         
 
 

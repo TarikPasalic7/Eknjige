@@ -51,5 +51,17 @@ namespace eKnjige.WebaAPI.Controllers
 
         }
 
+        [HttpPut("{id}")]
+        public Model.EKnjiga Update(int id, [FromBody]Model.Requests.EKnjigaInsertRequest request)
+        {
+            return ieknjiga.Update(id,request);
+        }
+
+        [HttpDelete("{id}")]
+        public bool Remove(int id)
+        {
+            return ieknjiga.Remove(id);
+        }
+
     }
 }

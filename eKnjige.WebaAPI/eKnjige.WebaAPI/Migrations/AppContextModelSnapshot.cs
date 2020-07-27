@@ -86,8 +86,8 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<float>("Cijena")
                         .HasColumnType("real");
 
-                    b.Property<string>("Mp3Path")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Mp3file")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
@@ -98,11 +98,11 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PdfPath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Pdffile")
+                        .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("Slika")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Slika")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("EKnjigaID");
 

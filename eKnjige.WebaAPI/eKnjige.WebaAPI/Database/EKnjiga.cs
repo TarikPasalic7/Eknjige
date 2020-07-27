@@ -12,10 +12,10 @@ namespace eKnjige.WebaAPI
         public int EKnjigaID { get; set; }
         public string Naziv { get; set; }
         public float OcjenaKnjige { get; set; }
-        public string Slika { get; set; }
+        public byte[] Slika { get; set; }
         public float Cijena { get; set; }
-        public string Mp3Path { get; set; }
-        public string PdfPath { get; set; }
+        public byte[] Mp3file { get; set; } 
+        public byte[] Pdffile { get; set; }
         public string Opis { get; set; }
 
         

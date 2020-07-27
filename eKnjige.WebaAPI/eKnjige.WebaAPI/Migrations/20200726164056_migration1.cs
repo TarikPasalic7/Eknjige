@@ -75,20 +75,6 @@ namespace eKnjige.WebaAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Uloga",
-                columns: table => new
-                {
-                    UlogaId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Naziv = table.Column<string>(nullable: true),
-                    Opis = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Uloga", x => x.UlogaId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Uloge",
                 columns: table => new
                 {
@@ -156,9 +142,9 @@ namespace eKnjige.WebaAPI.Migrations
                         principalColumn: "SpolID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Klijenti_Uloga_UlogaID",
+                        name: "FK_Klijenti_Uloge_UlogaID",
                         column: x => x.UlogaID,
-                        principalTable: "Uloga",
+                        principalTable: "Uloge",
                         principalColumn: "UlogaId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -171,10 +157,10 @@ namespace eKnjige.WebaAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Naziv = table.Column<string>(nullable: true),
                     OcjenaKnjige = table.Column<float>(nullable: false),
-                    Slika = table.Column<string>(nullable: true),
+                    Slika = table.Column<byte[]>(nullable: true),
                     Cijena = table.Column<float>(nullable: false),
-                    Mp3Path = table.Column<string>(nullable: true),
-                    PdfPath = table.Column<string>(nullable: true),
+                    Mp3file = table.Column<byte[]>(nullable: true),
+                    Pdffile = table.Column<byte[]>(nullable: true),
                     Opis = table.Column<string>(nullable: true),
                     AdministratorID = table.Column<int>(nullable: false)
                 },
@@ -500,9 +486,6 @@ namespace eKnjige.WebaAPI.Migrations
                 name: "PrijedlogKnjiga");
 
             migrationBuilder.DropTable(
-                name: "Uloge");
-
-            migrationBuilder.DropTable(
                 name: "Autori");
 
             migrationBuilder.DropTable(
@@ -524,7 +507,7 @@ namespace eKnjige.WebaAPI.Migrations
                 name: "Spol");
 
             migrationBuilder.DropTable(
-                name: "Uloga");
+                name: "Uloge");
 
             migrationBuilder.DropTable(
                 name: "Drzave");

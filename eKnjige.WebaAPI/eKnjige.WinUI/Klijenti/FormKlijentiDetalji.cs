@@ -101,7 +101,10 @@ namespace eKnjige.WinUI.Klijenti
                 textPrezime.Text = klijent.Prezime;
                 textJmbg.Text = klijent.Jmbg;
                 textEmail.Text = klijent.Email;
-
+                textPassword.Hide();
+                textPasswordPotvrda.Hide();
+                labelPassword.Hide();
+                labelPasswordPotvrda.Hide();
                 // var result =await servicegrad.get<List<Model.Grad>>(null);
                 //cmbGradovi.SelectedItem = klijent.GradID;
                 ////dateDatum.Value = klijent.DatumRodjenja;

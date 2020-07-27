@@ -46,7 +46,6 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.FormLo
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Gradovi.FormDodajGrad.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Klijenti.FormKlijenti.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Klijenti.FormKlijentiDetalji.resources
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormEKnjigeDetalji.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKnjige.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Properties.Resources.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.GenerateResource.cache
@@ -54,3 +53,7 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.exe
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.pdb
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Autori.FormDodajAutora.resources
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Kategorije.FormDodajKategoriju.resources
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.TipFajla.FormSnimiTipFajla.resources
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormEknjigeDodaj.resources

@@ -31,13 +31,19 @@ namespace eKnjige.WinUI
                 {
                     await apiservice.get<dynamic>(null);
                     FormIndex form = new FormIndex();
+
+                   
+                    DialogResult = DialogResult.OK;
                     form.Show();
+                    //Close();
+                    
                   
 
                 }
                 else
                 {
                     throw new Exception("Unos nije ispravan");
+                   
                 }
                
             }

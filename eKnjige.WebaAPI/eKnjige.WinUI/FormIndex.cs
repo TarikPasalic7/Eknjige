@@ -1,5 +1,8 @@
-﻿using eKnjige.WinUI.Klijenti;
+﻿using eKnjige.WinUI.Autori;
+using eKnjige.WinUI.Kategorije;
+using eKnjige.WinUI.Klijenti;
 using eKnjige.WinUI.Knjige;
+using eKnjige.WinUI.TipFajla;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -130,6 +133,25 @@ namespace eKnjige.WinUI
         private void pretragaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormKnjige form = new FormKnjige();
+            form.Show();
+        }
+
+        private void kategorijeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormDodajKategoriju form = new FormDodajKategoriju();
+            form.Show();
+        }
+
+        private void autoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDodajAutora form = new FormDodajAutora();
+            form.Show();
+        }
+
+        private void tipFajlaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSnimiTipFajla form = new FormSnimiTipFajla();
             form.Show();
         }
     }

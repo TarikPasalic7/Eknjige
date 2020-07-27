@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 using eKnjige.Model;
+using System.Windows.Forms;
+
 namespace eKnjige.WinUI
 {
    public class APIService
@@ -79,5 +81,42 @@ namespace eKnjige.WinUI
             var result = await url.WithBasicAuth(username, password).PutJsonAsync(request).ReceiveJson<T>();
             return result;
         }
+
+        public async Task<bool> Remove(int id)
+        {
+            var url = $"{Properties.Settings.Default.APIurl}/{route}/{id}";
+
+            try
+            {
+                return await url.WithBasicAuth(username, password).DeleteAsync().ReceiveJson<bool>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    MessageBox.Show("Neuspjela prijava ili nepostojeći korisnik!");
+
+                    return false;
+                }
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Forbidden)
+                {
+                    MessageBox.Show("Niste autorizovani");
+                }
+
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, {string.Join(",", error.Value)}");
+                }
+
+                MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
+
     }
 }

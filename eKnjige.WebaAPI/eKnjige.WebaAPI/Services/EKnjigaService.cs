@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eKnjige.Model;
 using eKnjige.Model.Requests;
 using eKnjige.WebaAPI.Data;
 using System.Collections.Generic;
@@ -51,6 +52,32 @@ namespace eKnjige.WebaAPI.Services
             db.EKnjige.Add(eknjiga);
             db.SaveChanges();
             return mapper.Map<Model.EKnjiga>(eknjiga);
+        }
+
+        public bool Remove(int id)
+        {
+           var entity = db.EKnjige.Where(x => x.EKnjigaID == id).FirstOrDefault();
+            if (entity != null)
+            {
+                db.EKnjige.Remove(entity);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public Model.EKnjiga Update(int id, EKnjigaInsertRequest request)
+        {
+            var entity = db.EKnjige.Where(x => x.EKnjigaID == id).FirstOrDefault();
+
+            db.EKnjige.Attach(entity);
+            db.EKnjige.Update(entity);
+
+            entity = mapper.Map(request, entity);
+
+            db.SaveChanges();
+
+            return mapper.Map<Model.EKnjiga>(entity);
         }
     }
 }

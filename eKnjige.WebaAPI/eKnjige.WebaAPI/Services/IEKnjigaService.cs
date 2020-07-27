@@ -13,7 +13,9 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.EKnjiga Insert(Model.Requests.EKnjigaInsertRequest request);
 
+        public Model.EKnjiga Update(int id, Model.Requests.EKnjigaInsertRequest request);
 
+        bool Remove(int id);
 
     }
 }
