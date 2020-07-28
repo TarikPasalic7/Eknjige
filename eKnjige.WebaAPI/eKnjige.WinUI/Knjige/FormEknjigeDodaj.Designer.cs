@@ -42,6 +42,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSlika = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBoxMP3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPdf = new System.Windows.Forms.CheckBox();
+            this.buttonKategorijeKnjige = new System.Windows.Forms.Button();
+            this.comboBoxKategorije = new System.Windows.Forms.ComboBox();
+            this.comboBoxAutori = new System.Windows.Forms.ComboBox();
+            this.buttonEknnjigeAutori = new System.Windows.Forms.Button();
+            this.buttonmp3file = new System.Windows.Forms.Button();
+            this.buttonpdffile = new System.Windows.Forms.Button();
+            this.openFileDialogmp3 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogpdf = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,9 +122,9 @@
             // 
             // btnSnimi
             // 
-            this.btnSnimi.Location = new System.Drawing.Point(621, 368);
+            this.btnSnimi.Location = new System.Drawing.Point(949, 500);
             this.btnSnimi.Name = "btnSnimi";
-            this.btnSnimi.Size = new System.Drawing.Size(75, 23);
+            this.btnSnimi.Size = new System.Drawing.Size(155, 56);
             this.btnSnimi.TabIndex = 18;
             this.btnSnimi.Text = "Snimi";
             this.btnSnimi.UseVisualStyleBackColor = true;
@@ -122,7 +132,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(566, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(900, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,11 +169,103 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // checkBoxMP3
+            // 
+            this.checkBoxMP3.AutoSize = true;
+            this.checkBoxMP3.Location = new System.Drawing.Point(336, 130);
+            this.checkBoxMP3.Name = "checkBoxMP3";
+            this.checkBoxMP3.Size = new System.Drawing.Size(48, 17);
+            this.checkBoxMP3.TabIndex = 23;
+            this.checkBoxMP3.Text = "MP3";
+            this.checkBoxMP3.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPdf
+            // 
+            this.checkBoxPdf.AutoSize = true;
+            this.checkBoxPdf.Location = new System.Drawing.Point(442, 130);
+            this.checkBoxPdf.Name = "checkBoxPdf";
+            this.checkBoxPdf.Size = new System.Drawing.Size(47, 17);
+            this.checkBoxPdf.TabIndex = 24;
+            this.checkBoxPdf.Text = "PDF";
+            this.checkBoxPdf.UseVisualStyleBackColor = true;
+            // 
+            // buttonKategorijeKnjige
+            // 
+            this.buttonKategorijeKnjige.Location = new System.Drawing.Point(702, 269);
+            this.buttonKategorijeKnjige.Name = "buttonKategorijeKnjige";
+            this.buttonKategorijeKnjige.Size = new System.Drawing.Size(75, 23);
+            this.buttonKategorijeKnjige.TabIndex = 25;
+            this.buttonKategorijeKnjige.Text = "Kategorije";
+            this.buttonKategorijeKnjige.UseVisualStyleBackColor = true;
+            this.buttonKategorijeKnjige.Click += new System.EventHandler(this.buttonKategorijeKnjige_Click);
+            // 
+            // comboBoxKategorije
+            // 
+            this.comboBoxKategorije.FormattingEnabled = true;
+            this.comboBoxKategorije.Location = new System.Drawing.Point(496, 271);
+            this.comboBoxKategorije.Name = "comboBoxKategorije";
+            this.comboBoxKategorije.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKategorije.TabIndex = 26;
+            // 
+            // comboBoxAutori
+            // 
+            this.comboBoxAutori.FormattingEnabled = true;
+            this.comboBoxAutori.Location = new System.Drawing.Point(496, 344);
+            this.comboBoxAutori.Name = "comboBoxAutori";
+            this.comboBoxAutori.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAutori.TabIndex = 28;
+            // 
+            // buttonEknnjigeAutori
+            // 
+            this.buttonEknnjigeAutori.Location = new System.Drawing.Point(702, 342);
+            this.buttonEknnjigeAutori.Name = "buttonEknnjigeAutori";
+            this.buttonEknnjigeAutori.Size = new System.Drawing.Size(75, 23);
+            this.buttonEknnjigeAutori.TabIndex = 27;
+            this.buttonEknnjigeAutori.Text = "Autori";
+            this.buttonEknnjigeAutori.UseVisualStyleBackColor = true;
+            this.buttonEknnjigeAutori.Click += new System.EventHandler(this.buttonEknnjigeAutori_Click);
+            // 
+            // buttonmp3file
+            // 
+            this.buttonmp3file.Location = new System.Drawing.Point(312, 170);
+            this.buttonmp3file.Name = "buttonmp3file";
+            this.buttonmp3file.Size = new System.Drawing.Size(75, 23);
+            this.buttonmp3file.TabIndex = 29;
+            this.buttonmp3file.Text = "MP3 file";
+            this.buttonmp3file.UseVisualStyleBackColor = true;
+            this.buttonmp3file.Click += new System.EventHandler(this.buttonmp3file_Click);
+            // 
+            // buttonpdffile
+            // 
+            this.buttonpdffile.Location = new System.Drawing.Point(442, 169);
+            this.buttonpdffile.Name = "buttonpdffile";
+            this.buttonpdffile.Size = new System.Drawing.Size(75, 23);
+            this.buttonpdffile.TabIndex = 30;
+            this.buttonpdffile.Text = "PDF file";
+            this.buttonpdffile.UseVisualStyleBackColor = true;
+            this.buttonpdffile.Click += new System.EventHandler(this.buttonpdffile_Click);
+            // 
+            // openFileDialogmp3
+            // 
+            this.openFileDialogmp3.FileName = "openFileDialogmp3";
+            // 
+            // openFileDialogpdf
+            // 
+            this.openFileDialogpdf.FileName = "openFileDialogpdf";
+            // 
             // FormEknjigeDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1190, 638);
+            this.Controls.Add(this.buttonpdffile);
+            this.Controls.Add(this.buttonmp3file);
+            this.Controls.Add(this.comboBoxAutori);
+            this.Controls.Add(this.buttonEknnjigeAutori);
+            this.Controls.Add(this.comboBoxKategorije);
+            this.Controls.Add(this.buttonKategorijeKnjige);
+            this.Controls.Add(this.checkBoxPdf);
+            this.Controls.Add(this.checkBoxMP3);
             this.Controls.Add(this.btnSlika);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSlikaInput);
@@ -202,5 +304,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSlika;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox checkBoxMP3;
+        private System.Windows.Forms.CheckBox checkBoxPdf;
+        private System.Windows.Forms.Button buttonKategorijeKnjige;
+        private System.Windows.Forms.ComboBox comboBoxKategorije;
+        private System.Windows.Forms.ComboBox comboBoxAutori;
+        private System.Windows.Forms.Button buttonEknnjigeAutori;
+        private System.Windows.Forms.Button buttonmp3file;
+        private System.Windows.Forms.Button buttonpdffile;
+        private System.Windows.Forms.OpenFileDialog openFileDialogmp3;
+        private System.Windows.Forms.OpenFileDialog openFileDialogpdf;
     }
 }

@@ -18,8 +18,12 @@ namespace eKnjige.WebaAPI
         public byte[] Pdffile { get; set; }
         public string Opis { get; set; }
 
-        
-       
+        public bool MP3Dodan { get; set; }
+
+        public bool PDFDodan { get; set; }
+
+
+
         public Klijent  Administrator { get; set; }
         public int AdministratorID { get; set; }
     }

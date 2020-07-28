@@ -57,3 +57,4 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Autori
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Kategorije.FormDodajKategoriju.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.TipFajla.FormSnimiTipFajla.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormEknjigeDodaj.resources
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKategorijeKnjige.resources

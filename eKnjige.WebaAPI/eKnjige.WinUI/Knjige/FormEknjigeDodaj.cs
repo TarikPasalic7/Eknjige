@@ -1,4 +1,7 @@
-﻿using System;
+﻿using eKnjige.WinUI.Autori;
+using eKnjige.WinUI.Drzave;
+using eKnjige.WinUI.Kategorije;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +17,11 @@ namespace eKnjige.WinUI.Knjige
     public partial class FormEknjigeDodaj : Form
     {
         private readonly APIService _apiservice = new APIService("eknjiga");
+        private readonly APIService _Kategorijaapiservice = new APIService("kategorija");
+        private readonly APIService _Autorapiservice = new APIService("autor");
+        private readonly  APIService _kategorijaKnjigaservice = new APIService("eknjigakategorija");
+        private readonly APIService _autorKnjigaservice = new APIService("eknjigaautor");
+        private readonly APIService _EknjigaTip = new APIService("eknjigatipfajla");
 
         private int? id = null;
         public FormEknjigeDodaj(int? knjigetId = null)
@@ -37,7 +45,38 @@ namespace eKnjige.WinUI.Knjige
 
             }
 
+            await LoadAutori();
+            await LoadKategorije();
+
         }
+
+
+        private async Task LoadKategorije()
+        {
+            var result = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
+
+            comboBoxKategorije.DisplayMember = "Naziv";
+            comboBoxKategorije.ValueMember = "KategorijaID";
+            comboBoxKategorije.DataSource = result;
+
+
+
+
+        }
+
+        private async Task LoadAutori()
+        {
+
+
+            var result = await _Autorapiservice.get<List<Model.Autor>>(null);
+            
+            comboBoxAutori.DisplayMember = "Ime";
+            comboBoxAutori.ValueMember = "AutorID";
+            comboBoxAutori.DataSource = result;
+
+        }
+
+     
 
         private async Task EknjigeUcitaj()
         {
@@ -70,7 +109,7 @@ namespace eKnjige.WinUI.Knjige
                 request.OcjenaKnjige = float.Parse(textOcjena.Text);
                 request.AdministratorID = APIService.PrijavljeniKorisnik.KlijentID;
                 request.Opis = textOpis.Text;
-
+                
 
            
 
@@ -82,7 +121,57 @@ namespace eKnjige.WinUI.Knjige
             else
             {
 
-                await _apiservice.Insert<Model.EKnjiga>(request);
+                var knjiga =await _apiservice.Insert<Model.EKnjiga>(request);
+                var autorId = (comboBoxAutori.SelectedItem as Model.Autor).AutorID;
+                var kategorijaId = (comboBoxKategorije.SelectedItem as Model.Kategorija).KategorijaID;
+                Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+                {
+                    AutorID = autorId,
+                    EKnjigaID = knjiga.EKnjigaID
+                };
+                Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
+                {
+                    KategorijaID = kategorijaId,
+                    EKnjigaID = knjiga.EKnjigaID
+
+                };
+                await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
+                await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+                if (checkBoxMP3.Checked)
+                {
+                    request.MP3Dodan= true;
+                    var tip = new Model.EKnjigaTipRequest
+                    {
+                        TipFajlaID = 1,
+                        EKnjigaID = knjiga.EKnjigaID
+
+
+                    };
+
+
+                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+
+
+                }
+                if (checkBoxPdf.Checked)
+                {
+                    request.PDFDodan = true;
+                    var tip = new Model.EKnjigaTipRequest
+                    {
+                        TipFajlaID = 2,
+                        EKnjigaID = knjiga.EKnjigaID
+                        
+
+
+                    };
+
+
+                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+
+
+                }
+
+
             }
             MessageBox.Show("Operacija uspjesna");
             DialogResult = DialogResult.OK;
@@ -106,6 +195,58 @@ namespace eKnjige.WinUI.Knjige
                 txtSlikaInput.Text = filename;
                 Image image = Image.FromFile(filename);
                 pictureBox1.Image = image;
+
+            }
+
+        }
+
+        private async void buttonKategorijeKnjige_Click(object sender, EventArgs e)
+        {
+            FormDodajKategoriju form = new FormDodajKategoriju();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var listKategorija = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
+                comboBoxKategorije.DataSource = listKategorija;
+            }
+          
+        }
+
+        private async void buttonEknnjigeAutori_Click(object sender, EventArgs e)
+        {
+            FormDodajAutora form = new FormDodajAutora();
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                var listaautora = await _autorKnjigaservice.get<List<Model.Autor>>(null);
+                comboBoxAutori.DataSource = listaautora;
+
+            }
+        }
+
+        private void buttonmp3file_Click(object sender, EventArgs e)
+        {
+            var result = openFileDialogmp3.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                var filename = openFileDialogmp3.FileName;
+                var file = File.ReadAllBytes(filename);
+                request.Mp3file= file;
+                checkBoxMP3.Checked = true;
+
+            }
+        }
+
+        private void buttonpdffile_Click(object sender, EventArgs e)
+        {
+
+            var result = openFileDialogpdf.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                var filename = openFileDialogmp3.FileName;
+                var file = File.ReadAllBytes(filename);
+                request.Pdffile = file;
+                checkBoxPdf.Checked = true;
 
             }
 

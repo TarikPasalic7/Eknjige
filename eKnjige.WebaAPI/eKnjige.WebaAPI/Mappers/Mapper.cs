@@ -30,6 +30,12 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<Drzava, Model.DrzavaRequest>().ReverseMap();
             CreateMap<Drzava, Model.Drzava>().ReverseMap();
             CreateMap<EKnjiga, Model.Requests.eKnjigeSearchRequest>().ReverseMap();
+            CreateMap<EKnjigaKategorija, Model.EKnjigaKategorija>().ReverseMap();
+            CreateMap<EKnjigaKategorija, Model.EKnjigaKategorijaRequest>().ReverseMap();
+            CreateMap<EKnjigaTip, Model.EKnjigaTip>().ReverseMap();
+            CreateMap<EKnjigaTip, Model.EKnjigaTipRequest>().ReverseMap();
+            CreateMap<EKnjigeAutor, Model.EKnjigeAutor>().ReverseMap();
+            CreateMap<EKnjigeAutor, Model.EKnjigeAutorRequest>().ReverseMap();
             
         }
     }

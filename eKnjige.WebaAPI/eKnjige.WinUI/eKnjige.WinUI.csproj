@@ -114,6 +114,12 @@
     <Compile Include="Knjige\FormEknjigeDodaj.Designer.cs">
       <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Knjige\FormKategorijeKnjige.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Knjige\FormKategorijeKnjige.Designer.cs">
+      <DependentUpon>FormKategorijeKnjige.cs</DependentUpon>
+    </Compile>
     <Compile Include="Knjige\FormKnjige.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Knjige\FormEknjigeDodaj.resx">
       <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Knjige\FormKategorijeKnjige.resx">
+      <DependentUpon>FormKategorijeKnjige.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Knjige\FormKnjige.resx">
       <DependentUpon>FormKnjige.cs</DependentUpon>

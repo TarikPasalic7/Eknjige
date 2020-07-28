@@ -11,10 +11,13 @@ namespace eKnjige.Model.Requests
         public float OcjenaKnjige { get; set; }
         public byte[] Slika { get; set; }
         public float Cijena { get; set; }
-        public byte[] Mp3Path { get; set; }
-        public byte[] PdfPath { get; set; }
+        public byte[] Mp3file { get; set; }
+        public byte[] Pdffile { get; set; }
         public string Opis { get; set; }
 
+        public bool MP3Dodan { get; set; }
+
+        public bool PDFDodan { get; set; }
         public int AdministratorID { get; set; }
 
 

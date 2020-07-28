@@ -72,7 +72,10 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.DrzavaRequest>>();
             services.AddScoped<IEKnjigaService, EKnjigaService>();
             services.AddScoped<ICRUDService<Model.Autor, Model.AutorSearchRequest, Model.Autor, Model.Autor>, BaseCRUDService<Model.Autor, Model.AutorSearchRequest, Autor, Model.Autor, Model.Autor>>();
-        
+            services.AddScoped<ICRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>, BaseCRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>>();
+            services.AddScoped<ICRUDService<Model.EKnjigaTip, Model.EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>, BaseCRUDService<Model.EKnjigaTip, Model.EKnjigaTip, EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>>();
+            services.AddScoped<ICRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>, BaseCRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>>();
+
 
 
             services.AddSwaggerGen(c =>
