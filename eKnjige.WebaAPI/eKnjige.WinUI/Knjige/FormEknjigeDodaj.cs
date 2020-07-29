@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace eKnjige.WinUI.Knjige
 {
@@ -26,7 +27,10 @@ namespace eKnjige.WinUI.Knjige
         private int? id = null;
         public FormEknjigeDodaj(int? knjigetId = null)
         {
+            
             InitializeComponent();
+            dataGridViewAutori.AutoGenerateColumns = false;
+            dataGridViewKategorije.AutoGenerateColumns = false;
             id = knjigetId;
         }
 
@@ -55,11 +59,25 @@ namespace eKnjige.WinUI.Knjige
         {
             var result = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
 
-            comboBoxKategorije.DisplayMember = "Naziv";
-            comboBoxKategorije.ValueMember = "KategorijaID";
-            comboBoxKategorije.DataSource = result;
+            if (dataGridViewKategorije.DataSource == null)
+            {
 
+                dataGridViewKategorije.DataSource = result;
+            }
 
+            
+
+            foreach (DataGridViewRow item in dataGridViewKategorije.Rows)
+            {
+
+                if (item.Cells[0].Value == null)
+                {
+                    item.Cells[0].Value = false;
+
+                }
+                
+
+            }
 
 
         }
@@ -69,10 +87,23 @@ namespace eKnjige.WinUI.Knjige
 
 
             var result = await _Autorapiservice.get<List<Model.Autor>>(null);
+
+            if (dataGridViewAutori.DataSource == null)
+            {
+                dataGridViewAutori.DataSource = result;
+
+            }
             
-            comboBoxAutori.DisplayMember = "Ime";
-            comboBoxAutori.ValueMember = "AutorID";
-            comboBoxAutori.DataSource = result;
+            foreach(DataGridViewRow item in dataGridViewAutori.Rows)
+            {
+                if (item.Cells[0].Value == null)
+                {
+                    item.Cells[0].Value = false;
+
+                }
+                
+
+            }
 
         }
 
@@ -81,6 +112,83 @@ namespace eKnjige.WinUI.Knjige
         private async Task EknjigeUcitaj()
         {
             var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
+            var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
+            var autori = await _Autorapiservice.get<List<Model.Autor>>(null);
+            var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
+            var kategorije = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
+            //foreach(var a in autori)
+            //{
+            //   foreach(var k in knjigaautori)
+            //    {
+            //        if(k.)
+
+
+
+            //    }
+
+
+
+            //}
+            dataGridViewAutori.DataSource = autori;
+            dataGridViewKategorije.DataSource = kategorije;
+            foreach(DataGridViewRow r in dataGridViewAutori.Rows)
+            {
+                bool dodan=false;
+                foreach(var a in knjigaautori)
+                {
+                    var v = int.Parse(r.Cells[1].Value.ToString());
+
+                    if (a.EKnjigaID==knjiga.EKnjigaID && a.AutorID==v)
+                    {
+                        dodan= true;
+                    }
+                   
+
+
+                }
+                if (dodan == true) {
+                    r.Cells[0].Value = true;
+                    
+
+                }
+                else
+                {
+                    r.Cells[0].Value = false;
+
+                }
+
+
+            }
+            foreach (DataGridViewRow r in dataGridViewKategorije.Rows)
+            {
+                bool dodan = false;
+                foreach (var k in knjigakategorije)
+                {
+                    var v = int.Parse(r.Cells[1].Value.ToString());
+
+                    if (k.EKnjigaID == knjiga.EKnjigaID && k.KategorijaID == v)
+                    {
+                        dodan = true;
+                    }
+
+
+
+                }
+                if (dodan == true)
+                {
+                    r.Cells[0].Value = true;
+
+
+                }
+                else
+                {
+                    r.Cells[0].Value = false;
+
+                }
+
+
+            }
+
             textNaziv.Text = knjiga.Naziv;
             textCijena.Text = knjiga.Cijena.ToString();
             textOcjena.Text = knjiga.OcjenaKnjige.ToString();
@@ -122,21 +230,53 @@ namespace eKnjige.WinUI.Knjige
             {
 
                 var knjiga =await _apiservice.Insert<Model.EKnjiga>(request);
-                var autorId = (comboBoxAutori.SelectedItem as Model.Autor).AutorID;
-                var kategorijaId = (comboBoxKategorije.SelectedItem as Model.Kategorija).KategorijaID;
-                Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+              
+                foreach(DataGridViewRow item in dataGridViewAutori.Rows)
                 {
-                    AutorID = autorId,
-                    EKnjigaID = knjiga.EKnjigaID
-                };
-                Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
-                {
-                    KategorijaID = kategorijaId,
-                    EKnjigaID = knjiga.EKnjigaID
+                    if (bool.Parse(item.Cells[0].Value.ToString())){
 
-                };
-                await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
-                await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+                        Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+                        {
+                            AutorID = int.Parse(item.Cells[1].Value.ToString()),
+                            EKnjigaID = knjiga.EKnjigaID
+                        };
+
+                        await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
+                    }
+                  
+
+                }
+
+                foreach (DataGridViewRow item in dataGridViewKategorije.Rows)
+                {
+                    if (bool.Parse(item.Cells[0].Value.ToString()))
+                    {
+
+                        Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
+                        {
+                            KategorijaID= int.Parse(item.Cells[1].Value.ToString()),
+                            EKnjigaID = knjiga.EKnjigaID
+                        };
+
+                        await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+                    }
+
+
+                }
+
+                //Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+                //{
+                //    AutorID = autorId,
+                //    EKnjigaID = knjiga.EKnjigaID
+                //};
+                //Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
+                //{
+                //    KategorijaID = kategorijaId,
+                //    EKnjigaID = knjiga.EKnjigaID
+
+                //};
+
+               
                 if (checkBoxMP3.Checked)
                 {
                     request.MP3Dodan= true;
@@ -206,20 +346,15 @@ namespace eKnjige.WinUI.Knjige
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var listKategorija = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
-                comboBoxKategorije.DataSource = listKategorija;
+                dataGridViewKategorije.DataSource = listKategorija;
             }
           
         }
 
         private async void buttonEknnjigeAutori_Click(object sender, EventArgs e)
         {
-            FormDodajAutora form = new FormDodajAutora();
-            if(form.ShowDialog() == DialogResult.OK)
-            {
-                var listaautora = await _autorKnjigaservice.get<List<Model.Autor>>(null);
-                comboBoxAutori.DataSource = listaautora;
+           
 
-            }
         }
 
         private void buttonmp3file_Click(object sender, EventArgs e)
@@ -243,13 +378,29 @@ namespace eKnjige.WinUI.Knjige
             if (result == DialogResult.OK)
             {
 
-                var filename = openFileDialogmp3.FileName;
+                var filename = openFileDialogpdf.FileName;
                 var file = File.ReadAllBytes(filename);
                 request.Pdffile = file;
                 checkBoxPdf.Checked = true;
 
             }
 
+        }
+
+        private async void buttonAutoriDodaj_Click(object sender, EventArgs e)
+        {
+            FormDodajAutora form = new FormDodajAutora();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var listaautora = await _autorKnjigaservice.get<List<Model.Autor>>(null);
+                dataGridViewAutori.DataSource = listaautora;
+
+                foreach (DataGridViewRow item in dataGridViewAutori.Rows)
+                {
+                    item.Cells[0].Value = false;
+
+                }
+            }
         }
     }
 }

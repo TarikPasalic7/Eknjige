@@ -34,7 +34,7 @@
             this.textCijena = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textOcjena = new System.Windows.Forms.TextBox();
-            this.Naziv = new System.Windows.Forms.Label();
+            this.NazivKnjige = new System.Windows.Forms.Label();
             this.textNaziv = new System.Windows.Forms.TextBox();
             this.btnSnimi = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,14 +45,23 @@
             this.checkBoxMP3 = new System.Windows.Forms.CheckBox();
             this.checkBoxPdf = new System.Windows.Forms.CheckBox();
             this.buttonKategorijeKnjige = new System.Windows.Forms.Button();
-            this.comboBoxKategorije = new System.Windows.Forms.ComboBox();
-            this.comboBoxAutori = new System.Windows.Forms.ComboBox();
-            this.buttonEknnjigeAutori = new System.Windows.Forms.Button();
             this.buttonmp3file = new System.Windows.Forms.Button();
             this.buttonpdffile = new System.Windows.Forms.Button();
             this.openFileDialogmp3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogpdf = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewAutori = new System.Windows.Forms.DataGridView();
+            this.Dodaj = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.AutorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewKategorije = new System.Windows.Forms.DataGridView();
+            this.DodajKategoriju = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.KategorijaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAutoriDodaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -104,14 +113,14 @@
             this.textOcjena.Size = new System.Drawing.Size(100, 20);
             this.textOcjena.TabIndex = 12;
             // 
-            // Naziv
+            // NazivKnjige
             // 
-            this.Naziv.AutoSize = true;
-            this.Naziv.Location = new System.Drawing.Point(158, 30);
-            this.Naziv.Name = "Naziv";
-            this.Naziv.Size = new System.Drawing.Size(34, 13);
-            this.Naziv.TabIndex = 11;
-            this.Naziv.Text = "Naziv";
+            this.NazivKnjige.AutoSize = true;
+            this.NazivKnjige.Location = new System.Drawing.Point(158, 30);
+            this.NazivKnjige.Name = "NazivKnjige";
+            this.NazivKnjige.Size = new System.Drawing.Size(34, 13);
+            this.NazivKnjige.TabIndex = 11;
+            this.NazivKnjige.Text = "Naziv";
             // 
             // textNaziv
             // 
@@ -122,7 +131,7 @@
             // 
             // btnSnimi
             // 
-            this.btnSnimi.Location = new System.Drawing.Point(949, 500);
+            this.btnSnimi.Location = new System.Drawing.Point(1196, 537);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(155, 56);
             this.btnSnimi.TabIndex = 18;
@@ -132,7 +141,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(900, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1166, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,7 +150,7 @@
             // 
             // txtSlikaInput
             // 
-            this.txtSlikaInput.Location = new System.Drawing.Point(369, 30);
+            this.txtSlikaInput.Location = new System.Drawing.Point(1011, 33);
             this.txtSlikaInput.Name = "txtSlikaInput";
             this.txtSlikaInput.Size = new System.Drawing.Size(135, 20);
             this.txtSlikaInput.TabIndex = 20;
@@ -149,7 +158,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 33);
+            this.label4.Location = new System.Drawing.Point(946, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 21;
@@ -157,7 +166,7 @@
             // 
             // btnSlika
             // 
-            this.btnSlika.Location = new System.Drawing.Point(429, 78);
+            this.btnSlika.Location = new System.Drawing.Point(1071, 78);
             this.btnSlika.Name = "btnSlika";
             this.btnSlika.Size = new System.Drawing.Size(75, 23);
             this.btnSlika.TabIndex = 22;
@@ -172,7 +181,7 @@
             // checkBoxMP3
             // 
             this.checkBoxMP3.AutoSize = true;
-            this.checkBoxMP3.Location = new System.Drawing.Point(336, 130);
+            this.checkBoxMP3.Location = new System.Drawing.Point(23, 462);
             this.checkBoxMP3.Name = "checkBoxMP3";
             this.checkBoxMP3.Size = new System.Drawing.Size(48, 17);
             this.checkBoxMP3.TabIndex = 23;
@@ -182,7 +191,7 @@
             // checkBoxPdf
             // 
             this.checkBoxPdf.AutoSize = true;
-            this.checkBoxPdf.Location = new System.Drawing.Point(442, 130);
+            this.checkBoxPdf.Location = new System.Drawing.Point(198, 469);
             this.checkBoxPdf.Name = "checkBoxPdf";
             this.checkBoxPdf.Size = new System.Drawing.Size(47, 17);
             this.checkBoxPdf.TabIndex = 24;
@@ -191,7 +200,7 @@
             // 
             // buttonKategorijeKnjige
             // 
-            this.buttonKategorijeKnjige.Location = new System.Drawing.Point(702, 269);
+            this.buttonKategorijeKnjige.Location = new System.Drawing.Point(774, 263);
             this.buttonKategorijeKnjige.Name = "buttonKategorijeKnjige";
             this.buttonKategorijeKnjige.Size = new System.Drawing.Size(75, 23);
             this.buttonKategorijeKnjige.TabIndex = 25;
@@ -199,35 +208,9 @@
             this.buttonKategorijeKnjige.UseVisualStyleBackColor = true;
             this.buttonKategorijeKnjige.Click += new System.EventHandler(this.buttonKategorijeKnjige_Click);
             // 
-            // comboBoxKategorije
-            // 
-            this.comboBoxKategorije.FormattingEnabled = true;
-            this.comboBoxKategorije.Location = new System.Drawing.Point(496, 271);
-            this.comboBoxKategorije.Name = "comboBoxKategorije";
-            this.comboBoxKategorije.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxKategorije.TabIndex = 26;
-            // 
-            // comboBoxAutori
-            // 
-            this.comboBoxAutori.FormattingEnabled = true;
-            this.comboBoxAutori.Location = new System.Drawing.Point(496, 344);
-            this.comboBoxAutori.Name = "comboBoxAutori";
-            this.comboBoxAutori.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxAutori.TabIndex = 28;
-            // 
-            // buttonEknnjigeAutori
-            // 
-            this.buttonEknnjigeAutori.Location = new System.Drawing.Point(702, 342);
-            this.buttonEknnjigeAutori.Name = "buttonEknnjigeAutori";
-            this.buttonEknnjigeAutori.Size = new System.Drawing.Size(75, 23);
-            this.buttonEknnjigeAutori.TabIndex = 27;
-            this.buttonEknnjigeAutori.Text = "Autori";
-            this.buttonEknnjigeAutori.UseVisualStyleBackColor = true;
-            this.buttonEknnjigeAutori.Click += new System.EventHandler(this.buttonEknnjigeAutori_Click);
-            // 
             // buttonmp3file
             // 
-            this.buttonmp3file.Location = new System.Drawing.Point(312, 170);
+            this.buttonmp3file.Location = new System.Drawing.Point(23, 508);
             this.buttonmp3file.Name = "buttonmp3file";
             this.buttonmp3file.Size = new System.Drawing.Size(75, 23);
             this.buttonmp3file.TabIndex = 29;
@@ -237,7 +220,7 @@
             // 
             // buttonpdffile
             // 
-            this.buttonpdffile.Location = new System.Drawing.Point(442, 169);
+            this.buttonpdffile.Location = new System.Drawing.Point(198, 508);
             this.buttonpdffile.Name = "buttonpdffile";
             this.buttonpdffile.Size = new System.Drawing.Size(75, 23);
             this.buttonpdffile.TabIndex = 30;
@@ -253,16 +236,95 @@
             // 
             this.openFileDialogpdf.FileName = "openFileDialogpdf";
             // 
+            // dataGridViewAutori
+            // 
+            this.dataGridViewAutori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAutori.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Dodaj,
+            this.AutorID,
+            this.Ime,
+            this.Prezime});
+            this.dataGridViewAutori.Location = new System.Drawing.Point(504, 347);
+            this.dataGridViewAutori.Name = "dataGridViewAutori";
+            this.dataGridViewAutori.Size = new System.Drawing.Size(345, 246);
+            this.dataGridViewAutori.TabIndex = 31;
+            // 
+            // Dodaj
+            // 
+            this.Dodaj.HeaderText = "Dodaj";
+            this.Dodaj.Name = "Dodaj";
+            // 
+            // AutorID
+            // 
+            this.AutorID.DataPropertyName = "AutorID";
+            this.AutorID.HeaderText = " AutorID";
+            this.AutorID.Name = "AutorID";
+            this.AutorID.Visible = false;
+            // 
+            // Ime
+            // 
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            // 
+            // Prezime
+            // 
+            this.Prezime.DataPropertyName = "Prezime";
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            // 
+            // dataGridViewKategorije
+            // 
+            this.dataGridViewKategorije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKategorije.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DodajKategoriju,
+            this.KategorijaID,
+            this.Naziv});
+            this.dataGridViewKategorije.Location = new System.Drawing.Point(504, 40);
+            this.dataGridViewKategorije.Name = "dataGridViewKategorije";
+            this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
+            this.dataGridViewKategorije.TabIndex = 32;
+            // 
+            // DodajKategoriju
+            // 
+            this.DodajKategoriju.HeaderText = "Dodaj";
+            this.DodajKategoriju.Name = "DodajKategoriju";
+            this.DodajKategoriju.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DodajKategoriju.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // KategorijaID
+            // 
+            this.KategorijaID.DataPropertyName = "KategorijaID";
+            this.KategorijaID.HeaderText = "KategorijaID";
+            this.KategorijaID.Name = "KategorijaID";
+            this.KategorijaID.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            // 
+            // buttonAutoriDodaj
+            // 
+            this.buttonAutoriDodaj.Location = new System.Drawing.Point(878, 569);
+            this.buttonAutoriDodaj.Name = "buttonAutoriDodaj";
+            this.buttonAutoriDodaj.Size = new System.Drawing.Size(75, 23);
+            this.buttonAutoriDodaj.TabIndex = 33;
+            this.buttonAutoriDodaj.Text = "Autori";
+            this.buttonAutoriDodaj.UseVisualStyleBackColor = true;
+            this.buttonAutoriDodaj.Click += new System.EventHandler(this.buttonAutoriDodaj_Click);
+            // 
             // FormEknjigeDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 638);
+            this.ClientSize = new System.Drawing.Size(1514, 638);
+            this.Controls.Add(this.buttonAutoriDodaj);
+            this.Controls.Add(this.dataGridViewKategorije);
+            this.Controls.Add(this.dataGridViewAutori);
             this.Controls.Add(this.buttonpdffile);
             this.Controls.Add(this.buttonmp3file);
-            this.Controls.Add(this.comboBoxAutori);
-            this.Controls.Add(this.buttonEknnjigeAutori);
-            this.Controls.Add(this.comboBoxKategorije);
             this.Controls.Add(this.buttonKategorijeKnjige);
             this.Controls.Add(this.checkBoxPdf);
             this.Controls.Add(this.checkBoxMP3);
@@ -277,12 +339,14 @@
             this.Controls.Add(this.textCijena);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textOcjena);
-            this.Controls.Add(this.Naziv);
+            this.Controls.Add(this.NazivKnjige);
             this.Controls.Add(this.textNaziv);
             this.Name = "FormEknjigeDodaj";
             this.Text = "FormEknjigeDodaj";
             this.Load += new System.EventHandler(this.FormEknjigeDodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +360,7 @@
         private System.Windows.Forms.TextBox textCijena;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textOcjena;
-        private System.Windows.Forms.Label Naziv;
+        private System.Windows.Forms.Label NazivKnjige;
         private System.Windows.Forms.TextBox textNaziv;
         private System.Windows.Forms.Button btnSnimi;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -307,12 +371,19 @@
         private System.Windows.Forms.CheckBox checkBoxMP3;
         private System.Windows.Forms.CheckBox checkBoxPdf;
         private System.Windows.Forms.Button buttonKategorijeKnjige;
-        private System.Windows.Forms.ComboBox comboBoxKategorije;
-        private System.Windows.Forms.ComboBox comboBoxAutori;
-        private System.Windows.Forms.Button buttonEknnjigeAutori;
         private System.Windows.Forms.Button buttonmp3file;
         private System.Windows.Forms.Button buttonpdffile;
         private System.Windows.Forms.OpenFileDialog openFileDialogmp3;
         private System.Windows.Forms.OpenFileDialog openFileDialogpdf;
+        private System.Windows.Forms.DataGridView dataGridViewAutori;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Dodaj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AutorID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridView dataGridViewKategorije;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DodajKategoriju;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KategorijaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
+        private System.Windows.Forms.Button buttonAutoriDodaj;
     }
 }
