@@ -3,7 +3,7 @@
 
 namespace eKnjige.Model
 {
-    public class PrijedlogKnjiga
+    public class PrijedlogKnjigaRequest
     {
 
 
@@ -18,14 +18,14 @@ namespace eKnjige.Model
 
         public int KlijentID { get; set; }
 
-     
+        
 
         
 
       
 
-        public Klijent Administrator { get; set; }
-
        
+
+        public int AdministratorID { get; set; }
     }
 }

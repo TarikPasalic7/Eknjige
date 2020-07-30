@@ -59,6 +59,7 @@
             this.KategorijaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAutoriDodaj = new System.Windows.Forms.Button();
+            this.buttonKomentari = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).BeginInit();
@@ -315,11 +316,21 @@
             this.buttonAutoriDodaj.UseVisualStyleBackColor = true;
             this.buttonAutoriDodaj.Click += new System.EventHandler(this.buttonAutoriDodaj_Click);
             // 
+            // buttonKomentari
+            // 
+            this.buttonKomentari.Location = new System.Drawing.Point(1129, 347);
+            this.buttonKomentari.Name = "buttonKomentari";
+            this.buttonKomentari.Size = new System.Drawing.Size(191, 60);
+            this.buttonKomentari.TabIndex = 34;
+            this.buttonKomentari.Text = "Komentari";
+            this.buttonKomentari.UseVisualStyleBackColor = true;
+            // 
             // FormEknjigeDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 638);
+            this.Controls.Add(this.buttonKomentari);
             this.Controls.Add(this.buttonAutoriDodaj);
             this.Controls.Add(this.dataGridViewKategorije);
             this.Controls.Add(this.dataGridViewAutori);
@@ -385,5 +396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KategorijaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.Button buttonAutoriDodaj;
+        private System.Windows.Forms.Button buttonKomentari;
     }
 }

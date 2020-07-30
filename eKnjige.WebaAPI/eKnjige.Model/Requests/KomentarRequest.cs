@@ -3,7 +3,7 @@
 
 namespace eKnjige.Model
 {
-    public class Komentar
+    public class KomentarRequest
     {
         public int KomentarId { get; set; }
 
@@ -13,11 +13,11 @@ namespace eKnjige.Model
 
         
         public int KlijentID { get; set; }
-    
+        
 
         
         public int EKnjigaID { get; set; }
-        
+      
 
     }
 }

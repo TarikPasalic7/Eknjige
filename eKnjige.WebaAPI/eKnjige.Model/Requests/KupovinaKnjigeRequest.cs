@@ -2,7 +2,8 @@
 
 namespace eKnjige.Model
 {
-    public class KupovinaKnjige
+    public class KupovinaKnjigeRequest
+
     {
         
         public int KupovinaKnjigeID { get; set; }
@@ -12,13 +13,13 @@ namespace eKnjige.Model
 
         public int KlijentID { get; set; }
 
- 
+        
 
       
 
         public int EKnjigaID { get; set; }
 
-   
+      
 
        
     }

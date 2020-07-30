@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eKnjige.WebaAPI.Database;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,12 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<EKnjigaTip, Model.EKnjigaTipRequest>().ReverseMap();
             CreateMap<EKnjigeAutor, Model.EKnjigeAutor>().ReverseMap();
             CreateMap<EKnjigeAutor, Model.EKnjigeAutorRequest>().ReverseMap();
+            CreateMap<PrijedlogKnjiga, Model.PrijedlogKnjiga>().ReverseMap();
+            CreateMap<PrijedlogKnjiga, Model.PrijedlogKnjigaRequest>().ReverseMap();
+            CreateMap<KupovinaKnjige, Model.KupovinaKnjige>().ReverseMap();
+            CreateMap<KupovinaKnjige, Model.KupovinaKnjigeRequest>().ReverseMap();
+            CreateMap<Komentar, Model.Komentar>().ReverseMap();
+            CreateMap<Komentar, Model.KomentarRequest>().ReverseMap();
             
         }
     }

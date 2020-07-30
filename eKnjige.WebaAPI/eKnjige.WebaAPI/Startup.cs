@@ -75,7 +75,9 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>, BaseCRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>>();
             services.AddScoped<ICRUDService<Model.EKnjigaTip, Model.EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>, BaseCRUDService<Model.EKnjigaTip, Model.EKnjigaTip, EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>>();
             services.AddScoped<ICRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>, BaseCRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>>();
-
+            services.AddScoped<ICRUDService<Model.Komentar, Model.KomentarRequest, Model.KomentarRequest, Model.KomentarRequest>, BaseCRUDService<Model.Komentar, Model.KomentarRequest, Komentar, Model.KomentarRequest, Model.KomentarRequest>>();
+            services.AddScoped<ICRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>, BaseCRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>>();
+            services.AddScoped<ICRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>, BaseCRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>>();
 
 
             services.AddSwaggerGen(c =>

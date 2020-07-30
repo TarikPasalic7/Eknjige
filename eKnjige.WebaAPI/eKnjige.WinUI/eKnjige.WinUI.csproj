@@ -114,17 +114,23 @@
     <Compile Include="Knjige\FormEknjigeDodaj.Designer.cs">
       <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
     </Compile>
-    <Compile Include="Knjige\FormKategorijeKnjige.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Knjige\FormKategorijeKnjige.Designer.cs">
-      <DependentUpon>FormKategorijeKnjige.cs</DependentUpon>
-    </Compile>
     <Compile Include="Knjige\FormKnjige.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Knjige\FormKnjige.Designer.cs">
       <DependentUpon>FormKnjige.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Komentari\FormKomentari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Komentari\FormKomentari.Designer.cs">
+      <DependentUpon>FormKomentari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prijedlozi\FormPrijedlozi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prijedlozi\FormPrijedlozi.Designer.cs">
+      <DependentUpon>FormPrijedlozi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,11 +167,14 @@
     <EmbeddedResource Include="Knjige\FormEknjigeDodaj.resx">
       <DependentUpon>FormEknjigeDodaj.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Knjige\FormKategorijeKnjige.resx">
-      <DependentUpon>FormKategorijeKnjige.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Knjige\FormKnjige.resx">
       <DependentUpon>FormKnjige.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Komentari\FormKomentari.resx">
+      <DependentUpon>FormKomentari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prijedlozi\FormPrijedlozi.resx">
+      <DependentUpon>FormPrijedlozi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

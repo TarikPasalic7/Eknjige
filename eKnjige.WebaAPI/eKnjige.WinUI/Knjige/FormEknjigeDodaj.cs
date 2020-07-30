@@ -46,7 +46,7 @@ namespace eKnjige.WinUI.Knjige
 
 
             }
-
+            buttonKomentari.Hide();
             await LoadAutori();
             await LoadKategorije();
 
@@ -314,6 +314,7 @@ namespace eKnjige.WinUI.Knjige
             }
             else
             {
+                
                 if (checkBoxMP3.Checked == true)
                 {
                     request.MP3Dodan = true;
