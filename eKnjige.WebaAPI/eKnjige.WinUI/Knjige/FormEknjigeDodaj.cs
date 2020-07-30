@@ -44,8 +44,6 @@ namespace eKnjige.WinUI.Knjige
 
 
 
-                //await LoadSpol(klijent.SpolID);
-                //await LoadGradovi(klijent.GradID);
 
             }
 
@@ -116,21 +114,25 @@ namespace eKnjige.WinUI.Knjige
             var autori = await _Autorapiservice.get<List<Model.Autor>>(null);
             var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
             var kategorije = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
-            //foreach(var a in autori)
-            //{
-            //   foreach(var k in knjigaautori)
-            //    {
-            //        if(k.)
+            var eknjigetipfajla = await _EknjigaTip.get<List<Model.EKnjigaTip>>(null);
 
+            if (knjiga.MP3Dodan == true)
+            {
+                checkBoxMP3.Checked=true;
+                buttonmp3file.Hide();
 
+            }
+            if (knjiga.PDFDodan == true)
+            {
+                checkBoxPdf.Checked=true;
+                buttonpdffile.Hide();
 
-            //    }
+            }
 
-
-
-            //}
             dataGridViewAutori.DataSource = autori;
             dataGridViewKategorije.DataSource = kategorije;
+        
+
             foreach(DataGridViewRow r in dataGridViewAutori.Rows)
             {
                 bool dodan=false;
@@ -217,17 +219,109 @@ namespace eKnjige.WinUI.Knjige
                 request.OcjenaKnjige = float.Parse(textOcjena.Text);
                 request.AdministratorID = APIService.PrijavljeniKorisnik.KlijentID;
                 request.Opis = textOpis.Text;
-                
+            
 
            
 
             if (id.HasValue)
             {
-                await _apiservice.Update<Model.EKnjiga>(id,request);
+                var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
+                request.Slika = knjiga.Slika;
+                if (checkBoxMP3.Checked==true && knjiga.MP3Dodan==false)
+                {
+                    request.MP3Dodan = true;
+                    var tip = new Model.EKnjigaTipRequest
+                    {
+                        TipFajlaID = 1,
+                        EKnjigaID = knjiga.EKnjigaID
+
+
+                    };
+                    
+                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                }
+                if (checkBoxPdf.Checked == true && knjiga.PDFDodan == false)
+                {
+                    request.PDFDodan = true;
+                    var tip = new Model.EKnjigaTipRequest
+                    {
+                        TipFajlaID = 2,
+                        EKnjigaID = knjiga.EKnjigaID
+
+
+                    };
+
+                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                }
+                var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
+                foreach (DataGridViewRow item in dataGridViewAutori.Rows)
+                {
+                    bool tacan = false;
+
+                    foreach(var item2 in  knjigaautori )
+                    if (bool.Parse(item.Cells[0].Value.ToString()) && item2.EKnjigaID==knjiga.EKnjigaID && item2.AutorID==int.Parse(item.Cells[1].Value.ToString()))
+                    {
+
+                            tacan = true;
+                            break;
+                    }
+
+                    if (tacan == false && bool.Parse(item.Cells[0].Value.ToString()))
+                    {
+
+                        Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+                        {
+                            AutorID = int.Parse(item.Cells[1].Value.ToString()),
+                            EKnjigaID = knjiga.EKnjigaID
+                        };
+
+                        await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
+                    }
+
+                }
+
+                var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
+
+                foreach (DataGridViewRow item in dataGridViewKategorije.Rows)
+                {
+                    bool tacan = false;
+
+                    foreach (var item2 in knjigakategorije)
+                        if (bool.Parse(item.Cells[0].Value.ToString()) && item2.EKnjigaID == knjiga.EKnjigaID && item2.KategorijaID == int.Parse(item.Cells[1].Value.ToString()))
+                        {
+
+                            tacan = true;
+                            break;
+                        }
+
+                    if (tacan == false && bool.Parse(item.Cells[0].Value.ToString()))
+                    {
+
+                        Model.EKnjigaKategorijaRequest kategorija= new Model.EKnjigaKategorijaRequest()
+                        {
+                            KategorijaID = int.Parse(item.Cells[1].Value.ToString()),
+                            EKnjigaID = knjiga.EKnjigaID
+                        };
+
+                        await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+                    }
+
+                }
+
+
+                await _apiservice.Update<Model.EKnjiga>(id, request);
             }
             else
             {
+                if (checkBoxMP3.Checked == true)
+                {
+                    request.MP3Dodan = true;
+                }
+                if (checkBoxPdf.Checked == true)
+                {
+                    request.PDFDodan = true;
+                }
 
                 var knjiga =await _apiservice.Insert<Model.EKnjiga>(request);
               
@@ -279,7 +373,7 @@ namespace eKnjige.WinUI.Knjige
                
                 if (checkBoxMP3.Checked)
                 {
-                    request.MP3Dodan= true;
+                    
                     var tip = new Model.EKnjigaTipRequest
                     {
                         TipFajlaID = 1,
@@ -295,7 +389,7 @@ namespace eKnjige.WinUI.Knjige
                 }
                 if (checkBoxPdf.Checked)
                 {
-                    request.PDFDodan = true;
+                   
                     var tip = new Model.EKnjigaTipRequest
                     {
                         TipFajlaID = 2,
@@ -351,11 +445,7 @@ namespace eKnjige.WinUI.Knjige
           
         }
 
-        private async void buttonEknnjigeAutori_Click(object sender, EventArgs e)
-        {
-           
-
-        }
+       
 
         private void buttonmp3file_Click(object sender, EventArgs e)
         {

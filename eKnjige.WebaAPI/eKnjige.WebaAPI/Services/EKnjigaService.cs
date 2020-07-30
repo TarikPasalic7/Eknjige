@@ -70,10 +70,29 @@ namespace eKnjige.WebaAPI.Services
         {
             var entity = db.EKnjige.Where(x => x.EKnjigaID == id).FirstOrDefault();
 
-            db.EKnjige.Attach(entity);
-            db.EKnjige.Update(entity);
+            //db.EKnjige.Attach(entity);
+            //db.EKnjige.Update(entity);
 
-            entity = mapper.Map(request, entity);
+            //entity = mapper.Map(request, entity);
+
+            entity.Cijena = request.Cijena;
+            entity.Naziv = request.Naziv;
+            entity.OcjenaKnjige = request.OcjenaKnjige;
+
+            entity.Slika = request.Slika;
+            entity.Opis = request.Opis;
+            if (request.PDFDodan == true)
+            {
+                entity.PDFDodan = true;
+                entity.Pdffile = request.Pdffile;
+
+            }
+            if (request.MP3Dodan == true)
+            {
+                entity.MP3Dodan = true;
+                entity.Mp3file = request.Mp3file;
+
+            }
 
             db.SaveChanges();
 
