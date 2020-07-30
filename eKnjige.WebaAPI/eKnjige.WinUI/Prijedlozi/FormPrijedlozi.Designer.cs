@@ -34,7 +34,6 @@
             this.PrijedlogKnjigeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prihvacen = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Odgovoren = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrijedlog)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +45,6 @@
             this.PrijedlogKnjigeID,
             this.Naziv,
             this.Datum,
-            this.Prihvacen,
             this.Odgovoren});
             this.dataGridViewPrijedlog.Location = new System.Drawing.Point(70, 111);
             this.dataGridViewPrijedlog.Name = "dataGridViewPrijedlog";
@@ -89,12 +87,6 @@
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             // 
-            // Prihvacen
-            // 
-            this.Prihvacen.DataPropertyName = "Prihvacen";
-            this.Prihvacen.HeaderText = "Prihvacen";
-            this.Prihvacen.Name = "Prihvacen";
-            // 
             // Odgovoren
             // 
             this.Odgovoren.DataPropertyName = "Odgovoren";
@@ -125,7 +117,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrijedlogKnjigeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Prihvacen;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Odgovoren;
     }
 }

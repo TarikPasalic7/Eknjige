@@ -10,7 +10,7 @@ namespace eKnjige.Model
         public int PrijedlogKnjigeID { get; set; }
 
         public DateTime Datum { get; set; }
-        public bool Prihvacen { get; set; }
+       
         public bool Odgovoren { get; set; }
         public string Naziv { get; set; }
 
@@ -24,7 +24,7 @@ namespace eKnjige.Model
 
       
 
-        public Klijent Administrator { get; set; }
+     
 
        
     }

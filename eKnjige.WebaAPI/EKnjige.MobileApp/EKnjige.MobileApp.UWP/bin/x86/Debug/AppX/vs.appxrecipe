@@ -740,11 +740,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\EKnjige.MobileApp.dll">
       <PackagePath>EKnjige.MobileApp.dll</PackagePath>
-      <Modified>2020-07-30T17:01:52.484</Modified>
+      <Modified>2020-07-30T20:27:14.186</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\eKnjige.Model.dll">
       <PackagePath>eKnjige.Model.dll</PackagePath>
-      <Modified>2020-07-30T17:01:50.212</Modified>
+      <Modified>2020-07-30T20:27:11.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
