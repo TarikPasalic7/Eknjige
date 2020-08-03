@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EKnjige.MobileApp.Views.KorisnikPage.xaml", "Views/KorisnikPage.xaml", typeof(global::EKnjige.MobileApp.Views.KorisnikPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EKnjige.MobileApp.Views.RegistracijaPage.xaml", "Views/RegistracijaPage.xaml", typeof(global::EKnjige.MobileApp.Views.RegistracijaPage))]
 
 namespace EKnjige.MobileApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\KorisnikPage.xaml")]
-    public partial class KorisnikPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\RegistracijaPage.xaml")]
+    public partial class RegistracijaPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(KorisnikPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RegistracijaPage));
         }
     }
 }

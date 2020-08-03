@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:EKnjige.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="EKnjige.MobileApp.Views.RegistracijaPage">
+
+    <ContentPage.BindingContext>
+        <vm:RegistracijaViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+
+            <Label Text="Ime :" />
+            <Entry Text="{Binding Ime}"></Entry>
+            <Label Text="Prezime :" />
+            <Entry Text="{Binding Prezime}"></Entry>
+            <Label Text="Korisničko Ime :" />
+            <Entry Text="{Binding KorisnickoIme}"></Entry>
+            <Label Text="Email :" />
+            <Entry Text="{Binding Email}"></Entry>
+            <Label Text="Jmbg :" />
+            <Entry Text="{Binding Jmbg}"></Entry>
+            <Label Text="Datum Rodenja :" />
+            <Entry Text="{Binding DatumRodenja}"></Entry>
+            <Label Text="Password :"/>
+            <Entry  Text="{Binding Lozinka}"></Entry>
+            <Label Text="Password Provjera :"/>
+            <Entry  Text="{Binding LozinkaProvjera}"></Entry>
+            <Label Text="Grad :"/>
+            <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+            <Label Text="Spol :"/>
+            <Picker ItemsSource="{Binding SpolList}" SelectedItem="{Binding SelectedSpol}" ItemDisplayBinding="{Binding Tip}"></Picker>
+
+            <Button Command="{Binding RegistracijaCommand}" Text="Login"></Button>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

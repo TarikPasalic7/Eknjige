@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eKnjige.WebaAPI.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class KlijentiController : ControllerBase
@@ -25,37 +25,37 @@ namespace eKnjige.WebaAPI.Controllers
             _service = service;
         }
 
-
+        [Authorize]
         [HttpGet]
         public List<Model.Klijent> Get([FromQuery] Model.Requests.KlijentiSearchRequest request)
         {
             return _service.Get(request);
         }
 
-      
+       
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
+        
         public Model.Klijent Insert(Model.KlijentInsertRequest request)
         {
             return _service.Insert(request);
         }
 
-       
+        [Authorize]
         [HttpPut("{id}")]
         
         public Model.Klijent Update(int id, [FromBody]Model.KlijentUpdateRequest request)
         {
             return _service.Update(id, request);
         }
-
+        [Authorize]
         [HttpGet("{id}")]
         public Model.Klijent GetById(int id)
         {
             return _service.GetbyId(id);
         }
-
-        [HttpGet("Profil")]
         [Authorize]
+        [HttpGet("Profil")]
+        
         public Model.Klijent Profil()
         {
             return _service.Profil();

@@ -26,10 +26,10 @@ namespace EKnjige.MobileApp.Views
             await klijentivm.Init();
         }
 
-        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = e.SelectedItem as Klijent;
-            await Navigation.PushAsync(new KorisnikPage(item));
-        }
+        //private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    var item = e.SelectedItem as Klijent;
+        //    await Navigation.PushAsync(new RegistracijaPag(item));
+        //}
     }
 }

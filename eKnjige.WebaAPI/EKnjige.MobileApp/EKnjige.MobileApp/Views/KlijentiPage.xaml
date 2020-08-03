@@ -14,28 +14,7 @@
             <Label Text="Klijenti"
                                     />
             <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding Naziv}"></Picker>  
-            <ListView ItemsSource="{Binding klijentilist}" ItemSelected="ListView_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10" Orientation="Horizontal">
-                                <!--<StackLayout>
-                                    --><!--<Image Source="{Binding SlikaThumb, Converter={StaticResource imgConv}}"></Image>--><!--
-                                </StackLayout>-->
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding Ime}" 
-                                           LineBreakMode="NoWrap" 
-                                           Style="{DynamicResource ListItemTextStyle}" 
-                                           FontSize="16" />
-                                 
-                                </StackLayout>
-
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
+        
             
             
         </StackLayout>

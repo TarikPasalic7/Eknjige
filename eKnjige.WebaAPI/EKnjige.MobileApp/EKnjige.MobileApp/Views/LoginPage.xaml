@@ -17,6 +17,7 @@
             <Entry  Text="{Binding Lozinka}"></Entry>
             <Button Command="{Binding LoginCommand}" Text="Login"></Button>
             <Label IsVisible="{Binding IsBusy}" Text="Working.."/>
+            <Button Command="{Binding RegistracijaCommand}" Text="Registruj se"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eKnjige.WebaAPI.Controllers
 {
-    [Authorize]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TModel,TSearch> : ControllerBase

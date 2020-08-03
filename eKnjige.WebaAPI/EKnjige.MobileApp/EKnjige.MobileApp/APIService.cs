@@ -13,7 +13,7 @@ namespace EKnjige.MobileApp
         public static Klijent PrijavljeniKorisnik { get; set; }
         public static string username { get; set; }
         public static string password { get; set; }
-        public static string passwors{ get; set; }
+       
 
 
         private readonly string route ;
@@ -34,34 +34,31 @@ namespace EKnjige.MobileApp
 
         }
 
-        public async Task<T> get<T>(object search)
+        public async Task<T> get<T>(object search, string actionName = "")
         {
 
 
             var url = $"{_apiURL}/{route}";
 
-            //try
-            //{
-                if (search != null)
-                {
-                    url += "?";
-                    url += await search.ToQueryString();
+            if (actionName != null)
+            {
+                url += "/";
+                url += actionName;
+            }
 
-                }
-                var result = await url.WithBasicAuth(username, password).GetJsonAsync<T>();
-                return result;
-            //}
-            //catch(FlurlHttpException ex)
-            //{
-                //if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
-                //{
-                //   await  Application.Current.MainPage.DisplayAlert("Greška", "Niste authentificirani", "OK");
-                //}
+            if (search != null)
+            {
+                url += "?";
+                url += await search.ToQueryString();
 
+            }
+           
+            if (route == "Grad" || route == "Spol")
+            {
+                return await url.GetJsonAsync<T>();
+            }
+            return await url.WithBasicAuth(username, password).GetJsonAsync<T>();
 
-            //}
-
-         
         }
 
 
@@ -70,9 +67,9 @@ namespace EKnjige.MobileApp
 
 
             var url = $"{_apiURL}/{route}/{id}";
-
-
-            var result = await url.WithBasicAuth(username, password).GetJsonAsync<T>();
+            T result ;
+          
+            result = await url.WithBasicAuth(username, password).GetJsonAsync<T>();
             return result;
         }
 
@@ -80,12 +77,16 @@ namespace EKnjige.MobileApp
         {
 
 
+           
             var url = $"{_apiURL}/{route}";
 
+            if(route=="Klijenti")
+            {
+                return  await url.PostJsonAsync(request).ReceiveJson<T>();
+            }
 
-
-            var result = await url.WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
-            return result;
+          return  await url.WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
+            
         }
 
         public async Task<T> Update<T>(object id, object request)

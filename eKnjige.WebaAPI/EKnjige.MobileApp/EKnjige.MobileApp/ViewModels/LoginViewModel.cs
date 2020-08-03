@@ -22,7 +22,15 @@ namespace EKnjige.MobileApp.ViewModels
                   await Login();
 
               });
+
+           RegistracijaCommand = new Command(async () =>
+            {
+                await Registracija();
+
+            });
         }
+
+      
 
         string korisnickoime= string.Empty;
         public string KorisnickoIme
@@ -39,7 +47,13 @@ namespace EKnjige.MobileApp.ViewModels
         }
 
         public ICommand LoginCommand { get; set; }
+        public ICommand RegistracijaCommand { get; set; }
+         async Task Registracija()
+        {
 
+             Application.Current.MainPage = new RegistracijaPage();
+
+        }
         async Task Login()
         {
             IsBusy = true;
@@ -48,7 +62,7 @@ namespace EKnjige.MobileApp.ViewModels
             try
             {
 
-                APIService.PrijavljeniKorisnik = await _service.get<Klijent>(null);
+                APIService.PrijavljeniKorisnik = await _service.get<Klijent>(null, "Profil");
                    if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Korisnik")
                 {
                     Application.Current.MainPage = new MainPage();
