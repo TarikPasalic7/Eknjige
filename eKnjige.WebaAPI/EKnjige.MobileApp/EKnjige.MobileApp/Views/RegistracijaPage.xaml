@@ -25,9 +25,9 @@
             <Label Text="Jmbg :" />
             <Entry Text="{Binding Jmbg}"></Entry>
             <Label Text="Datum Rodenja :" />
-            <Entry Text="{Binding DatumRodenja}"></Entry>
+            <Entry Text="{Binding DatumRodenja}" IsPassword="True"></Entry>
             <Label Text="Password :"/>
-            <Entry  Text="{Binding Lozinka}"></Entry>
+            <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
             <Label Text="Password Provjera :"/>
             <Entry  Text="{Binding LozinkaProvjera}"></Entry>
             <Label Text="Grad :"/>
