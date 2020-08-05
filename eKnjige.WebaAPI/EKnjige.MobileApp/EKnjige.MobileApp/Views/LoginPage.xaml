@@ -14,9 +14,9 @@
             <Label Text="Korisničko Ime :" />
             <Entry Text="{Binding KorisnickoIme}"></Entry>
             <Label Text="Password :"/>
-            <Entry  Text="{Binding Lozinka}"></Entry>
+            <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
             <Button Command="{Binding LoginCommand}" Text="Login"></Button>
-            <Label IsVisible="{Binding IsBusy}" Text="Working.."/>
+            <Label IsVisible="{Binding IsBusy}" Text="..."/>
             <Button Command="{Binding RegistracijaCommand}" Text="Registruj se"></Button>
         </StackLayout>
     </ContentPage.Content>

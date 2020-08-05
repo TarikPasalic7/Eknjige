@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EKnjige.MobileApp.Models
 {
-    class EknjigaMobile
+   public  class EknjigaMobile
     {
         public int EKnjigaID { get; set; }
         public string Naziv { get; set; }

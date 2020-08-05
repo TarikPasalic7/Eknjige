@@ -1,4 +1,5 @@
 ﻿using eKnjige.Model;
+using EKnjige.MobileApp.Models;
 using EKnjige.MobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,8 @@ namespace EKnjige.MobileApp.Views
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as Kategorija;
-            await Navigation.PushAsync(new MainPage());
+            var item = e.SelectedItem as EknjigaMobile;
+            await Navigation.PushAsync(new KnjigaDetailPage(item));
         }
     }
 }
