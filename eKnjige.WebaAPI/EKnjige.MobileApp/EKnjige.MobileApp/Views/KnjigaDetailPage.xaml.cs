@@ -1,4 +1,5 @@
-﻿using EKnjige.MobileApp.Models;
+﻿using eKnjige.Model;
+using EKnjige.MobileApp.Models;
 using EKnjige.MobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,8 +28,19 @@ namespace EKnjige.MobileApp.Views
 
         protected async override void OnAppearing()
         {
+            
             base.OnAppearing();
             await model.Init();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+
+            var button = sender as Button;
+            var komentar = button?.BindingContext as Komentar;
+
+            await model.Obrisi(komentar);
+
         }
     }
 }

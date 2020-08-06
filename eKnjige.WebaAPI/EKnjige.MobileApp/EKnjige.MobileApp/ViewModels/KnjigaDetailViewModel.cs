@@ -18,15 +18,45 @@ namespace EKnjige.MobileApp.ViewModels
         public KnjigaDetailViewModel()
         {
             InitCommand = new Command(async () => await Init());
+            ObrisiCommand= new Command<Komentar>(async (komentar) =>await Obrisi(komentar));
         }
         public EknjigaMobile EKnjiga { get; set; }
         public ObservableCollection<Komentar> KomentariList { get; set; } = new ObservableCollection<Komentar>();
 
-       
+        int komentarId;
+        public int  KomentarId
+        {
+            get { return komentarId; }
+            set { SetProperty(ref komentarId, value); }
+        }
 
+
+        Komentar _selectedKomentar = null;
+
+        public Komentar SelectedKomentar
+        {
+            get { return _selectedKomentar; }
+            set
+            {
+                SetProperty(ref _selectedKomentar, value);
+                if (value != null)
+                {
+                    InitCommand.Execute(null);
+                }
+
+            }
+        }
 
 
         public ICommand InitCommand { get; set; }
+        public ICommand ObrisiCommand { get; set; }
+
+        public  async Task Obrisi(Komentar k)
+        {
+
+            var id = k.KomentarId;
+            List<Komentar> komentari = await _servicekomentari.get<List<Komentar>>(null);
+        }
 
         public async Task Init()
 
