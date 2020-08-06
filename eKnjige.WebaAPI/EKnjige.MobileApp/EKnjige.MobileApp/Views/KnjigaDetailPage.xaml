@@ -24,6 +24,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition  Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -45,8 +46,25 @@
                 </Label>
               
             </StackLayout>
-            
+            <StackLayout Margin="5" >
+                <Label Text="Komentari"></Label>
+            </StackLayout>
             <StackLayout Grid.Row="1" Grid.Column="0">
+               
+               
+                <Entry Text="{Binding Komentar }">
+                    
+                </Entry>
+                
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+        
+               
+                    <Button Command="{Binding DodajCommand}" Text="Dodaj"  WidthRequest="50"></Button>
+                
+
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0">
                 <ListView  ItemsSource="{Binding KomentariList}" SelectedItem="{Binding SelectedKomentar}"   >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -80,10 +98,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <StackLayout Grid.Row="1" Grid.Column="1">
-
-                <Label Text="kak"></Label>
-            </StackLayout>
+           
         </Grid>
     </ContentPage.Content>
 </ContentPage>

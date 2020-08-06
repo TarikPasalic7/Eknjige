@@ -62,3 +62,4 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigePage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigaDetailPage.xaml.g.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\PrijedlogKnjigePage.xaml.g.cs

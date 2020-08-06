@@ -19,30 +19,23 @@ namespace EKnjige.MobileApp.ViewModels
         {
             InitCommand = new Command(async () => await Init());
             ObrisiCommand= new Command<Komentar>(async (komentar) =>await Obrisi(komentar));
+            DodajCommand = new Command(async () => await Dodaj());
         }
         public EknjigaMobile EKnjiga { get; set; }
         public ObservableCollection<Komentar> KomentariList { get; set; } = new ObservableCollection<Komentar>();
 
-        int komentarId;
-        public int  KomentarId
+    
+
+
+        string _komentar = null;
+
+        public string Komentar
         {
-            get { return komentarId; }
-            set { SetProperty(ref komentarId, value); }
-        }
-
-
-        Komentar _selectedKomentar = null;
-
-        public Komentar SelectedKomentar
-        {
-            get { return _selectedKomentar; }
+            get { return _komentar; }
             set
             {
-                SetProperty(ref _selectedKomentar, value);
-                if (value != null)
-                {
-                    InitCommand.Execute(null);
-                }
+                SetProperty(ref _komentar, value);
+              
 
             }
         }
@@ -51,11 +44,31 @@ namespace EKnjige.MobileApp.ViewModels
         public ICommand InitCommand { get; set; }
         public ICommand ObrisiCommand { get; set; }
 
+        public ICommand DodajCommand { get; set; }
+
+        public async Task Dodaj()
+        {
+            KomentarRequest request = new KomentarRequest()
+            {
+                DatumKomentara = DateTime.Now,
+                EKnjigaID = EKnjiga.EKnjigaID,
+                KlijentID = APIService.PrijavljeniKorisnik.KlijentID,
+                komentar = Komentar
+            };
+
+           await _servicekomentari.Insert<Komentar>(request);
+
+            KomentariList.Clear();
+            List<Komentar> komentari = await _servicekomentari.get<List<Komentar>>(null);
+            Komentar = null;
+            await Init();
+        }
+
         public  async Task Obrisi(Komentar k)
         {
 
             var id = k.KomentarId;
-            List<Komentar> komentari = await _servicekomentari.get<List<Komentar>>(null);
+          
         }
 
         public async Task Init()

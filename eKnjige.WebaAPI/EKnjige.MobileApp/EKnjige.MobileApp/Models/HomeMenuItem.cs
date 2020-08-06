@@ -9,7 +9,8 @@ namespace EKnjige.MobileApp.Models
         Browse,
         About,
         Klijenti,
-        Knjige
+        Knjige,
+        PredloziKnjigu
     }
     public class HomeMenuItem
     {
