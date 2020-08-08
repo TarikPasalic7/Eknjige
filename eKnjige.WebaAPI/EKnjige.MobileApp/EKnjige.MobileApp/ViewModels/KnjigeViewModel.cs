@@ -27,6 +27,7 @@ namespace EKnjige.MobileApp.ViewModels
         }
         public ObservableCollection<EknjigaMobile> KnjigaList { get; set; } = new ObservableCollection<EknjigaMobile>();
         public ObservableCollection<Kategorija> KategorijaList { get; set; } = new ObservableCollection<Kategorija>();
+
         Kategorija _selectedKategorija = null;
 
         public Kategorija SelectedKategorija

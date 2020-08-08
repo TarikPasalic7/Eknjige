@@ -19,9 +19,10 @@ namespace EKnjige.MobileApp.Views
         public KnjigaDetailPage(EknjigaMobile eknjiga) 
         {
             InitializeComponent();
-            BindingContext = model = new KnjigaDetailViewModel()
+            BindingContext = model = new KnjigaDetailViewModel(this.Navigation)
             {
                 EKnjiga = eknjiga
+                
             };
             
         }

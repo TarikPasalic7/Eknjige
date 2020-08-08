@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KJfe6PAvG7GhEoqw7teeJWoNIEvm7TvRKx6hoI3mTX4mGFSIFmB0y5YvdDHJv55SHlxyG+RmQdjRMa97QInHhQ==",
+  "dgSpecHash": "KTDLF/5Usez9cCO2VhSVCsjnHUxlQCLCP1ccE+tg9XtD4LOd45Q0Z9O67/0qYoQl/XZuJh8iixqqVOra9WDZXg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\eKnjige.WebaAPI\\eKnjige.WebaAPI.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,7 @@
     "C:\\Users\\pc\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\stripe.net\\37.29.0\\stripe.net.37.29.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore\\5.3.3\\swashbuckle.aspnetcore.5.3.3.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.3.3\\swashbuckle.aspnetcore.swagger.5.3.3.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.3.3\\swashbuckle.aspnetcore.swaggergen.5.3.3.nupkg.sha512",

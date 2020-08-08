@@ -1,5 +1,6 @@
 ﻿using eKnjige.Model;
 using EKnjige.MobileApp.Models;
+using EKnjige.MobileApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,11 +21,22 @@ namespace EKnjige.MobileApp.ViewModels
             InitCommand = new Command(async () => await Init());
             ObrisiCommand= new Command<Komentar>(async (komentar) =>await Obrisi(komentar));
             DodajCommand = new Command(async () => await Dodaj());
+            KupiCommand = new Command(async () => await Kupi());
+        }
+
+        public KnjigaDetailViewModel(INavigation nav)
+        {
+            InitCommand = new Command(async () => await Init());
+            ObrisiCommand = new Command<Komentar>(async (komentar) => await Obrisi(komentar));
+            DodajCommand = new Command(async () => await Dodaj());
+            KupiCommand = new Command(async () => await Kupi());
+            this.Navigation = nav;
+            
         }
         public EknjigaMobile EKnjiga { get; set; }
         public ObservableCollection<Komentar> KomentariList { get; set; } = new ObservableCollection<Komentar>();
 
-    
+        private readonly INavigation Navigation;
 
 
         string _komentar = null;
@@ -45,6 +57,15 @@ namespace EKnjige.MobileApp.ViewModels
         public ICommand ObrisiCommand { get; set; }
 
         public ICommand DodajCommand { get; set; }
+
+        public ICommand KupiCommand { get; set; }
+
+        public async Task Kupi()
+        {
+
+            await Navigation.PushAsync(new PaymentPage(EKnjiga));
+
+        }
 
         public async Task Dodaj()
         {

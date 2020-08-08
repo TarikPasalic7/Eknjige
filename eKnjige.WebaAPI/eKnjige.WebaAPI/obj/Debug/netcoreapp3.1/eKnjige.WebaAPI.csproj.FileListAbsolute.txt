@@ -804,9 +804,6 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runt
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\eKnjige.Model.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\eKnjige.Model.pdb
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csprojAssemblyReference.cache
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csproj.CoreCompileInputs.cache
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.AssemblyInfoInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.AssemblyInfo.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.RazorTargetAssemblyInfo.cache
@@ -816,3 +813,7 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\stat
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.pdb
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.genruntimeconfig.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csproj.CoreCompileInputs.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cache

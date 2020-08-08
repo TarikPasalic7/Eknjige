@@ -45,6 +45,9 @@ namespace EKnjige.MobileApp.Views
                     case (int)MenuItemType.PredloziKnjigu:
                         MenuPages.Add(id, new NavigationPage(new  PrijedlogKnjigePage()));
                         break;
+                    case (int)MenuItemType.KorisnickiProfil:
+                        MenuPages.Add(id, new NavigationPage(new ProfilPage()));
+                        break;
                 }
             }
 

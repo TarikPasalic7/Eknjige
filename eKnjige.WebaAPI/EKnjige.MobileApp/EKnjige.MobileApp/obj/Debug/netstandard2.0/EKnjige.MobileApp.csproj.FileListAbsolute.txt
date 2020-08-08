@@ -34,7 +34,6 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\RegistracijaPage.xaml.g.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CoreCompileInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.AssemblyInfoInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.AssemblyInfo.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.dll
@@ -58,8 +57,12 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\Accessibility.xml
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\System.Deployment.xml
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigePage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigaDetailPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\PrijedlogKnjigePage.xaml.g.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\PaymentPage.xaml.g.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CoreCompileInputs.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\ProfilPage.xaml.g.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\ProfilKnjigaPage.xaml.g.cs
