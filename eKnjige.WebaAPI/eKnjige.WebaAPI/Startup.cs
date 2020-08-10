@@ -78,7 +78,9 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Komentar, Model.KomentarRequest, Model.KomentarRequest, Model.KomentarRequest>, BaseCRUDService<Model.Komentar, Model.KomentarRequest, Komentar, Model.KomentarRequest, Model.KomentarRequest>>();
             services.AddScoped<ICRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>, BaseCRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>>();
             services.AddScoped<ICRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>, BaseCRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>>();
-
+            services.AddScoped<IPreporukaService, PreporukaService>();
+            services.AddScoped<ICRUDService<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>,
+                BaseCRUDService<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>>();
 
             services.AddSwaggerGen(c =>
             {

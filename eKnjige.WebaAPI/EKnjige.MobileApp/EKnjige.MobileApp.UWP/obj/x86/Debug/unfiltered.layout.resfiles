@@ -34,4 +34,7 @@ Microsoft.UI.Xaml\DensityStyles\Compact.xbf
 cancel.png
 Properties\Default.rd.xml
 save.png
+star_empty.png
+star_emptyinside.png
+star_filled.png
 xamarin_logo.png

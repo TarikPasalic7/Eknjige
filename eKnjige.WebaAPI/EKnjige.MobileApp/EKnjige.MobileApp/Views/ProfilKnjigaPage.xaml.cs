@@ -25,5 +25,10 @@ namespace EKnjige.MobileApp.Views
 
             };
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await model.Init();
+        }
     }
 }

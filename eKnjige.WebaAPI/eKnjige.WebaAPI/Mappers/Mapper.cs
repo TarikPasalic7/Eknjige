@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eKnjige.Model;
 using eKnjige.WebaAPI.Database;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -18,8 +19,8 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<TipFajla, Model.TipFajla>().ReverseMap();
             CreateMap<Kategorija, Model.Kategorija>().ReverseMap();
             CreateMap<Kategorija, Model.Requests.KategorijaInertRequest>().ReverseMap();
-            CreateMap<Uloga, Model.Uloga>().ReverseMap();
-            CreateMap<Uloga, Model.UlogeRequest>().ReverseMap();
+            CreateMap<Database.Uloga, Model.Uloga>().ReverseMap();
+            CreateMap<Database.Uloga, Model.UlogeRequest>().ReverseMap();
             CreateMap<Klijent, Model.KlijentInsertRequest>().ReverseMap();
             CreateMap<Klijent, Model.KlijentUpdateRequest>().ReverseMap();
             CreateMap<Autor, Model.Autor>().ReverseMap();
@@ -43,7 +44,9 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<KupovinaKnjige, Model.KupovinaKnjigeRequest>().ReverseMap();
             CreateMap<Komentar, Model.Komentar>().ReverseMap();
             CreateMap<Komentar, Model.KomentarRequest>().ReverseMap();
-            
+            CreateMap<KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena>().ReverseMap();
+            CreateMap<KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest>().ReverseMap();
+
         }
     }
 }
