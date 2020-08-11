@@ -15,7 +15,7 @@ namespace eKnjige.WebaAPI.Services
         private readonly IMapper _mapper;
 
         private int pozitivnaOcjena = 3;
-        private int brojRezultata = 5;
+        private int brojRezultata = 3;
 
         public PreporukaService(AppContext context, IMapper mapper)
         {
@@ -23,7 +23,7 @@ namespace eKnjige.WebaAPI.Services
             _mapper = mapper;
         }
 
-        public List<Model.EKnjiga> GetPreporuceneKnjige(int knjigaId)
+        public List<Model.EKnjiga> GetPreporuceneKnjige()
         {
             int KorisnikId = Security.BasicAuthenticationHandler.PrijavljeniKlijent.KlijentID;
 
@@ -48,13 +48,13 @@ namespace eKnjige.WebaAPI.Services
                     List<Kategorija> jedinstveneKategorije = new List<Kategorija>();
                     foreach (var item in listaPozitivnihOcjena)
                     {
-                        var igraKategorije = _context.EKnjigaKategorije.Where(m => m.EKnjigaID == item.EKnjigaID)
+                        var knjigaKategorije = _context.EKnjigaKategorije.Where(m => m.EKnjigaID == item.EKnjigaID)
                             .Select(g => g.Kategorija)
                             .ToList();
 
-                        foreach (var Kategorija in igraKategorije)
+                        foreach (var Kategorija in knjigaKategorije)
                         {
-                            // Add only unique items to the list (no duplicates)
+                            
                             bool dodaj = true;
                             for (int i = 0; i < jedinstveneKategorije.Count; i++)
                             {
@@ -74,17 +74,17 @@ namespace eKnjige.WebaAPI.Services
                     List<EKnjiga> konacnaLista = new List<EKnjiga>();
                     foreach (var item in jedinstveneKategorije)
                     {
-                        var igreUKategoriji = _context.EKnjigaKategorije
+                        var knjigeUKategoriji = _context.EKnjigaKategorije
                             .Where(g => g.KategorijaID == item.KategorijaID)
                             .Select(x => x.Eknjiga)
                             .ToList();
 
-                        foreach (var Igra in igreUKategoriji)
+                        foreach (var knjiga in knjigeUKategoriji)
                         {
                             bool dodaj = true;
                             for (int i = 0; i < konacnaLista.Count; i++)
                             {
-                                if (Igra.Naziv == konacnaLista[i].Naziv)
+                                if (knjiga.Naziv == konacnaLista[i].Naziv)
                                 {
                                     dodaj = false;
                                 }
@@ -93,7 +93,7 @@ namespace eKnjige.WebaAPI.Services
 
                             foreach (var ocjena in listaOcjena)
                             {
-                                if (Igra.Naziv == ocjena.Eknjiga.Naziv)
+                                if (knjiga.Naziv == ocjena.Eknjiga.Naziv)
                                 {
                                     dodaj = false;
                                 }
@@ -101,12 +101,12 @@ namespace eKnjige.WebaAPI.Services
 
                             if (dodaj)
                             {
-                                konacnaLista.Add(Igra);
+                                konacnaLista.Add(knjiga);
                             }
                         }
                     }
 
-                    konacnaLista = konacnaLista.OrderBy(media => System.Guid.NewGuid()).Take(brojRezultata).ToList();
+                    konacnaLista = konacnaLista.OrderByDescending(x=>x.OcjenaKnjige).Take(brojRezultata).ToList();
 
                    
                     List<Model.EKnjiga> listaKnjiga = _mapper.Map<List<Model.EKnjiga>>(konacnaLista);
@@ -117,8 +117,8 @@ namespace eKnjige.WebaAPI.Services
                 throw new System.Exception();
             }
             catch
-            {
-                var lista = _context.EKnjige.OrderBy(media => System.Guid.NewGuid()).Take(brojRezultata).ToList();
+            {/*media => System.Guid.NewGuid()*/
+                var lista = _context.EKnjige.OrderByDescending(x=>x.OcjenaKnjige).Take(brojRezultata).ToList();
 
                 // ucitavanje slika za svaku igru
                 List<Model.EKnjiga> listaKnjiga = _mapper.Map<List<Model.EKnjiga>>(lista);

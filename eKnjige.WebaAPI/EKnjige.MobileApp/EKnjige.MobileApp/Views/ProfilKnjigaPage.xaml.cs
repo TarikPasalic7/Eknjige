@@ -30,5 +30,12 @@ namespace EKnjige.MobileApp.Views
             base.OnAppearing();
             await model.Init();
         }
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as EknjigaMobile;
+           
+            await Navigation.PushAsync(new KnjigaDetailPage(item));
+        }
     }
 }

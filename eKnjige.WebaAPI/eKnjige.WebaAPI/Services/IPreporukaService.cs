@@ -8,6 +8,6 @@ namespace eKnjige.WebaAPI.Services
    public interface IPreporukaService
     {
 
-        List<Model.EKnjiga> GetPreporuceneKnjige(int knjigaId);
+        List<Model.EKnjiga> GetPreporuceneKnjige();
     }
 }

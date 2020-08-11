@@ -87,8 +87,40 @@
                             CommandParameter="5"
                             />
                 </StackLayout>
+            <StackLayout Grid.Row="2">
+                <ListView ItemsSource="{Binding PreporuceneKnjigeList}" ItemSelected="ListView_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Slika, Converter={StaticResource imgConv}}" HeightRequest="100" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Naziv}"
+                                               TextColor="Black"
+                                               Style="{DynamicResource ListItemTextStyle}" 
+                                               FontSize="14"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding OcjenaKnjige}"
+                                               TextColor="Black"
+                                               Style="{DynamicResource ListItemTextStyle}" 
+                                               FontSize="14"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
 
         </Grid>
+        
+        
 
     </ContentPage.Content>
 </ContentPage>

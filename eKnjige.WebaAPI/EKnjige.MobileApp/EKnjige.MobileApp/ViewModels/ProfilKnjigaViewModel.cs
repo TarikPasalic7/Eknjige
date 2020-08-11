@@ -3,6 +3,7 @@ using eKnjige.Model.Requests;
 using EKnjige.MobileApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,6 +16,7 @@ namespace EKnjige.MobileApp.ViewModels
 
         readonly APIService _serviceOcjenaEknjige = new APIService("EKnjigaOcjena");
         readonly APIService _service = new APIService("EKnjiga");
+        readonly APIService _servicePreporuka = new APIService("Preporuka");
         #region stars
 
         private Star _star1;
@@ -48,6 +50,8 @@ namespace EKnjige.MobileApp.ViewModels
             set { SetProperty(ref _star5, value); }
         }
         #endregion
+
+        public ObservableCollection<EknjigaMobile> PreporuceneKnjigeList { get; set; } = new ObservableCollection<EknjigaMobile>();
 
         public ProfilKnjigaViewModel()
         {
@@ -169,8 +173,14 @@ namespace EKnjige.MobileApp.ViewModels
             
 
             UpdateStar();
+            List<EknjigaMobile> listknjge = await _servicePreporuka.get<List<EknjigaMobile>>(null, "GetPreporuceneKnjige");
 
-            
+            PreporuceneKnjigeList.Clear();
+            foreach (var item in listknjge)
+            {
+                PreporuceneKnjigeList.Add(item);
+            }
+
         }
 
     }
