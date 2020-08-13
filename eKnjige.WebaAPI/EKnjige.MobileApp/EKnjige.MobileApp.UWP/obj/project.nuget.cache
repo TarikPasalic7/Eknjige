@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t06nJCPIw+naLjyoNelt27FXygeZo0dl2hSazhfD6z1yf20DtZHepUCOlycFTwCv+jZoPtzcBVnAppigguG1Lw==",
+  "dgSpecHash": "EzslofUAVNF3LOMApMgUrZE8YegSfDCMq7xSAIY5HQNmQRmZGEV5ntU0RDHx49CLRd/jk5RUhqCWy7f/2/k4fA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\EKnjige.MobileApp.UWP.csproj",
   "expectedPackageFiles": [
@@ -117,9 +117,9 @@
     "C:\\Users\\pc\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+    "C:\\Users\\pc\\.nuget\\packages\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],
   "logs": []
 }

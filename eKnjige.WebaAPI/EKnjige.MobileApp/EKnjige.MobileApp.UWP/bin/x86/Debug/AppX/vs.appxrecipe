@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>EF77179E7BC6F4D38471B7A84D55E2F523CA0056DF3DA7DC9E3D3B66DE01A3D6</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>3D2E9BE245EC277FB70AD9D2780C91A18C3068AA8EEC18894F8DFB76403902AA</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>239c9df9-81d0-4a96-b1a3-e158a33c9614_1.0.0.0_x86__a083hdpdgjakg</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>239c9df9-81d0-4a96-b1a3-e158a33c9614_a083hdpdgjakg!App</RegisteredUserModeAppID>
     <RegisteredPackageID>239c9df9-81d0-4a96-b1a3-e158a33c9614</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-08-11T16:15:20.113</Modified>
+      <Modified>2020-08-12T19:06:10.029</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\EKnjige.MobileApp.UWP.exe">
       <PackagePath>entrypoint\EKnjige.MobileApp.UWP.exe</PackagePath>
-      <Modified>2020-08-11T16:15:18.492</Modified>
+      <Modified>2020-08-12T19:06:02.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\acr.userdialogs\7.1.0.446\lib\uap10.0.16299\Acr.UserDialogs.dll">
       <PackagePath>Acr.UserDialogs.dll</PackagePath>
@@ -754,41 +754,41 @@
       <PackagePath>System.Threading.Tasks.Extensions.dll</PackagePath>
       <Modified>2018-11-29T14:39:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\win2d.uwp\1.20.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
-      <Modified>2016-11-30T00:58:38.000</Modified>
+      <Modified>2016-11-30T01:58:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.essentials\1.3.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.essentials\1.3.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
       <PackagePath>Xamarin.Essentials.dll</PackagePath>
-      <Modified>2019-09-18T21:33:26.000</Modified>
+      <Modified>2019-09-18T22:33:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
-      <Modified>2019-12-09T22:29:38.000</Modified>
+      <Modified>2019-12-09T23:29:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
-      <Modified>2019-12-09T22:29:38.000</Modified>
+      <Modified>2019-12-09T23:29:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
-      <Modified>2019-12-09T22:29:40.000</Modified>
+      <Modified>2019-12-09T23:29:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
-      <Modified>2019-12-09T22:29:40.000</Modified>
+      <Modified>2019-12-09T23:29:40.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\EKnjige.MobileApp.dll">
       <PackagePath>EKnjige.MobileApp.dll</PackagePath>
-      <Modified>2020-08-11T16:15:11.934</Modified>
+      <Modified>2020-08-13T16:58:11.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\eKnjige.Model.dll">
       <PackagePath>eKnjige.Model.dll</PackagePath>
-      <Modified>2020-08-10T22:37:33.863</Modified>
+      <Modified>2020-08-12T19:05:48.349</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
-      <Modified>2016-11-30T00:58:38.000</Modified>
+      <Modified>2016-11-30T01:58:38.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -802,9 +802,9 @@
       <PackagePath>Coding4Fun.Toolkit.Controls\Coding4Fun.Toolkit.Controls.xr.xml</PackagePath>
       <Modified>2016-05-12T13:21:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\xamarin.forms\4.4.0.991265\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
-      <Modified>2019-12-09T22:29:32.000</Modified>
+      <Modified>2019-12-09T23:29:32.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\coding4fun.toolkit.controls\2.1.8\lib\netcore451\Coding4Fun.Toolkit.Controls\Themes\Generic.xbf">
       <PackagePath>Coding4Fun.Toolkit.Controls\Themes\Generic.xbf</PackagePath>
@@ -983,15 +983,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-08-11T16:15:18.332</Modified>
+      <Modified>2020-08-12T19:06:02.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-08-11T16:15:18.333</Modified>
+      <Modified>2020-08-12T19:06:02.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-08-11T16:15:18.333</Modified>
+      <Modified>2020-08-12T19:06:02.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -1007,11 +1007,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-08-10T22:37:53.068</Modified>
+      <Modified>2020-08-12T19:06:06.650</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Core\EKnjige.MobileApp.UWP.exe">
       <PackagePath>EKnjige.MobileApp.UWP.exe</PackagePath>
-      <Modified>2020-08-11T16:15:20.107</Modified>
+      <Modified>2020-08-12T19:06:10.005</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

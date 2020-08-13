@@ -25,17 +25,19 @@
             <Label Text="Jmbg :" />
             <Entry Text="{Binding Jmbg}"></Entry>
             <Label Text="Datum Rodenja :" />
-            <Entry Text="{Binding DatumRodenja}" IsPassword="True"></Entry>
+            <Entry Text="{Binding DatumRodenja}" ></Entry>
             <Label Text="Password :"/>
             <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
             <Label Text="Password Provjera :"/>
-            <Entry  Text="{Binding LozinkaProvjera}"></Entry>
+            <Entry  Text="{Binding LozinkaProvjera}" IsPassword="True"></Entry>
             <Label Text="Grad :"/>
             <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding Naziv}"></Picker>
             <Label Text="Spol :"/>
             <Picker ItemsSource="{Binding SpolList}" SelectedItem="{Binding SelectedSpol}" ItemDisplayBinding="{Binding Tip}"></Picker>
 
-            <Button Command="{Binding RegistracijaCommand}" Text="Login"></Button>
+            <Button Command="{Binding RegistracijaCommand}" Text="Registracija"
+                    BackgroundColor="MediumPurple"
+                    TextColor="White"></Button>
            
         </StackLayout>
     </ContentPage.Content>

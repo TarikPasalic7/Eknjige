@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pt5HZTK83nDnYwgsFD5lejYHZvLQ6Zcd+r3spR2GAV+Gj9W0MY5/eLNM1kPTGAdOu+Uu1p4fF9izsLgbX/ucHg==",
+  "dgSpecHash": "i1o/f8am1Ab6kRk5eSuI10UFVZR61YQh0CRVN/Z/YJXjERQ87QlyoDsCxSRuqCDsWUqO+Hwhb32s3A1A4Xj9jw==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\EKnjige.MobileApp\\EKnjige.MobileApp.Android\\EKnjige.MobileApp.Android.csproj",
   "expectedPackageFiles": [
@@ -67,8 +67,8 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+    "C:\\Users\\pc\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],
   "logs": []
 }

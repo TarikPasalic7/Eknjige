@@ -9,15 +9,15 @@
         <vm:LoginViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
-        <StackLayout Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+    <ContentPage.Content >
+        <StackLayout Padding="7"  Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
             <Label Text="Korisničko Ime :" />
             <Entry Text="{Binding KorisnickoIme}"></Entry>
             <Label Text="Password :"/>
             <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
-            <Button Command="{Binding LoginCommand}" Text="Login"></Button>
+            <Button Command="{Binding LoginCommand}" Text="Login" BackgroundColor="MediumPurple" TextColor="White"></Button>
             <Label IsVisible="{Binding IsBusy}" Text="..."/>
-            <Button Command="{Binding RegistracijaCommand}" Text="Registruj se"></Button>
+            <Button Command="{Binding RegistracijaCommand}" Text="Registruj se" BackgroundColor="MediumPurple" TextColor="White"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
