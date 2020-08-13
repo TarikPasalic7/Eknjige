@@ -77,12 +77,14 @@
             // 
             // btntrazi
             // 
+            this.btntrazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btntrazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btntrazi.Location = new System.Drawing.Point(301, 38);
             this.btntrazi.Name = "btntrazi";
             this.btntrazi.Size = new System.Drawing.Size(75, 23);
             this.btntrazi.TabIndex = 1;
             this.btntrazi.Text = "Traži";
-            this.btntrazi.UseVisualStyleBackColor = true;
+            this.btntrazi.UseVisualStyleBackColor = false;
             this.btntrazi.Click += new System.EventHandler(this.btntrazi_Click);
             // 
             // txtTrazi
@@ -96,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtTrazi);
             this.Controls.Add(this.btntrazi);

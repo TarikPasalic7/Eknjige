@@ -35,12 +35,14 @@
             // 
             // btnSnimi
             // 
+            this.btnSnimi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSnimi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSnimi.Location = new System.Drawing.Point(338, 181);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(75, 23);
             this.btnSnimi.TabIndex = 0;
             this.btnSnimi.Text = "Dodaj";
-            this.btnSnimi.UseVisualStyleBackColor = true;
+            this.btnSnimi.UseVisualStyleBackColor = false;
             this.btnSnimi.Click += new System.EventHandler(this.btnSnimi_Click);
             // 
             // label1
@@ -63,6 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(498, 244);
             this.Controls.Add(this.txtTipFajlaNaziv);
             this.Controls.Add(this.label1);

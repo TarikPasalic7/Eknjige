@@ -31,22 +31,24 @@
             this.buttonPrikazi = new System.Windows.Forms.Button();
             this.textPrikazi = new System.Windows.Forms.TextBox();
             this.dgveknjige = new System.Windows.Forms.DataGridView();
-            this.btnDodaj = new System.Windows.Forms.Button();
             this.EKnjigaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDodaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgveknjige)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPrikazi
             // 
+            this.buttonPrikazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonPrikazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonPrikazi.Location = new System.Drawing.Point(40, 29);
             this.buttonPrikazi.Name = "buttonPrikazi";
             this.buttonPrikazi.Size = new System.Drawing.Size(75, 23);
             this.buttonPrikazi.TabIndex = 0;
             this.buttonPrikazi.Text = "Prikaži";
-            this.buttonPrikazi.UseVisualStyleBackColor = true;
+            this.buttonPrikazi.UseVisualStyleBackColor = false;
             this.buttonPrikazi.Click += new System.EventHandler(this.buttonPrikazi_Click);
             // 
             // textPrikazi
@@ -71,16 +73,6 @@
             this.dgveknjige.TabIndex = 2;
             this.dgveknjige.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgveknjige.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgveknjige_MouseDoubleClick);
-            // 
-            // btnDodaj
-            // 
-            this.btnDodaj.Location = new System.Drawing.Point(535, 29);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
-            this.btnDodaj.TabIndex = 3;
-            this.btnDodaj.Text = "Dodaj";
-            this.btnDodaj.UseVisualStyleBackColor = true;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // EKnjigaID
             // 
@@ -107,10 +99,23 @@
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
             // 
+            // btnDodaj
+            // 
+            this.btnDodaj.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDodaj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDodaj.Location = new System.Drawing.Point(535, 29);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnDodaj.TabIndex = 3;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
             // FormKnjige
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dgveknjige);

@@ -35,12 +35,14 @@
             // 
             // buttonDrzavaSnimi
             // 
+            this.buttonDrzavaSnimi.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonDrzavaSnimi.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonDrzavaSnimi.Location = new System.Drawing.Point(233, 154);
             this.buttonDrzavaSnimi.Name = "buttonDrzavaSnimi";
             this.buttonDrzavaSnimi.Size = new System.Drawing.Size(141, 49);
             this.buttonDrzavaSnimi.TabIndex = 0;
             this.buttonDrzavaSnimi.Text = "Dodaj";
-            this.buttonDrzavaSnimi.UseVisualStyleBackColor = true;
+            this.buttonDrzavaSnimi.UseVisualStyleBackColor = false;
             this.buttonDrzavaSnimi.Click += new System.EventHandler(this.buttonDrzavaSnimi_Click);
             // 
             // label1
@@ -63,6 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(463, 256);
             this.Controls.Add(this.textDrzavaNaziv);
             this.Controls.Add(this.label1);

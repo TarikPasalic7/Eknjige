@@ -1,6 +1,7 @@
 ﻿using eKnjige.WinUI.Autori;
 using eKnjige.WinUI.Drzave;
 using eKnjige.WinUI.Kategorije;
+using eKnjige.WinUI.Komentari;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,15 +24,16 @@ namespace eKnjige.WinUI.Knjige
         private readonly  APIService _kategorijaKnjigaservice = new APIService("eknjigakategorija");
         private readonly APIService _autorKnjigaservice = new APIService("eknjigaautor");
         private readonly APIService _EknjigaTip = new APIService("eknjigatipfajla");
+     
 
         private int? id = null;
-        public FormEknjigeDodaj(int? knjigetId = null)
+        public FormEknjigeDodaj(int? knjigeId = null)
         {
             
             InitializeComponent();
             dataGridViewAutori.AutoGenerateColumns = false;
             dataGridViewKategorije.AutoGenerateColumns = false;
-            id = knjigetId;
+            id = knjigeId;
         }
 
         private async void FormEknjigeDodaj_Load(object sender, EventArgs e)
@@ -492,6 +494,16 @@ namespace eKnjige.WinUI.Knjige
 
                 }
             }
+        }
+
+        private void buttonKomentari_Click(object sender, EventArgs e)
+        {
+            if (id != null)
+            {
+                FormKomentari form = new FormKomentari();
+                form.Show();
+            }
+           
         }
     }
 }

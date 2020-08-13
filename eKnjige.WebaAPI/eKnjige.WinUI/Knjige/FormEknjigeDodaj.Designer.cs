@@ -318,12 +318,13 @@
             // 
             // buttonKomentari
             // 
-            this.buttonKomentari.Location = new System.Drawing.Point(1129, 347);
+            this.buttonKomentari.Location = new System.Drawing.Point(1160, 317);
             this.buttonKomentari.Name = "buttonKomentari";
             this.buttonKomentari.Size = new System.Drawing.Size(191, 60);
             this.buttonKomentari.TabIndex = 34;
             this.buttonKomentari.Text = "Komentari";
             this.buttonKomentari.UseVisualStyleBackColor = true;
+            this.buttonKomentari.Click += new System.EventHandler(this.buttonKomentari_Click);
             // 
             // FormEknjigeDodaj
             // 

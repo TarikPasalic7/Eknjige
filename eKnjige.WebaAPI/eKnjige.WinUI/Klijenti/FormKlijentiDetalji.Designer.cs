@@ -172,12 +172,14 @@
             // 
             // btnSnimi
             // 
+            this.btnSnimi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSnimi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSnimi.Location = new System.Drawing.Point(510, 401);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(130, 38);
             this.btnSnimi.TabIndex = 14;
             this.btnSnimi.Text = "Sačuvaj";
-            this.btnSnimi.UseVisualStyleBackColor = true;
+            this.btnSnimi.UseVisualStyleBackColor = false;
             this.btnSnimi.Click += new System.EventHandler(this.btnSnimi_Click);
             // 
             // errorProvider
@@ -237,12 +239,14 @@
             // 
             // buttonGrad
             // 
+            this.buttonGrad.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonGrad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonGrad.Location = new System.Drawing.Point(395, 44);
             this.buttonGrad.Name = "buttonGrad";
             this.buttonGrad.Size = new System.Drawing.Size(75, 23);
             this.buttonGrad.TabIndex = 21;
             this.buttonGrad.Text = "Dodaj Grad";
-            this.buttonGrad.UseVisualStyleBackColor = true;
+            this.buttonGrad.UseVisualStyleBackColor = false;
             this.buttonGrad.Click += new System.EventHandler(this.buttonGrad_Click);
             // 
             // dateDatum
@@ -277,6 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(733, 492);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbUloga);

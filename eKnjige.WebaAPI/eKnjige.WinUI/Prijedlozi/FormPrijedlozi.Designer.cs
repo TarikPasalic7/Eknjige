@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewPrijedlog = new System.Windows.Forms.DataGridView();
-            this.buttonTrazi = new System.Windows.Forms.Button();
-            this.textBoxTrazi = new System.Windows.Forms.TextBox();
             this.PrijedlogKnjigeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Odgovoren = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonTrazi = new System.Windows.Forms.Button();
+            this.textBoxTrazi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrijedlog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,23 +50,6 @@
             this.dataGridViewPrijedlog.Name = "dataGridViewPrijedlog";
             this.dataGridViewPrijedlog.Size = new System.Drawing.Size(496, 241);
             this.dataGridViewPrijedlog.TabIndex = 0;
-            // 
-            // buttonTrazi
-            // 
-            this.buttonTrazi.Location = new System.Drawing.Point(297, 34);
-            this.buttonTrazi.Name = "buttonTrazi";
-            this.buttonTrazi.Size = new System.Drawing.Size(75, 23);
-            this.buttonTrazi.TabIndex = 1;
-            this.buttonTrazi.Text = "Trazi";
-            this.buttonTrazi.UseVisualStyleBackColor = true;
-            this.buttonTrazi.Click += new System.EventHandler(this.buttonTrazi_Click);
-            // 
-            // textBoxTrazi
-            // 
-            this.textBoxTrazi.Location = new System.Drawing.Point(84, 36);
-            this.textBoxTrazi.Name = "textBoxTrazi";
-            this.textBoxTrazi.Size = new System.Drawing.Size(146, 20);
-            this.textBoxTrazi.TabIndex = 2;
             // 
             // PrijedlogKnjigeID
             // 
@@ -93,14 +76,34 @@
             this.Odgovoren.HeaderText = "Odgovoren";
             this.Odgovoren.Name = "Odgovoren";
             // 
+            // buttonTrazi
+            // 
+            this.buttonTrazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonTrazi.Location = new System.Drawing.Point(297, 34);
+            this.buttonTrazi.Name = "buttonTrazi";
+            this.buttonTrazi.Size = new System.Drawing.Size(75, 23);
+            this.buttonTrazi.TabIndex = 1;
+            this.buttonTrazi.Text = "Trazi";
+            this.buttonTrazi.UseVisualStyleBackColor = false;
+            this.buttonTrazi.Click += new System.EventHandler(this.buttonTrazi_Click);
+            // 
+            // textBoxTrazi
+            // 
+            this.textBoxTrazi.Location = new System.Drawing.Point(84, 36);
+            this.textBoxTrazi.Name = "textBoxTrazi";
+            this.textBoxTrazi.Size = new System.Drawing.Size(146, 20);
+            this.textBoxTrazi.TabIndex = 2;
+            // 
             // FormPrijedlozi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBoxTrazi);
             this.Controls.Add(this.buttonTrazi);
             this.Controls.Add(this.dataGridViewPrijedlog);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "FormPrijedlozi";
             this.Text = "FormPrijedlozi";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrijedlog)).EndInit();
