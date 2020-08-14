@@ -26,5 +26,7 @@ namespace eKnjige.WinUI.Prijedlozi
 
             dataGridViewPrijedlog.DataSource = result;
         }
+
+       
     }
 }

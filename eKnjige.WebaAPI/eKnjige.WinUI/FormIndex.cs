@@ -111,16 +111,13 @@ namespace eKnjige.WinUI
             }
         }
 
-        private void noviKlijentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void pretragaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             FormKlijenti klijent = new FormKlijenti();
-            klijent.MdiParent= this;
+            //klijent.MdiParent= this;
             klijent.Show();
               
 
@@ -168,5 +165,25 @@ namespace eKnjige.WinUI
             FormPrijedlozi form = new FormPrijedlozi();
             form.Show();
         }
+
+        private void buttonKorisnik_Click(object sender, EventArgs e)
+        {
+            FormKlijenti form = new FormKlijenti();
+            form.Show();
+        }
+
+        private void buttonEKnjige_Click(object sender, EventArgs e)
+        {
+            FormKnjige form = new FormKnjige();
+            form.Show();
+        }
+
+        private void buttonPrijedlozi_Click(object sender, EventArgs e)
+        {
+            FormPrijedlozi form = new FormPrijedlozi();
+            form.Show();
+        }
+
+       
     }
 }

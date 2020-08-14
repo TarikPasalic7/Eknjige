@@ -72,6 +72,7 @@
             this.Controls.Add(this.buttonDrzavaSnimi);
             this.Name = "FormDodajDrzavu";
             this.Text = "FormDodajDrzavu";
+            this.Load += new System.EventHandler(this.FormDodajDrzavu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

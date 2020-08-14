@@ -25,14 +25,28 @@ namespace eKnjige.WinUI.Drzave
                 Naziv = textDrzavaNaziv.Text
             };
 
-            await service.Insert<Model.DrzavaRequest>(insert);
-                
-                
-                
-                MessageBox.Show("Operacija uspjesna");
+            var result=await service.Insert<Model.DrzavaRequest>(insert);
+            if(result != null)
+            {
+                MessageBox.Show("Država uspješno dodana.");
+                DialogResult = DialogResult.OK;
+                Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Greška");
+            }
+     
+
+            
 
 
 
+        }
+
+        private void FormDodajDrzavu_Load(object sender, EventArgs e)
+        {
 
         }
     }

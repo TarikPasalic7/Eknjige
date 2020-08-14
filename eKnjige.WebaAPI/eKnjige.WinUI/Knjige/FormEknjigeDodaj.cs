@@ -34,6 +34,7 @@ namespace eKnjige.WinUI.Knjige
             dataGridViewAutori.AutoGenerateColumns = false;
             dataGridViewKategorije.AutoGenerateColumns = false;
             id = knjigeId;
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private async void FormEknjigeDodaj_Load(object sender, EventArgs e)
@@ -504,6 +505,62 @@ namespace eKnjige.WinUI.Knjige
                 form.Show();
             }
            
+        }
+
+        private void textNaziv_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textNaziv.Text))
+            {
+
+                errorProvider.SetError(textNaziv, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(textNaziv, null);
+            }
+        }
+
+        private void textCijena_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textCijena.Text))
+            {
+
+                errorProvider.SetError(textCijena, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(textCijena, null);
+            }
+        }
+
+        private void dataGridViewKategorije_Validating(object sender, CancelEventArgs e)
+        {
+            if (dataGridViewKategorije.SelectedRows!=null)
+            {
+
+                errorProvider.SetError(dataGridViewKategorije, "Obavezno dodati barem jednu kategoriju");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(dataGridViewKategorije, null);
+            }
+        }
+
+        private void dataGridViewAutori_Validating(object sender, CancelEventArgs e)
+        {
+            if (dataGridViewAutori.SelectedRows != null)
+            {
+
+                errorProvider.SetError(dataGridViewAutori, "Obavezno dodati barem jednog autora");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(dataGridViewAutori, null);
+            }
         }
     }
 }

@@ -21,10 +21,34 @@ namespace eKnjige.WinUI.Klijenti
         {
             InitializeComponent();
             dgvKlijenti.AutoGenerateColumns = false;
+            dugme();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public async void dugme()
         {
+            var result = await _apiservice.get<List<Model.Komentar>>(null);
+
+           dgvKlijenti.DataSource = result;
+            DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
+
+            deletebutton.FlatStyle = FlatStyle.Popup;
+
+            deletebutton.HeaderText = "Izbrisi";
+            deletebutton.Name = "Izbrisi";
+            deletebutton.UseColumnTextForButtonValue = true;
+            deletebutton.Text = "Izbrisi";
+
+
+            deletebutton.Width = 70;
+
+            if (dgvKlijenti.Columns.Contains(deletebutton.Name = "Izbrisi"))
+            {
+
+            }
+            else
+            {
+                dgvKlijenti.Columns.Add(deletebutton);
+            }
 
         }
 
@@ -44,6 +68,28 @@ namespace eKnjige.WinUI.Klijenti
 
             FormKlijentiDetalji form = new FormKlijentiDetalji(int.Parse(id.ToString()));
             form.Show();
+        }
+
+        private async void dgvKlijenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id;
+            if (e.ColumnIndex == 6)
+            {
+                id = Convert.ToInt32(dgvKlijenti.Rows[e.RowIndex].Cells[0].Value.ToString());
+                DialogResult result = MessageBox.Show("Da li zaista zelite izbrisati korisnika", "Upozorenje", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    await _apiservice.Remove(id);
+                    dugme();
+                    MessageBox.Show("Uspjesno ste izbrisali korisnika");
+                }
+                else if (result == DialogResult.No)
+                {
+                    return;
+
+                }
+
+            }
         }
     }
 }

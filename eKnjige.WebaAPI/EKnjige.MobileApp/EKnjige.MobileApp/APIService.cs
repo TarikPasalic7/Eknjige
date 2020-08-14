@@ -100,6 +100,19 @@ namespace EKnjige.MobileApp
             var result = await url.WithBasicAuth(username, password).PutJsonAsync(request).ReceiveJson<T>();
             return result;
         }
+
+        public async Task<bool> Remove(int id, string actionName = null)
+        {
+            var url = $"{_apiURL}/{route}";
+
+            if (actionName != null)
+                url += "/" + actionName;
+
+            url += "/" + id;
+
+            return await url.WithBasicAuth(username, password).DeleteAsync().ReceiveJson<bool>();
+        }
+
     }
 
 }

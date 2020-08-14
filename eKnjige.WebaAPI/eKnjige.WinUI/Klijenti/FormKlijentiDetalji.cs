@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,6 +28,7 @@ namespace eKnjige.WinUI.Klijenti
             InitializeComponent();
 
             id = klijentId;
+            this.AutoValidate = AutoValidate.Disable;
         }
 
        
@@ -245,39 +248,137 @@ namespace eKnjige.WinUI.Klijenti
 
         private void textEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textJmbg.Text))
+            if (string.IsNullOrWhiteSpace(textEmail.Text))
             {
 
-                errorProvider.SetError(textJmbg, "Obavezno Polje");
+                errorProvider.SetError(textEmail, "Obavezno Polje");
                 e.Cancel = true;
             }
             else
             {
-                errorProvider.SetError(textJmbg, null);
+                try
+                {
+                    MailAddress mail = new MailAddress(textEmail.Text);
+                }
+                catch (Exception)
+                {
+                  
+                    errorProvider.SetError(textEmail,"Pogrešan format");
+                     e.Cancel = true;
+                }
+               
+               
             }
         }
 
-        private void buttonGrad_Click(object sender, EventArgs e)
+        private async void buttonGrad_Click(object sender, EventArgs e)
         {
             FormDodajGrad form = new FormDodajGrad();
-            form.Show();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var listgradovi = await servicegrad.get<List<Model.Grad>>(null);
+                cmbGradovi.DataSource = listgradovi;
+            }
 
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+ 
+
+        private void textPassword_Validating(object sender, CancelEventArgs e)
         {
+
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMinimum8Chars = new Regex(@".{8,}");
+
+            if (string.IsNullOrWhiteSpace(textPassword.Text))
+            {
+               
+                errorProvider.SetError(textPassword, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                if (hasNumber.IsMatch(textPassword.Text) && hasUpperChar.IsMatch(textPassword.Text) && hasMinimum8Chars.IsMatch(textPassword.Text))
+                {
+                    errorProvider.SetError(textPassword, null);
+                }
+                else
+                {
+                    errorProvider.SetError(textPassword, "Lozinka mora imati brojeve,velika slova i minimum 8 karaktera");
+                    e.Cancel = true;
+
+                }
+            }
 
         }
 
-        private void cmbUloga_SelectedIndexChanged(object sender, EventArgs e)
+        private void textPasswordPotvrda_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textPasswordPotvrda.Text))
+            {
+
+                errorProvider.SetError(textPasswordPotvrda, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                if (textPassword.Text == textPasswordPotvrda.Text)
+                {
+                    errorProvider.SetError(textPasswordPotvrda, null);
+                }
+                else
+                {
+                    errorProvider.SetError(textPasswordPotvrda, "Lozinke se ne slazu ");
+                    e.Cancel = true;
+                }
+               
+            }
+        }
+
+        private void cmbGradovi_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (cmbGradovi.SelectedValue==null)
+            {
+
+                errorProvider.SetError(cmbGradovi, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbGradovi, null);
+            }
 
         }
 
-        private void cmbGradovi_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSpol_Validating(object sender, CancelEventArgs e)
         {
+            if (cmbSpol.SelectedValue == null)
+            {
 
+                errorProvider.SetError(cmbSpol, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbSpol, null);
+            }
+        }
+
+        private void cmbUloga_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbUloga.SelectedValue == null)
+            {
+
+                errorProvider.SetError(cmbUloga, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbUloga, null);
+            }
         }
     }
 }

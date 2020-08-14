@@ -37,12 +37,14 @@
             // 
             // buttonlogin
             // 
-            this.buttonlogin.Location = new System.Drawing.Point(396, 221);
+            this.buttonlogin.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonlogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonlogin.Location = new System.Drawing.Point(348, 208);
             this.buttonlogin.Name = "buttonlogin";
             this.buttonlogin.Size = new System.Drawing.Size(122, 38);
             this.buttonlogin.TabIndex = 0;
             this.buttonlogin.Text = "Login";
-            this.buttonlogin.UseVisualStyleBackColor = true;
+            this.buttonlogin.UseVisualStyleBackColor = false;
             this.buttonlogin.Click += new System.EventHandler(this.buttonlogin_Click);
             // 
             // label1
@@ -82,7 +84,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 316);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(501, 282);
             this.Controls.Add(this.textLozinka);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textKorisnickoIme);

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-08-12T19:06:10.029</Modified>
+      <Modified>2020-08-14T19:06:24.280</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\EKnjige.MobileApp.UWP.exe">
       <PackagePath>entrypoint\EKnjige.MobileApp.UWP.exe</PackagePath>
-      <Modified>2020-08-12T19:06:02.348</Modified>
+      <Modified>2020-08-14T19:06:20.964</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\.nuget\packages\acr.userdialogs\7.1.0.446\lib\uap10.0.16299\Acr.UserDialogs.dll">
       <PackagePath>Acr.UserDialogs.dll</PackagePath>
@@ -780,7 +780,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\EKnjige.MobileApp.dll">
       <PackagePath>EKnjige.MobileApp.dll</PackagePath>
-      <Modified>2020-08-13T16:58:11.237</Modified>
+      <Modified>2020-08-14T19:06:13.603</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\eKnjige.Model.dll">
       <PackagePath>eKnjige.Model.dll</PackagePath>
@@ -983,15 +983,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-08-12T19:06:02.032</Modified>
+      <Modified>2020-08-14T19:06:20.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-08-12T19:06:02.032</Modified>
+      <Modified>2020-08-14T19:06:20.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-08-12T19:06:02.032</Modified>
+      <Modified>2020-08-14T19:06:20.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -1011,7 +1011,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\bin\x86\Debug\Core\EKnjige.MobileApp.UWP.exe">
       <PackagePath>EKnjige.MobileApp.UWP.exe</PackagePath>
-      <Modified>2020-08-12T19:06:10.005</Modified>
+      <Modified>2020-08-14T19:06:24.274</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

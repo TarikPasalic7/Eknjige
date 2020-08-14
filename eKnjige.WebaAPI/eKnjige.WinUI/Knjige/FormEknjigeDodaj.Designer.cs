@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.textOpis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,9 +61,11 @@
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAutoriDodaj = new System.Windows.Forms.Button();
             this.buttonKomentari = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -97,6 +100,7 @@
             this.textCijena.Name = "textCijena";
             this.textCijena.Size = new System.Drawing.Size(100, 20);
             this.textCijena.TabIndex = 14;
+            this.textCijena.Validating += new System.ComponentModel.CancelEventHandler(this.textCijena_Validating);
             // 
             // label1
             // 
@@ -129,15 +133,19 @@
             this.textNaziv.Name = "textNaziv";
             this.textNaziv.Size = new System.Drawing.Size(100, 20);
             this.textNaziv.TabIndex = 10;
+            this.textNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.textNaziv_Validating);
             // 
             // btnSnimi
             // 
+            this.btnSnimi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSnimi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSnimi.Location = new System.Drawing.Point(1196, 537);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(155, 56);
             this.btnSnimi.TabIndex = 18;
             this.btnSnimi.Text = "Snimi";
-            this.btnSnimi.UseVisualStyleBackColor = true;
+            this.btnSnimi.UseVisualStyleBackColor = false;
             this.btnSnimi.Click += new System.EventHandler(this.btnSnimi_Click);
             // 
             // pictureBox1
@@ -167,12 +175,14 @@
             // 
             // btnSlika
             // 
+            this.btnSlika.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSlika.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSlika.Location = new System.Drawing.Point(1071, 78);
             this.btnSlika.Name = "btnSlika";
             this.btnSlika.Size = new System.Drawing.Size(75, 23);
             this.btnSlika.TabIndex = 22;
             this.btnSlika.Text = "Dodaj";
-            this.btnSlika.UseVisualStyleBackColor = true;
+            this.btnSlika.UseVisualStyleBackColor = false;
             this.btnSlika.Click += new System.EventHandler(this.btnSlika_Click);
             // 
             // openFileDialog1
@@ -192,7 +202,7 @@
             // checkBoxPdf
             // 
             this.checkBoxPdf.AutoSize = true;
-            this.checkBoxPdf.Location = new System.Drawing.Point(198, 469);
+            this.checkBoxPdf.Location = new System.Drawing.Point(198, 462);
             this.checkBoxPdf.Name = "checkBoxPdf";
             this.checkBoxPdf.Size = new System.Drawing.Size(47, 17);
             this.checkBoxPdf.TabIndex = 24;
@@ -201,32 +211,38 @@
             // 
             // buttonKategorijeKnjige
             // 
-            this.buttonKategorijeKnjige.Location = new System.Drawing.Point(774, 263);
+            this.buttonKategorijeKnjige.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonKategorijeKnjige.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonKategorijeKnjige.Location = new System.Drawing.Point(774, 253);
             this.buttonKategorijeKnjige.Name = "buttonKategorijeKnjige";
-            this.buttonKategorijeKnjige.Size = new System.Drawing.Size(75, 23);
+            this.buttonKategorijeKnjige.Size = new System.Drawing.Size(75, 33);
             this.buttonKategorijeKnjige.TabIndex = 25;
             this.buttonKategorijeKnjige.Text = "Kategorije";
-            this.buttonKategorijeKnjige.UseVisualStyleBackColor = true;
+            this.buttonKategorijeKnjige.UseVisualStyleBackColor = false;
             this.buttonKategorijeKnjige.Click += new System.EventHandler(this.buttonKategorijeKnjige_Click);
             // 
             // buttonmp3file
             // 
+            this.buttonmp3file.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonmp3file.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonmp3file.Location = new System.Drawing.Point(23, 508);
             this.buttonmp3file.Name = "buttonmp3file";
             this.buttonmp3file.Size = new System.Drawing.Size(75, 23);
             this.buttonmp3file.TabIndex = 29;
             this.buttonmp3file.Text = "MP3 file";
-            this.buttonmp3file.UseVisualStyleBackColor = true;
+            this.buttonmp3file.UseVisualStyleBackColor = false;
             this.buttonmp3file.Click += new System.EventHandler(this.buttonmp3file_Click);
             // 
             // buttonpdffile
             // 
-            this.buttonpdffile.Location = new System.Drawing.Point(198, 508);
+            this.buttonpdffile.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonpdffile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonpdffile.Location = new System.Drawing.Point(186, 508);
             this.buttonpdffile.Name = "buttonpdffile";
             this.buttonpdffile.Size = new System.Drawing.Size(75, 23);
             this.buttonpdffile.TabIndex = 30;
             this.buttonpdffile.Text = "PDF file";
-            this.buttonpdffile.UseVisualStyleBackColor = true;
+            this.buttonpdffile.UseVisualStyleBackColor = false;
             this.buttonpdffile.Click += new System.EventHandler(this.buttonpdffile_Click);
             // 
             // openFileDialogmp3
@@ -249,6 +265,7 @@
             this.dataGridViewAutori.Name = "dataGridViewAutori";
             this.dataGridViewAutori.Size = new System.Drawing.Size(345, 246);
             this.dataGridViewAutori.TabIndex = 31;
+            this.dataGridViewAutori.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridViewAutori_Validating);
             // 
             // Dodaj
             // 
@@ -285,6 +302,7 @@
             this.dataGridViewKategorije.Name = "dataGridViewKategorije";
             this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
             this.dataGridViewKategorije.TabIndex = 32;
+            this.dataGridViewKategorije.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridViewKategorije_Validating);
             // 
             // DodajKategoriju
             // 
@@ -308,28 +326,38 @@
             // 
             // buttonAutoriDodaj
             // 
-            this.buttonAutoriDodaj.Location = new System.Drawing.Point(878, 569);
+            this.buttonAutoriDodaj.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAutoriDodaj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAutoriDodaj.Location = new System.Drawing.Point(877, 560);
             this.buttonAutoriDodaj.Name = "buttonAutoriDodaj";
-            this.buttonAutoriDodaj.Size = new System.Drawing.Size(75, 23);
+            this.buttonAutoriDodaj.Size = new System.Drawing.Size(75, 33);
             this.buttonAutoriDodaj.TabIndex = 33;
             this.buttonAutoriDodaj.Text = "Autori";
-            this.buttonAutoriDodaj.UseVisualStyleBackColor = true;
+            this.buttonAutoriDodaj.UseVisualStyleBackColor = false;
             this.buttonAutoriDodaj.Click += new System.EventHandler(this.buttonAutoriDodaj_Click);
             // 
             // buttonKomentari
             // 
+            this.buttonKomentari.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonKomentari.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonKomentari.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonKomentari.Location = new System.Drawing.Point(1160, 317);
             this.buttonKomentari.Name = "buttonKomentari";
             this.buttonKomentari.Size = new System.Drawing.Size(191, 60);
             this.buttonKomentari.TabIndex = 34;
             this.buttonKomentari.Text = "Komentari";
-            this.buttonKomentari.UseVisualStyleBackColor = true;
+            this.buttonKomentari.UseVisualStyleBackColor = false;
             this.buttonKomentari.Click += new System.EventHandler(this.buttonKomentari_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FormEknjigeDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1514, 638);
             this.Controls.Add(this.buttonKomentari);
             this.Controls.Add(this.buttonAutoriDodaj);
@@ -359,6 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.Button buttonAutoriDodaj;
         private System.Windows.Forms.Button buttonKomentari;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -77,7 +77,7 @@
             // labelDatumRodjenja
             // 
             this.labelDatumRodjenja.AutoSize = true;
-            this.labelDatumRodjenja.Location = new System.Drawing.Point(9, 276);
+            this.labelDatumRodjenja.Location = new System.Drawing.Point(12, 220);
             this.labelDatumRodjenja.Name = "labelDatumRodjenja";
             this.labelDatumRodjenja.Size = new System.Drawing.Size(82, 13);
             this.labelDatumRodjenja.TabIndex = 3;
@@ -86,7 +86,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(12, 219);
+            this.labelEmail.Location = new System.Drawing.Point(259, 220);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(36, 13);
             this.labelEmail.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // textJmbg
             // 
-            this.textJmbg.Location = new System.Drawing.Point(12, 244);
+            this.textJmbg.Location = new System.Drawing.Point(245, 238);
             this.textJmbg.Name = "textJmbg";
             this.textJmbg.Size = new System.Drawing.Size(159, 20);
             this.textJmbg.TabIndex = 4;
@@ -139,7 +139,7 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(9, 343);
+            this.labelPassword.Location = new System.Drawing.Point(12, 285);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(53, 13);
             this.labelPassword.TabIndex = 11;
@@ -147,16 +147,17 @@
             // 
             // textPassword
             // 
-            this.textPassword.Location = new System.Drawing.Point(12, 370);
+            this.textPassword.Location = new System.Drawing.Point(15, 301);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(159, 20);
             this.textPassword.TabIndex = 10;
+            this.textPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textPassword_Validating);
             // 
             // labelPasswordPotvrda
             // 
             this.labelPasswordPotvrda.AutoSize = true;
-            this.labelPasswordPotvrda.Location = new System.Drawing.Point(221, 343);
+            this.labelPasswordPotvrda.Location = new System.Drawing.Point(12, 347);
             this.labelPasswordPotvrda.Name = "labelPasswordPotvrda";
             this.labelPasswordPotvrda.Size = new System.Drawing.Size(93, 13);
             this.labelPasswordPotvrda.TabIndex = 13;
@@ -164,17 +165,18 @@
             // 
             // textPasswordPotvrda
             // 
-            this.textPasswordPotvrda.Location = new System.Drawing.Point(224, 370);
+            this.textPasswordPotvrda.Location = new System.Drawing.Point(15, 363);
             this.textPasswordPotvrda.Name = "textPasswordPotvrda";
             this.textPasswordPotvrda.PasswordChar = '*';
             this.textPasswordPotvrda.Size = new System.Drawing.Size(159, 20);
             this.textPasswordPotvrda.TabIndex = 12;
+            this.textPasswordPotvrda.Validating += new System.ComponentModel.CancelEventHandler(this.textPasswordPotvrda_Validating);
             // 
             // btnSnimi
             // 
             this.btnSnimi.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSnimi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSnimi.Location = new System.Drawing.Point(510, 401);
+            this.btnSnimi.Location = new System.Drawing.Point(519, 415);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(130, 38);
             this.btnSnimi.TabIndex = 14;
@@ -193,6 +195,7 @@
             this.cmbSpol.Name = "cmbSpol";
             this.cmbSpol.Size = new System.Drawing.Size(121, 21);
             this.cmbSpol.TabIndex = 15;
+            this.cmbSpol.Validating += new System.ComponentModel.CancelEventHandler(this.cmbSpol_Validating);
             // 
             // labelSpol
             // 
@@ -219,12 +222,12 @@
             this.cmbGradovi.Name = "cmbGradovi";
             this.cmbGradovi.Size = new System.Drawing.Size(121, 21);
             this.cmbGradovi.TabIndex = 17;
-            this.cmbGradovi.SelectedIndexChanged += new System.EventHandler(this.cmbGradovi_SelectedIndexChanged);
+            this.cmbGradovi.Validating += new System.ComponentModel.CancelEventHandler(this.cmbGradovi_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 401);
+            this.label1.Location = new System.Drawing.Point(12, 409);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 20;
@@ -243,7 +246,7 @@
             this.buttonGrad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonGrad.Location = new System.Drawing.Point(395, 44);
             this.buttonGrad.Name = "buttonGrad";
-            this.buttonGrad.Size = new System.Drawing.Size(75, 23);
+            this.buttonGrad.Size = new System.Drawing.Size(84, 34);
             this.buttonGrad.TabIndex = 21;
             this.buttonGrad.Text = "Dodaj Grad";
             this.buttonGrad.UseVisualStyleBackColor = false;
@@ -252,7 +255,7 @@
             // dateDatum
             // 
             this.dateDatum.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dateDatum.Location = new System.Drawing.Point(12, 301);
+            this.dateDatum.Location = new System.Drawing.Point(12, 238);
             this.dateDatum.Name = "dateDatum";
             this.dateDatum.Size = new System.Drawing.Size(200, 20);
             this.dateDatum.TabIndex = 22;
@@ -265,7 +268,7 @@
             this.cmbUloga.Name = "cmbUloga";
             this.cmbUloga.Size = new System.Drawing.Size(121, 21);
             this.cmbUloga.TabIndex = 23;
-            this.cmbUloga.SelectedIndexChanged += new System.EventHandler(this.cmbUloga_SelectedIndexChanged);
+            this.cmbUloga.Validating += new System.ComponentModel.CancelEventHandler(this.cmbUloga_Validating);
             // 
             // label2
             // 
@@ -275,7 +278,6 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 24;
             this.label2.Text = "Uloga";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FormKlijentiDetalji
             // 

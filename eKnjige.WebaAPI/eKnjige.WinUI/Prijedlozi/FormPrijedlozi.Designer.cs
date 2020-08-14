@@ -48,8 +48,8 @@
             this.Odgovoren});
             this.dataGridViewPrijedlog.Location = new System.Drawing.Point(70, 111);
             this.dataGridViewPrijedlog.Name = "dataGridViewPrijedlog";
-            this.dataGridViewPrijedlog.Size = new System.Drawing.Size(496, 241);
-            this.dataGridViewPrijedlog.TabIndex = 0;
+            this.dataGridViewPrijedlog.Size = new System.Drawing.Size(374, 158);
+            this.dataGridViewPrijedlog.TabIndex = 3;
             // 
             // PrijedlogKnjigeID
             // 

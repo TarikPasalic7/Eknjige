@@ -53,9 +53,10 @@
             // Ime
             // 
             this.Ime.AutoSize = true;
+            this.Ime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Ime.Location = new System.Drawing.Point(30, 58);
             this.Ime.Name = "Ime";
-            this.Ime.Size = new System.Drawing.Size(24, 13);
+            this.Ime.Size = new System.Drawing.Size(32, 18);
             this.Ime.TabIndex = 1;
             this.Ime.Text = "Ime";
             // 
@@ -76,9 +77,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(30, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Prezime";
             // 
@@ -92,9 +94,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(266, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Datum Rođenja";
             // 

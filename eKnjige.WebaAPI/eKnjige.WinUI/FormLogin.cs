@@ -30,12 +30,13 @@ namespace eKnjige.WinUI
                 if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Administrator")
                 {
                     await apiservice.get<dynamic>(null);
+                    this.Hide();
                     FormIndex form = new FormIndex();
 
                    
                     DialogResult = DialogResult.OK;
                     form.Show();
-                    //Close();
+                   
                     
                   
 

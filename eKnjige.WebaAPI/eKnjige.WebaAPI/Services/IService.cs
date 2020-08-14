@@ -12,5 +12,6 @@ namespace eKnjige.WebaAPI.Services
 
         TModel GetById(int id);
 
+        
     }
 }

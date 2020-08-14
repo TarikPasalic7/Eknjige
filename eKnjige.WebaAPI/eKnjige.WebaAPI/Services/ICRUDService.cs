@@ -10,6 +10,7 @@ namespace eKnjige.WebaAPI.Services
        TModel Insert(TInsert request);
 
         TModel Update(int id, TUpdate request);
-        
+
+        bool Remove(int id);
     }
 }

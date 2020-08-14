@@ -27,7 +27,17 @@ namespace eKnjige.WebaAPI.Services
             return mapper.Map<TModel>(entity);
         }
 
-        
+        public bool Remove(int id)
+        {
+            var entity = db.Set<TDatabase>().Find(id);
+            if (entity != null)
+            {
+                db.Set<TDatabase>().Remove(entity);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
 
         public virtual TModel Update(int id, TUptade request)
         {
