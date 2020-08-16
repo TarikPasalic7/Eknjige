@@ -18,6 +18,7 @@ namespace eKnjige.WinUI.Knjige
 {
     public partial class FormEknjigeDodaj : Form
     {
+        
         private readonly APIService _apiservice = new APIService("eknjiga");
         private readonly APIService _Kategorijaapiservice = new APIService("kategorija");
         private readonly APIService _Autorapiservice = new APIService("autor");
@@ -46,12 +47,19 @@ namespace eKnjige.WinUI.Knjige
 
 
 
-
+              
+                await LoadAutori();
+                await LoadKategorije();
 
             }
-            buttonKomentari.Hide();
-            await LoadAutori();
-            await LoadKategorije();
+            else
+            {
+                buttonKomentari.Hide();
+                await LoadAutori();
+                await LoadKategorije();
+            }
+            
+           ;
 
         }
 
@@ -117,7 +125,7 @@ namespace eKnjige.WinUI.Knjige
             var autori = await _Autorapiservice.get<List<Model.Autor>>(null);
             var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
             var kategorije = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
-            var eknjigetipfajla = await _EknjigaTip.get<List<Model.EKnjigaTip>>(null);
+           
 
             if (knjiga.MP3Dodan == true)
             {
@@ -231,32 +239,32 @@ namespace eKnjige.WinUI.Knjige
                 var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
                 request.Slika = knjiga.Slika;
-                if (checkBoxMP3.Checked==true && knjiga.MP3Dodan==false)
-                {
-                    request.MP3Dodan = true;
-                    var tip = new Model.EKnjigaTipRequest
-                    {
-                        TipFajlaID = 1,
-                        EKnjigaID = knjiga.EKnjigaID
+                //if (checkBoxMP3.Checked==true && knjiga.MP3Dodan==false)
+                //{
+                //    request.MP3Dodan = true;
+                //    var tip = new Model.EKnjigaTipRequest
+                //    {
+                //        TipFajlaID = 1,
+                //        EKnjigaID = knjiga.EKnjigaID
 
 
-                    };
+                //    };
                     
-                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-                }
-                if (checkBoxPdf.Checked == true && knjiga.PDFDodan == false)
-                {
-                    request.PDFDodan = true;
-                    var tip = new Model.EKnjigaTipRequest
-                    {
-                        TipFajlaID = 2,
-                        EKnjigaID = knjiga.EKnjigaID
+                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                //}
+                //if (checkBoxPdf.Checked == true && knjiga.PDFDodan == false)
+                //{
+                //    request.PDFDodan = true;
+                //    var tip = new Model.EKnjigaTipRequest
+                //    {
+                //        TipFajlaID = 2,
+                //        EKnjigaID = knjiga.EKnjigaID
 
 
-                    };
+                //    };
 
-                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-                }
+                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                //}
                 var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
                 foreach (DataGridViewRow item in dataGridViewAutori.Rows)
                 {
@@ -375,39 +383,39 @@ namespace eKnjige.WinUI.Knjige
                 //};
 
                
-                if (checkBoxMP3.Checked)
-                {
+                //if (checkBoxMP3.Checked)
+                //{
                     
-                    var tip = new Model.EKnjigaTipRequest
-                    {
-                        TipFajlaID = 1,
-                        EKnjigaID = knjiga.EKnjigaID
+                //    var tip = new Model.EKnjigaTipRequest
+                //    {
+                //        TipFajlaID = 1,
+                //        EKnjigaID = knjiga.EKnjigaID
 
 
-                    };
+                //    };
 
 
-                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
 
 
-                }
-                if (checkBoxPdf.Checked)
-                {
+                //}
+                //if (checkBoxPdf.Checked)
+                //{
                    
-                    var tip = new Model.EKnjigaTipRequest
-                    {
-                        TipFajlaID = 2,
-                        EKnjigaID = knjiga.EKnjigaID
+                //    var tip = new Model.EKnjigaTipRequest
+                //    {
+                //        TipFajlaID = 2,
+                //        EKnjigaID = knjiga.EKnjigaID
                         
 
 
-                    };
+                //    };
 
 
-                    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
+                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
 
 
-                }
+                //}
 
 
             }
@@ -458,8 +466,19 @@ namespace eKnjige.WinUI.Knjige
             {
 
                 var filename = openFileDialogmp3.FileName;
-                var file = File.ReadAllBytes(filename);
-                request.Mp3file= file;
+              
+                string[] f = filename.Split('\\');
+                // to get the only file name
+                string fn = f[(f.Length) - 1];
+                string startuppath = Path.GetDirectoryName(Application.ExecutablePath).Replace("eKnjige.WinUI\\bin\\Debug", string.Empty); ;
+                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\";
+
+
+                string dest = startuppath + filepath + fn;
+
+
+                File.Copy(filename, dest, true);
+                request.Mp3file= fn;
                 checkBoxMP3.Checked = true;
 
             }
@@ -473,13 +492,24 @@ namespace eKnjige.WinUI.Knjige
             {
 
                 var filename = openFileDialogpdf.FileName;
-                var file = File.ReadAllBytes(filename);
-                request.Pdffile = file;
-                checkBoxPdf.Checked = true;
+               
+                string[] f = filename.Split('\\');
+             
+                string fn = f[(f.Length) - 1];
+                string startuppath = Path.GetDirectoryName(Application.ExecutablePath).Replace("eKnjige.WinUI\\bin\\Debug", string.Empty); ;
+                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\";
 
+                
+                string dest=startuppath + filepath + fn;
+               
+                request.Pdffile = fn;
+                File.Copy(filename, dest, true);
+                checkBoxPdf.Checked = true;
+                // Unos za file
             }
 
         }
+     
 
         private async void buttonAutoriDodaj_Click(object sender, EventArgs e)
         {
@@ -501,7 +531,7 @@ namespace eKnjige.WinUI.Knjige
         {
             if (id != null)
             {
-                FormKomentari form = new FormKomentari();
+                FormKomentariKnjige form = new FormKomentariKnjige();
                 form.Show();
             }
            

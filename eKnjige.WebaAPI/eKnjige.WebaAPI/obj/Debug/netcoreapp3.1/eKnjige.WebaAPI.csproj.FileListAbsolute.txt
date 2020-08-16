@@ -407,7 +407,6 @@ C:\Users\pc\source\repos\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1
 C:\Users\pc\source\repos\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.dll
 C:\Users\pc\source\repos\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.pdb
 C:\Users\pc\source\repos\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.genruntimeconfig.cache
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -796,6 +795,7 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\tr\M
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll

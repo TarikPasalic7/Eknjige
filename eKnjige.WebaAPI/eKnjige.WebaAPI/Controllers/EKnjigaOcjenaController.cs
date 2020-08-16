@@ -12,9 +12,9 @@ namespace eKnjige.WebaAPI.Controllers
 {  
     [Route("api/[controller]")]
     [ApiController]
-    public class EKnjigaOcjenaController : BaseCRUDController<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>
+    public class EKnjigaOcjenaController : BaseCRUDController<Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>
     {
-        public EKnjigaOcjenaController(ICRUDService<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, KlijentKnjigaOcijenaRequest, KlijentKnjigaOcijenaRequest> _service) : base(_service)
+        public EKnjigaOcjenaController(ICRUDService<Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcjena, KlijentKnjigaOcijenaRequest, KlijentKnjigaOcijenaRequest> _service) : base(_service)
         {
         }
     }

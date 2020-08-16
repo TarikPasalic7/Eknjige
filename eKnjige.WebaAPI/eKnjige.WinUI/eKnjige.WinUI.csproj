@@ -120,6 +120,12 @@
     <Compile Include="Knjige\FormKnjige.Designer.cs">
       <DependentUpon>FormKnjige.cs</DependentUpon>
     </Compile>
+    <Compile Include="Knjige\FormKomentariKnjige.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Knjige\FormKomentariKnjige.Designer.cs">
+      <DependentUpon>FormKomentariKnjige.cs</DependentUpon>
+    </Compile>
     <Compile Include="Komentari\FormKomentari.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,12 +140,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipFajla\FormSnimiTipFajla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TipFajla\FormSnimiTipFajla.Designer.cs">
-      <DependentUpon>FormSnimiTipFajla.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Autori\FormDodajAutora.resx">
       <DependentUpon>FormDodajAutora.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +170,9 @@
     <EmbeddedResource Include="Knjige\FormKnjige.resx">
       <DependentUpon>FormKnjige.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Knjige\FormKomentariKnjige.resx">
+      <DependentUpon>FormKomentariKnjige.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Komentari\FormKomentari.resx">
       <DependentUpon>FormKomentari.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +189,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TipFajla\FormSnimiTipFajla.resx">
-      <DependentUpon>FormSnimiTipFajla.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

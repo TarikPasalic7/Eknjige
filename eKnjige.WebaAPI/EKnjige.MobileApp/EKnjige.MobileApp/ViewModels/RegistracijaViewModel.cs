@@ -143,7 +143,6 @@ namespace EKnjige.MobileApp.ViewModels
                 LozinkaHash = lozinka,
                 LozinkaProvjera = lozinkaprovjera,
                 GradID = SelectedGrad.Id,
-                Jmbg = jmbg,
                 UlogaId=2,
                 
 

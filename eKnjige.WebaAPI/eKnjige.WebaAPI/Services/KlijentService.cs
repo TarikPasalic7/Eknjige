@@ -165,7 +165,7 @@ namespace eKnjige.WebaAPI.Services
             k.SpolID = request.SpolID;
             k.GradID = request.GradID;
             k.UlogaID = request.UlogaId;
-            k.Jmbg = request.Jmbg;
+            
             k.Email = request.Email;
             
             //k = mapper.Map<Klijent>(request);

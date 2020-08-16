@@ -23,7 +23,6 @@ namespace eKnjige.Model
 
         public string Email { get; set; }
 
-        public string Jmbg { get; set; }
 
         public DateTime DatumRodenja { get; set; }
 

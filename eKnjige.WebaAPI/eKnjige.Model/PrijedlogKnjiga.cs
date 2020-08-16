@@ -14,7 +14,8 @@ namespace eKnjige.Model
         public bool Odgovoren { get; set; }
         public string Naziv { get; set; }
 
-      
+        public string Opis { get; set; }
+
 
         public int KlijentID { get; set; }
 

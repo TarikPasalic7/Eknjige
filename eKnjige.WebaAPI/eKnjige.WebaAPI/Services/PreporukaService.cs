@@ -34,12 +34,12 @@ namespace eKnjige.WebaAPI.Services
                     throw new System.Exception();
                 }
 
-                List<KlijentKnjigaOcijena> listaOcjena = _context.KlijentKnjigaOcijene.Where(x => x.KlijentID == KorisnikId)
+                List<KlijentKnjigaOcjena> listaOcjena = _context.KlijentKnjigaOcjene.Where(x => x.KlijentID == KorisnikId)
                     .Include(x=>x.Klijent)
                     .Include(x => x.Eknjiga)
                     .ToList();
 
-                List<KlijentKnjigaOcijena> listaPozitivnihOcjena = listaOcjena
+                List<KlijentKnjigaOcjena> listaPozitivnihOcjena = listaOcjena
                     .Where(x => x.Ocjena >= pozitivnaOcjena)
                     .ToList();
 

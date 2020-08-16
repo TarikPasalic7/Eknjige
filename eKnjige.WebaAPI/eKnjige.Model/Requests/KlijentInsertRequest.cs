@@ -24,7 +24,7 @@ namespace eKnjige.Model
         [Required]
         public string Email { get; set; }
 
-        public string Jmbg { get; set; }
+     
 
         public DateTime DatumRodenja { get; set; }
 

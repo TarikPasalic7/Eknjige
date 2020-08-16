@@ -62,13 +62,7 @@ namespace eKnjige.WinUI.Klijenti
             dgvKlijenti.DataSource = result;
         }
 
-        private void dgvKlijenti_DoubleClick(object sender, EventArgs e)
-        {
-            var id = dgvKlijenti.SelectedRows[0].Cells[0].Value;
-
-            FormKlijentiDetalji form = new FormKlijentiDetalji(int.Parse(id.ToString()));
-            form.Show();
-        }
+      
 
         private async void dgvKlijenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -90,6 +84,14 @@ namespace eKnjige.WinUI.Klijenti
                 }
 
             }
+        }
+
+        private void dgvKlijenti_DoubleClick_1(object sender, EventArgs e)
+        {
+            var id = dgvKlijenti.SelectedRows[0].Cells[0].Value;
+
+            FormKlijentiDetalji form = new FormKlijentiDetalji(int.Parse(id.ToString()));
+            form.Show();
         }
     }
 }

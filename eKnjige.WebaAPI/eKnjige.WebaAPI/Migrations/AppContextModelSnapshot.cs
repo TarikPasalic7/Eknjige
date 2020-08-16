@@ -89,8 +89,8 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<bool>("MP3Dodan")
                         .HasColumnType("bit");
 
-                    b.Property<byte[]>("Mp3file")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Mp3file")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
@@ -104,8 +104,8 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<bool>("PDFDodan")
                         .HasColumnType("bit");
 
-                    b.Property<byte[]>("Pdffile")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Pdffile")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Slika")
                         .HasColumnType("varbinary(max)");
@@ -137,28 +137,6 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("KategorijaID");
 
                     b.ToTable("EKnjigaKategorije");
-                });
-
-            modelBuilder.Entity("eKnjige.WebaAPI.EKnjigaTip", b =>
-                {
-                    b.Property<int>("EKnjigaTipID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("EKnjigaID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TipFajlaID")
-                        .HasColumnType("int");
-
-                    b.HasKey("EKnjigaTipID");
-
-                    b.HasIndex("EKnjigaID");
-
-                    b.HasIndex("TipFajlaID");
-
-                    b.ToTable("EKnjigaTipovi");
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjigeAutor", b =>
@@ -237,9 +215,6 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<string>("Ime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Jmbg")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("KorisnickoIme")
                         .HasColumnType("nvarchar(max)");
 
@@ -269,7 +244,7 @@ namespace eKnjige.WebaAPI.Migrations
                     b.ToTable("Klijenti");
                 });
 
-            modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcijena", b =>
+            modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcjena", b =>
                 {
                     b.Property<int>("KlijentKnjigaOcijenaID")
                         .ValueGeneratedOnAdd()
@@ -294,7 +269,7 @@ namespace eKnjige.WebaAPI.Migrations
 
                     b.HasIndex("KlijentID");
 
-                    b.ToTable("KlijentKnjigaOcijene");
+                    b.ToTable("KlijentKnjigaOcjene");
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Komentar", b =>
@@ -369,6 +344,9 @@ namespace eKnjige.WebaAPI.Migrations
                     b.Property<bool>("Odgovoren")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Opis")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("PrijedlogKnjigeID");
 
                     b.HasIndex("KlijentID");
@@ -391,21 +369,6 @@ namespace eKnjige.WebaAPI.Migrations
                     b.ToTable("Spol");
                 });
 
-            modelBuilder.Entity("eKnjige.WebaAPI.TipFajla", b =>
-                {
-                    b.Property<int>("TipFajlaID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Naziv")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TipFajlaID");
-
-                    b.ToTable("TipFajlova");
-                });
-
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjiga", b =>
                 {
                     b.HasOne("eKnjige.WebaAPI.Klijent", "Administrator")
@@ -426,21 +389,6 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasOne("eKnjige.WebaAPI.Kategorija", "Kategorija")
                         .WithMany()
                         .HasForeignKey("KategorijaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("eKnjige.WebaAPI.EKnjigaTip", b =>
-                {
-                    b.HasOne("eKnjige.WebaAPI.EKnjiga", "Eknjiga")
-                        .WithMany()
-                        .HasForeignKey("EKnjigaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("eKnjige.WebaAPI.TipFajla", "Tipfajla")
-                        .WithMany()
-                        .HasForeignKey("TipFajlaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -490,7 +438,7 @@ namespace eKnjige.WebaAPI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcijena", b =>
+            modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcjena", b =>
                 {
                     b.HasOne("eKnjige.WebaAPI.EKnjiga", "Eknjiga")
                         .WithMany()

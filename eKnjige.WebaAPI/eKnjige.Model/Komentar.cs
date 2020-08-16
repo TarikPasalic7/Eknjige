@@ -11,7 +11,9 @@ namespace eKnjige.Model
 
        public  DateTime DatumKomentara { get; set; }
 
-        
+
+
+        public Klijent Klijent { get; set; }
         public int KlijentID { get; set; }
     
 

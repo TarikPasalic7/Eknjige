@@ -17,7 +17,7 @@ namespace eKnjige.WinUI.Knjige
         {
             
             InitializeComponent();
-            dgveknjige.AutoGenerateColumns = false;
+            dgvKnjige.AutoGenerateColumns = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,23 +31,24 @@ namespace eKnjige.WinUI.Knjige
             search.Naziv = textPrikazi.Text;
             var result = await _apiservice.get<List<Model.EKnjiga>>(search);
 
-            dgveknjige.DataSource= result;
+            dgvKnjige.DataSource= result;
         }
 
-        private void dgveknjige_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var id = dgveknjige.SelectedRows[0].Cells[0].Value;
-             
-        FormEknjigeDodaj form = new FormEknjigeDodaj(int.Parse(id.ToString()));
-            form.Show();
-        }
-
+     
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             FormEknjigeDodaj form = new FormEknjigeDodaj();
             form.Show();
             
 
+        }
+
+        private void dgvKnjige_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var id = dgvKnjige.SelectedRows[0].Cells[0].Value;
+
+            FormEknjigeDodaj form = new FormEknjigeDodaj(int.Parse(id.ToString()));
+            form.Show();
         }
     }
 }

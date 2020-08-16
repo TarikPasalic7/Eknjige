@@ -177,9 +177,9 @@
             // 
             this.btnSlika.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSlika.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSlika.Location = new System.Drawing.Point(1071, 78);
+            this.btnSlika.Location = new System.Drawing.Point(1067, 78);
             this.btnSlika.Name = "btnSlika";
-            this.btnSlika.Size = new System.Drawing.Size(75, 23);
+            this.btnSlika.Size = new System.Drawing.Size(79, 30);
             this.btnSlika.TabIndex = 22;
             this.btnSlika.Text = "Dodaj";
             this.btnSlika.UseVisualStyleBackColor = false;

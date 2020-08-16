@@ -32,8 +32,6 @@
             this.textIme = new System.Windows.Forms.TextBox();
             this.labelIme = new System.Windows.Forms.Label();
             this.labelDatumRodjenja = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.textJmbg = new System.Windows.Forms.TextBox();
             this.labelKorisnickoIme = new System.Windows.Forms.Label();
             this.textKorisnickoIme = new System.Windows.Forms.TextBox();
             this.labelPrezime = new System.Windows.Forms.Label();
@@ -82,23 +80,6 @@
             this.labelDatumRodjenja.Size = new System.Drawing.Size(82, 13);
             this.labelDatumRodjenja.TabIndex = 3;
             this.labelDatumRodjenja.Text = "Datum Rođenja";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(259, 220);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(36, 13);
-            this.labelEmail.TabIndex = 5;
-            this.labelEmail.Text = "JMBG";
-            // 
-            // textJmbg
-            // 
-            this.textJmbg.Location = new System.Drawing.Point(245, 238);
-            this.textJmbg.Name = "textJmbg";
-            this.textJmbg.Size = new System.Drawing.Size(159, 20);
-            this.textJmbg.TabIndex = 4;
-            this.textJmbg.Validating += new System.ComponentModel.CancelEventHandler(this.textEmail_Validating);
             // 
             // labelKorisnickoIme
             // 
@@ -244,7 +225,7 @@
             // 
             this.buttonGrad.BackColor = System.Drawing.SystemColors.Highlight;
             this.buttonGrad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonGrad.Location = new System.Drawing.Point(395, 44);
+            this.buttonGrad.Location = new System.Drawing.Point(394, 36);
             this.buttonGrad.Name = "buttonGrad";
             this.buttonGrad.Size = new System.Drawing.Size(84, 34);
             this.buttonGrad.TabIndex = 21;
@@ -304,8 +285,6 @@
             this.Controls.Add(this.textPrezime);
             this.Controls.Add(this.labelKorisnickoIme);
             this.Controls.Add(this.textKorisnickoIme);
-            this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.textJmbg);
             this.Controls.Add(this.labelDatumRodjenja);
             this.Controls.Add(this.labelIme);
             this.Controls.Add(this.textIme);
@@ -323,8 +302,6 @@
         private System.Windows.Forms.TextBox textIme;
         private System.Windows.Forms.Label labelIme;
         private System.Windows.Forms.Label labelDatumRodjenja;
-        private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.TextBox textJmbg;
         private System.Windows.Forms.Label labelKorisnickoIme;
         private System.Windows.Forms.TextBox textKorisnickoIme;
         private System.Windows.Forms.Label labelPrezime;

@@ -49,7 +49,7 @@ namespace eKnjige.WinUI.Klijenti
                 request.LozinkaHash = textPassword.Text;
                 request.LozinkaProvjera = textPasswordPotvrda.Text;
                 request.DatumRodenja = dateDatum.Value;
-                request.Jmbg=textJmbg.Text;
+               
                 request.GradID = (cmbGradovi.SelectedItem as Model.Grad).Id;
                 request.SpolID = (cmbSpol.SelectedItem as Model.Spol).SpolID;
                 request.UlogaId = (cmbUloga.SelectedItem as Model.Uloga).UlogaId;
@@ -102,7 +102,7 @@ namespace eKnjige.WinUI.Klijenti
                 textKorisnickoIme.Text = klijent.KorisnickoIme;
                 textIme.Text = klijent.Ime;
                 textPrezime.Text = klijent.Prezime;
-                textJmbg.Text = klijent.Jmbg;
+               
                 textEmail.Text = klijent.Email;
                 textPassword.Hide();
                 textPasswordPotvrda.Hide();

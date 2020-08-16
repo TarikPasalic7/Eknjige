@@ -22,8 +22,6 @@
             <Entry Text="{Binding KorisnickoIme}"></Entry>
             <Label Text="Email :" />
             <Entry Text="{Binding Email}"></Entry>
-            <Label Text="Jmbg :" />
-            <Entry Text="{Binding Jmbg}"></Entry>
             <Label Text="Datum Rodenja :" />
             <Entry Text="{Binding DatumRodenja}" ></Entry>
             <Label Text="Password :"/>

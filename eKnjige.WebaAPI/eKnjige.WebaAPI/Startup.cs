@@ -66,21 +66,20 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
             services.AddScoped<ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>, BaseCRUDService<Model.Kategorija, object, eKnjige.WebaAPI.Kategorija, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>>();
             //services.AddScoped<ICRUDService<Model.Klijent, Model.Requests.KlijentiSearchRequest, Model.KlijentInsertRequest, Model.KlijentInsertRequest>, KlijentService>();
-            services.AddScoped<ICRUDService<Model.TipFajla, object, Model.TipFajla, Model.TipFajla>, BaseCRUDService<Model.TipFajla, object, eKnjige.WebaAPI.TipFajla, Model.TipFajla, Model.TipFajla>>();
+          
             services.AddScoped<IKlijentService, KlijentService>();
             services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
             services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.DrzavaRequest>>();
             services.AddScoped<IEKnjigaService, EKnjigaService>();
             services.AddScoped<ICRUDService<Model.Autor, Model.AutorSearchRequest, Model.Autor, Model.Autor>, BaseCRUDService<Model.Autor, Model.AutorSearchRequest, Autor, Model.Autor, Model.Autor>>();
             services.AddScoped<ICRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>, BaseCRUDService<Model.EKnjigeAutor, Model.EKnjigeAutor, EKnjigeAutor, Model.EKnjigeAutorRequest, Model.EKnjigeAutorRequest>>();
-            services.AddScoped<ICRUDService<Model.EKnjigaTip, Model.EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>, BaseCRUDService<Model.EKnjigaTip, Model.EKnjigaTip, EKnjigaTip, Model.EKnjigaTipRequest, Model.EKnjigaTipRequest>>();
             services.AddScoped<ICRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>, BaseCRUDService<Model.EKnjigaKategorija, Model.EKnjigaKategorija, EKnjigaKategorija, Model.EKnjigaKategorijaRequest, Model.EKnjigaKategorijaRequest>>();
             services.AddScoped<ICRUDService<Model.Komentar, Model.KomentarRequest, Model.KomentarRequest, Model.KomentarRequest>, BaseCRUDService<Model.Komentar, Model.KomentarRequest, Komentar, Model.KomentarRequest, Model.KomentarRequest>>();
             services.AddScoped<ICRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>, BaseCRUDService<Model.KupovinaKnjige, Model.KupovinaKnjigeRequest, KupovinaKnjige, Model.KupovinaKnjigeRequest, Model.KupovinaKnjigeRequest>>();
             services.AddScoped<ICRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>, BaseCRUDService<Model.PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, PrijedlogKnjiga, Model.PrijedlogKnjigaRequest, Model.PrijedlogKnjigaRequest>>();
             services.AddScoped<IPreporukaService, PreporukaService>();
-            services.AddScoped<ICRUDService<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>,
-                BaseCRUDService<Model.KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena, KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>>();
+            services.AddScoped<ICRUDService<Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>,
+                BaseCRUDService<Model.KlijentKnjigaOcjena, Model.KlijentKnjigaOcjena, KlijentKnjigaOcjena, Model.KlijentKnjigaOcijenaRequest, Model.KlijentKnjigaOcijenaRequest>>();
 
             services.AddSwaggerGen(c =>
             {

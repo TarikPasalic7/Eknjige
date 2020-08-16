@@ -16,9 +16,11 @@ namespace eKnjige.WebaAPI
         public bool Odgovoren { get; set; }
         public string Naziv { get; set; }
 
+        public string Opis { get; set; }
 
-     
-       
+
+
+
 
         public Klijent Klijent { get; set; }
         public int KlijentID { get; set; }

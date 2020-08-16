@@ -53,9 +53,9 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Komentari.FormKomentari.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Prijedlozi.FormPrijedlozi.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Properties.Resources.resources
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.TipFajla.FormSnimiTipFajla.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.GenerateResource.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.CoreCompileInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.exe
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.pdb
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKomentariKnjige.resources

@@ -16,7 +16,6 @@ namespace eKnjige.WebaAPI.Mappers
         {
 
             CreateMap<Klijent, Model.Klijent>().ReverseMap();
-            CreateMap<TipFajla, Model.TipFajla>().ReverseMap();
             CreateMap<Kategorija, Model.Kategorija>().ReverseMap();
             CreateMap<Kategorija, Model.Requests.KategorijaInertRequest>().ReverseMap();
             CreateMap<Database.Uloga, Model.Uloga>().ReverseMap();
@@ -34,8 +33,7 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<EKnjiga, Model.Requests.eKnjigeSearchRequest>().ReverseMap();
             CreateMap<EKnjigaKategorija, Model.EKnjigaKategorija>().ReverseMap();
             CreateMap<EKnjigaKategorija, Model.EKnjigaKategorijaRequest>().ReverseMap();
-            CreateMap<EKnjigaTip, Model.EKnjigaTip>().ReverseMap();
-            CreateMap<EKnjigaTip, Model.EKnjigaTipRequest>().ReverseMap();
+            
             CreateMap<EKnjigeAutor, Model.EKnjigeAutor>().ReverseMap();
             CreateMap<EKnjigeAutor, Model.EKnjigeAutorRequest>().ReverseMap();
             CreateMap<PrijedlogKnjiga, Model.PrijedlogKnjiga>().ReverseMap();
@@ -44,8 +42,8 @@ namespace eKnjige.WebaAPI.Mappers
             CreateMap<KupovinaKnjige, Model.KupovinaKnjigeRequest>().ReverseMap();
             CreateMap<Komentar, Model.Komentar>().ReverseMap();
             CreateMap<Komentar, Model.KomentarRequest>().ReverseMap();
-            CreateMap<KlijentKnjigaOcijena, Model.KlijentKnjigaOcijena>().ReverseMap();
-            CreateMap<KlijentKnjigaOcijena, Model.KlijentKnjigaOcijenaRequest>().ReverseMap();
+            CreateMap<KlijentKnjigaOcjena, Model.KlijentKnjigaOcjena>().ReverseMap();
+            CreateMap<KlijentKnjigaOcjena, Model.KlijentKnjigaOcijenaRequest>().ReverseMap();
 
         }
     }

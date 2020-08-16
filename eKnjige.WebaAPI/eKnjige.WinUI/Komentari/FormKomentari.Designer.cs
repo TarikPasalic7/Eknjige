@@ -31,32 +31,38 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btntrazi = new System.Windows.Forms.Button();
             this.txtTrazi = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.KomentarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.komentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumKomentara = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.KomentarId,
             this.komentar,
             this.DatumKomentara});
-            this.dataGridView1.Location = new System.Drawing.Point(96, 95);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(530, 260);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(629, 227);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btntrazi
             // 
             this.btntrazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btntrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btntrazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btntrazi.Location = new System.Drawing.Point(301, 38);
+            this.btntrazi.Location = new System.Drawing.Point(67, 36);
             this.btntrazi.Name = "btntrazi";
-            this.btntrazi.Size = new System.Drawing.Size(75, 23);
+            this.btntrazi.Size = new System.Drawing.Size(100, 31);
             this.btntrazi.TabIndex = 1;
             this.btntrazi.Text = "Traži";
             this.btntrazi.UseVisualStyleBackColor = false;
@@ -64,29 +70,45 @@
             // 
             // txtTrazi
             // 
-            this.txtTrazi.Location = new System.Drawing.Point(96, 38);
+            this.txtTrazi.Location = new System.Drawing.Point(193, 42);
             this.txtTrazi.Name = "txtTrazi";
             this.txtTrazi.Size = new System.Drawing.Size(149, 20);
             this.txtTrazi.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(45, 123);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(699, 283);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Komentari";
             // 
             // KomentarId
             // 
             this.KomentarId.DataPropertyName = "KomentarId";
             this.KomentarId.HeaderText = "KomentarId";
             this.KomentarId.Name = "KomentarId";
+            this.KomentarId.ReadOnly = true;
             this.KomentarId.Visible = false;
             // 
             // komentar
             // 
+            this.komentar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.komentar.DataPropertyName = "komentar";
-            this.komentar.HeaderText = "komentar";
+            this.komentar.HeaderText = "Komentar";
             this.komentar.Name = "komentar";
+            this.komentar.ReadOnly = true;
             // 
             // DatumKomentara
             // 
             this.DatumKomentara.DataPropertyName = "DatumKomentara";
             this.DatumKomentara.HeaderText = "DatumKomentara";
             this.DatumKomentara.Name = "DatumKomentara";
+            this.DatumKomentara.ReadOnly = true;
             // 
             // FormKomentari
             // 
@@ -94,12 +116,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTrazi);
             this.Controls.Add(this.btntrazi);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "FormKomentari";
             this.Text = "FormKomentari";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +136,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KomentarId;
         private System.Windows.Forms.DataGridViewTextBoxColumn komentar;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumKomentara;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

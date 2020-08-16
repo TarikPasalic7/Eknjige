@@ -75,7 +75,7 @@ namespace EKnjige.MobileApp.ViewModels
             {
                 float sum = 0;
                 int count = 0;
-                var ocjena =await  _serviceOcjenaEknjige.get<List<KlijentKnjigaOcijena>>(null);
+                var ocjena =await  _serviceOcjenaEknjige.get<List<KlijentKnjigaOcjena>>(null);
                 int ocjenaID = 0;
                 foreach (var o in ocjena)
                 {
@@ -87,7 +87,7 @@ namespace EKnjige.MobileApp.ViewModels
 
 
                 }
-                var ocjenarequest = new KlijentKnjigaOcijena()
+                var ocjenarequest = new KlijentKnjigaOcjena()
                 {
                     EKnjigaID = EKnjiga.EKnjigaID,
                     KlijentID = APIService.PrijavljeniKorisnik.KlijentID,
@@ -105,7 +105,7 @@ namespace EKnjige.MobileApp.ViewModels
                     await _serviceOcjenaEknjige.Insert<KlijentKnjigaOcijenaRequest>(ocjenarequest);
 
                 }
-                var ocjena2 = await _serviceOcjenaEknjige.get<List<KlijentKnjigaOcijena>>(null);
+                var ocjena2 = await _serviceOcjenaEknjige.get<List<KlijentKnjigaOcjena>>(null);
                 foreach (var o2 in ocjena2)
                 {
                     if (o2.EKnjigaID == EKnjiga.EKnjigaID)

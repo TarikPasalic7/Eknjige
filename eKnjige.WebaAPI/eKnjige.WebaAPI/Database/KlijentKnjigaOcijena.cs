@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eKnjige.WebaAPI
 {
-    public class KlijentKnjigaOcijena
+    public class KlijentKnjigaOcjena
     {
         [Key]
         public int KlijentKnjigaOcijenaID { get; set; }

@@ -77,19 +77,18 @@
             this.klijentiToolStripMenuItem.Name = "klijentiToolStripMenuItem";
             this.klijentiToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.klijentiToolStripMenuItem.Text = "Klijenti";
-        
             // 
             // pretragaToolStripMenuItem
             // 
             this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pretragaToolStripMenuItem.Text = "Pretraga";
             this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.pretragaToolStripMenuItem_Click);
             // 
             // noviKlijentToolStripMenuItem
             // 
             this.noviKlijentToolStripMenuItem.Name = "noviKlijentToolStripMenuItem";
-            this.noviKlijentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviKlijentToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.noviKlijentToolStripMenuItem.Text = "Novi Klijent";
             this.noviKlijentToolStripMenuItem.Click += new System.EventHandler(this.noviKlijentToolStripMenuItem_Click_1);
             // 
@@ -127,7 +126,6 @@
             this.tipFajlaToolStripMenuItem.Name = "tipFajlaToolStripMenuItem";
             this.tipFajlaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.tipFajlaToolStripMenuItem.Text = "TipFajla";
-            this.tipFajlaToolStripMenuItem.Click += new System.EventHandler(this.tipFajlaToolStripMenuItem_Click);
             // 
             // komentariToolStripMenuItem
             // 
