@@ -30,16 +30,23 @@ namespace eKnjige.WinUI.Klijenti
 
            dgvKlijenti.DataSource = result;
             DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn uredibutton = new DataGridViewButtonColumn();
 
             deletebutton.FlatStyle = FlatStyle.Popup;
-
             deletebutton.HeaderText = "Izbrisi";
             deletebutton.Name = "Izbrisi";
             deletebutton.UseColumnTextForButtonValue = true;
             deletebutton.Text = "Izbrisi";
-
-
             deletebutton.Width = 70;
+
+
+
+            uredibutton.FlatStyle = FlatStyle.Popup;
+            uredibutton.HeaderText = "Uredi";
+            uredibutton.Name = "Uredi";
+            uredibutton.UseColumnTextForButtonValue = true;
+            uredibutton.Text = "Uredi";
+            uredibutton.Width = 70;
 
             if (dgvKlijenti.Columns.Contains(deletebutton.Name = "Izbrisi"))
             {
@@ -49,6 +56,16 @@ namespace eKnjige.WinUI.Klijenti
             {
                 dgvKlijenti.Columns.Add(deletebutton);
             }
+
+            if (dgvKlijenti.Columns.Contains(uredibutton.Name = "Uredi"))
+            {
+
+            }
+            else
+            {
+                dgvKlijenti.Columns.Add(uredibutton);
+            }
+
 
         }
 
@@ -64,12 +81,14 @@ namespace eKnjige.WinUI.Klijenti
 
       
 
-        private async void dgvKlijenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
+     
+
+        private async void dgvKlijenti_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int id;
+            int id = Convert.ToInt32(dgvKlijenti.Rows[e.RowIndex].Cells[0].Value.ToString());
             if (e.ColumnIndex == 6)
             {
-                id = Convert.ToInt32(dgvKlijenti.Rows[e.RowIndex].Cells[0].Value.ToString());
+
                 DialogResult result = MessageBox.Show("Da li zaista zelite izbrisati korisnika", "Upozorenje", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -84,14 +103,13 @@ namespace eKnjige.WinUI.Klijenti
                 }
 
             }
-        }
+            if (e.ColumnIndex == 7)
+            {
 
-        private void dgvKlijenti_DoubleClick_1(object sender, EventArgs e)
-        {
-            var id = dgvKlijenti.SelectedRows[0].Cells[0].Value;
+                FormKlijentiDetalji form = new FormKlijentiDetalji(int.Parse(id.ToString()));
+                form.Show();
 
-            FormKlijentiDetalji form = new FormKlijentiDetalji(int.Parse(id.ToString()));
-            form.Show();
+            }
         }
     }
 }

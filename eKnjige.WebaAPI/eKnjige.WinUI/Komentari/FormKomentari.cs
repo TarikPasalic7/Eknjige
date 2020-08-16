@@ -24,9 +24,27 @@ namespace eKnjige.WinUI.Komentari
 
         private async void btntrazi_Click(object sender, EventArgs e)
         {
-           
+            string trazi = txtTrazi.Text;
             var result = await _apiservice.get<List<Model.Komentar>>(null);
+            var temp = new List<Model.Komentar>();
+            if (!string.IsNullOrWhiteSpace(trazi))
+            {
+                foreach (var item in result)
+                {
+                    if (item.komentar.Contains(trazi))
+                    {
 
+                        temp.Add(item);
+                    }
+
+
+                }
+                dataGridView1.DataSource = temp;
+            }
+            else
+            {
+                dataGridView1.DataSource = result;
+            }
             dataGridView1.DataSource = result;
         }
         public async void dugme()

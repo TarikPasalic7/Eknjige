@@ -18,9 +18,8 @@ namespace eKnjige.WebaAPI.Services
         }
         public virtual  List<TModel> Get(TSearch search)
         {
+
             var list = db.Set<TDatabase>().ToList();
-
-
 
 
             return mapper.Map<List<TModel>>(list);

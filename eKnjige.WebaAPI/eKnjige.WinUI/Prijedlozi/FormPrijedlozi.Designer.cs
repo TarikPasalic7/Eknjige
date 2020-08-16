@@ -35,7 +35,6 @@
             this.PrijedlogKnjigeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Odgovoren = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijedlozi)).BeginInit();
@@ -75,12 +74,12 @@
             // dgvPrijedlozi
             // 
             this.dgvPrijedlozi.AllowUserToAddRows = false;
+            this.dgvPrijedlozi.AllowUserToOrderColumns = true;
             this.dgvPrijedlozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrijedlozi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PrijedlogKnjigeID,
             this.Naziv,
             this.Datum,
-            this.Opis,
             this.Odgovoren});
             this.dgvPrijedlozi.Location = new System.Drawing.Point(21, 37);
             this.dgvPrijedlozi.Name = "dgvPrijedlozi";
@@ -112,14 +111,6 @@
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
-            // 
-            // Opis
-            // 
-            this.Opis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Opis.DataPropertyName = "Opis";
-            this.Opis.HeaderText = "Opis";
-            this.Opis.Name = "Opis";
-            this.Opis.ReadOnly = true;
             // 
             // Odgovoren
             // 
@@ -158,7 +149,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrijedlogKnjigeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Opis;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Odgovoren;
     }
 }

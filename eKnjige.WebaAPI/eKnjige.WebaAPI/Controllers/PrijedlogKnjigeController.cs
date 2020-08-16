@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using eKnjige.Model;
 using eKnjige.WebaAPI.Services;
@@ -18,5 +19,7 @@ namespace eKnjige.WebaAPI.Controllers
         public PrijedlogKnjigeController(ICRUDService<Model.PrijedlogKnjiga, PrijedlogKnjigaRequest, PrijedlogKnjigaRequest, PrijedlogKnjigaRequest> _service) : base(_service)
         {
         }
+
+       
     }
 }

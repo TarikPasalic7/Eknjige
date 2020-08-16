@@ -265,7 +265,7 @@
             this.dataGridViewAutori.Name = "dataGridViewAutori";
             this.dataGridViewAutori.Size = new System.Drawing.Size(345, 246);
             this.dataGridViewAutori.TabIndex = 31;
-            this.dataGridViewAutori.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridViewAutori_Validating);
+           
             // 
             // Dodaj
             // 
@@ -302,7 +302,7 @@
             this.dataGridViewKategorije.Name = "dataGridViewKategorije";
             this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
             this.dataGridViewKategorije.TabIndex = 32;
-            this.dataGridViewKategorije.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridViewKategorije_Validating);
+ 
             // 
             // DodajKategoriju
             // 

@@ -48,8 +48,8 @@ namespace eKnjige.WinUI.Knjige
 
 
               
-                await LoadAutori();
-                await LoadKategorije();
+                //await LoadAutori();
+                //await LoadKategorije();
 
             }
             else
@@ -74,7 +74,7 @@ namespace eKnjige.WinUI.Knjige
                 dataGridViewKategorije.DataSource = result;
             }
 
-            
+
 
             foreach (DataGridViewRow item in dataGridViewKategorije.Rows)
             {
@@ -84,7 +84,7 @@ namespace eKnjige.WinUI.Knjige
                     item.Cells[0].Value = false;
 
                 }
-                
+
 
             }
 
@@ -239,32 +239,7 @@ namespace eKnjige.WinUI.Knjige
                 var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
                 request.Slika = knjiga.Slika;
-                //if (checkBoxMP3.Checked==true && knjiga.MP3Dodan==false)
-                //{
-                //    request.MP3Dodan = true;
-                //    var tip = new Model.EKnjigaTipRequest
-                //    {
-                //        TipFajlaID = 1,
-                //        EKnjigaID = knjiga.EKnjigaID
-
-
-                //    };
-                    
-                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-                //}
-                //if (checkBoxPdf.Checked == true && knjiga.PDFDodan == false)
-                //{
-                //    request.PDFDodan = true;
-                //    var tip = new Model.EKnjigaTipRequest
-                //    {
-                //        TipFajlaID = 2,
-                //        EKnjigaID = knjiga.EKnjigaID
-
-
-                //    };
-
-                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-                //}
+               
                 var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
                 foreach (DataGridViewRow item in dataGridViewAutori.Rows)
                 {
@@ -370,52 +345,10 @@ namespace eKnjige.WinUI.Knjige
 
                 }
 
-                //Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
-                //{
-                //    AutorID = autorId,
-                //    EKnjigaID = knjiga.EKnjigaID
-                //};
-                //Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
-                //{
-                //    KategorijaID = kategorijaId,
-                //    EKnjigaID = knjiga.EKnjigaID
-
-                //};
-
-               
-                //if (checkBoxMP3.Checked)
-                //{
-                    
-                //    var tip = new Model.EKnjigaTipRequest
-                //    {
-                //        TipFajlaID = 1,
-                //        EKnjigaID = knjiga.EKnjigaID
+       
 
 
-                //    };
-
-
-                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-
-
-                //}
-                //if (checkBoxPdf.Checked)
-                //{
-                   
-                //    var tip = new Model.EKnjigaTipRequest
-                //    {
-                //        TipFajlaID = 2,
-                //        EKnjigaID = knjiga.EKnjigaID
-                        
-
-
-                //    };
-
-
-                //    await _EknjigaTip.Insert<Model.EKnjigaTip>(tip);
-
-
-                //}
+              
 
 
             }
@@ -453,6 +386,12 @@ namespace eKnjige.WinUI.Knjige
             {
                 var listKategorija = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
                 dataGridViewKategorije.DataSource = listKategorija;
+
+                foreach (DataGridViewRow item in dataGridViewKategorije.Rows)
+                {
+                    item.Cells[0].Value = false;
+
+                }
             }
           
         }
@@ -516,7 +455,7 @@ namespace eKnjige.WinUI.Knjige
             FormDodajAutora form = new FormDodajAutora();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                var listaautora = await _autorKnjigaservice.get<List<Model.Autor>>(null);
+                var listaautora = await _Autorapiservice.get<List<Model.Autor>>(null);
                 dataGridViewAutori.DataSource = listaautora;
 
                 foreach (DataGridViewRow item in dataGridViewAutori.Rows)
@@ -565,32 +504,32 @@ namespace eKnjige.WinUI.Knjige
             }
         }
 
-        private void dataGridViewKategorije_Validating(object sender, CancelEventArgs e)
-        {
-            if (dataGridViewKategorije.SelectedRows!=null)
-            {
+        //private void dataGridViewKategorije_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (dataGridViewKategorije.SelectedRows!=null)
+        //    {
 
-                errorProvider.SetError(dataGridViewKategorije, "Obavezno dodati barem jednu kategoriju");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(dataGridViewKategorije, null);
-            }
-        }
+        //        errorProvider.SetError(dataGridViewKategorije, "Obavezno dodati barem jednu kategoriju");
+        //        e.Cancel = true;
+        //    }
+        //    else
+        //    {
+        //        errorProvider.SetError(dataGridViewKategorije, null);
+        //    }
+        //}
 
-        private void dataGridViewAutori_Validating(object sender, CancelEventArgs e)
-        {
-            if (dataGridViewAutori.SelectedRows != null)
-            {
+        //private void dataGridViewAutori_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (dataGridViewAutori.SelectedRows != null)
+        //    {
 
-                errorProvider.SetError(dataGridViewAutori, "Obavezno dodati barem jednog autora");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(dataGridViewAutori, null);
-            }
-        }
+        //        errorProvider.SetError(dataGridViewAutori, "Obavezno dodati barem jednog autora");
+        //        e.Cancel = true;
+        //    }
+        //    else
+        //    {
+        //        errorProvider.SetError(dataGridViewAutori, null);
+        //    }
+        //}
     }
 }

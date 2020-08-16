@@ -13,7 +13,7 @@ namespace eKnjige.WinUI.Prijedlozi
     public partial class FormPrijedlozi : Form
 
     {
-        private readonly APIService _apiservicek = new APIService("komentar");
+     
         
         private readonly APIService _apiservice = new APIService("prijedlogknjige");
         public FormPrijedlozi()
@@ -24,59 +24,55 @@ namespace eKnjige.WinUI.Prijedlozi
         }
 
 
-        public async void dugme()
-        {
-            var result = await _apiservice.get<List<Model.PrijedlogKnjiga>>(null);
-
-            dgvPrijedlozi.DataSource = result;
-            DataGridViewButtonColumn Uredibutton = new DataGridViewButtonColumn();
-
-            Uredibutton.FlatStyle = FlatStyle.Popup;
-
-            Uredibutton.HeaderText = "Uredi";
-            Uredibutton.Name = "Uredi";
-            Uredibutton.UseColumnTextForButtonValue = true;
-            Uredibutton.Text = "Uredi";
-
-
-            Uredibutton.Width = 70;
-
-            if (dgvPrijedlozi.Columns.Contains(Uredibutton.Name = "Uredi"))
-            {
-
-            }
-            else
-            {
-                dgvPrijedlozi.Columns.Add(Uredibutton);
-            }
-
-        }
+  
 
         private async void buttonTrazi_Click(object sender, EventArgs e)
         {
-            var r = await _apiservicek.get<List<Model.Komentar>>(null);
-            var result = await _apiservice.get<List<Model.PrijedlogKnjiga>>(null);
-          
-            dgvPrijedlozi.DataSource = result;
+            string trazi = textBoxTrazi.Text;
+           var result = await _apiservice.get<List<Model.PrijedlogKnjiga>>(null);
+           var temp = new List<Model.PrijedlogKnjiga>();
+            if (!string.IsNullOrWhiteSpace(trazi))
+            {
+                foreach (var item in result)
+                {
+                    if (item.Naziv.Contains(trazi))
+                    {
+                        
+                        temp.Add(item);
+                    }
+                        
+
+                }
+                dgvPrijedlozi.DataSource = temp;
+            }
+            else
+            {
+                dgvPrijedlozi.DataSource = result;
+            }
+
+            
         }
 
         private async void dgvPrijedlozi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int id;
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 3)
             {
                 id = Convert.ToInt32(dgvPrijedlozi.Rows[e.RowIndex].Cells[0].Value.ToString());
-                 var odobren = dgvPrijedlozi.Rows[e.RowIndex].Cells[5].Value.ToString();
-                if (odobren == "1")
-                {
+                 //var odobren = dgvPrijedlozi.Rows[e.RowIndex].Cells[4].Value.ToString();
+               
 
                     var request = await _apiservice.getbyId<Model.PrijedlogKnjiga>(id);
+                if (request.Odgovoren == false)
+                {
                     request.Odgovoren = true;
-                    request.Opis= dgvPrijedlozi.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    await _apiservice.Remove(id);
-                    dugme();
-                    MessageBox.Show("Polsana je notifikacija korisniku");
+                    request.Opis = "Prijedlog knjige je odobren.";
+                    await _apiservice.Update<Model.PrijedlogKnjigaRequest>(id, request);
+
+                    MessageBox.Show("Poslana je notifikacija korisniku");
                 }
+                   
+               
 
                 
                   

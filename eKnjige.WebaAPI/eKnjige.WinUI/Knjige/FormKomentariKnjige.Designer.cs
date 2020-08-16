@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.Komentari = new System.Windows.Forms.GroupBox();
-            this.txtTrazi = new System.Windows.Forms.TextBox();
-            this.btnTrazi = new System.Windows.Forms.Button();
             this.dgvKomentari = new System.Windows.Forms.DataGridView();
             this.KomentarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.komentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumKomentara = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTrazi = new System.Windows.Forms.TextBox();
+            this.btnTrazi = new System.Windows.Forms.Button();
             this.Komentari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomentari)).BeginInit();
             this.SuspendLayout();
@@ -50,26 +50,6 @@
             this.Komentari.TabIndex = 0;
             this.Komentari.TabStop = false;
             this.Komentari.Text = "Komentari";
-            // 
-            // txtTrazi
-            // 
-            this.txtTrazi.Location = new System.Drawing.Point(192, 32);
-            this.txtTrazi.Name = "txtTrazi";
-            this.txtTrazi.Size = new System.Drawing.Size(100, 20);
-            this.txtTrazi.TabIndex = 1;
-            // 
-            // btnTrazi
-            // 
-            this.btnTrazi.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnTrazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTrazi.Location = new System.Drawing.Point(56, 29);
-            this.btnTrazi.Name = "btnTrazi";
-            this.btnTrazi.Size = new System.Drawing.Size(92, 36);
-            this.btnTrazi.TabIndex = 2;
-            this.btnTrazi.Text = "Trazi";
-            this.btnTrazi.UseVisualStyleBackColor = false;
-            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
             // 
             // dgvKomentari
             // 
@@ -109,6 +89,27 @@
             this.DatumKomentara.HeaderText = "DatumKomentara ";
             this.DatumKomentara.Name = "DatumKomentara";
             this.DatumKomentara.ReadOnly = true;
+            // 
+            // txtTrazi
+            // 
+            this.txtTrazi.Location = new System.Drawing.Point(192, 32);
+            this.txtTrazi.Multiline = true;
+            this.txtTrazi.Name = "txtTrazi";
+            this.txtTrazi.Size = new System.Drawing.Size(227, 33);
+            this.txtTrazi.TabIndex = 1;
+            // 
+            // btnTrazi
+            // 
+            this.btnTrazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTrazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTrazi.Location = new System.Drawing.Point(56, 29);
+            this.btnTrazi.Name = "btnTrazi";
+            this.btnTrazi.Size = new System.Drawing.Size(92, 36);
+            this.btnTrazi.TabIndex = 2;
+            this.btnTrazi.Text = "Trazi";
+            this.btnTrazi.UseVisualStyleBackColor = false;
+            this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
             // 
             // FormKomentariKnjige
             // 

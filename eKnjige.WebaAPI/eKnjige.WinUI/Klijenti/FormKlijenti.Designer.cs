@@ -30,14 +30,14 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvKlijenti = new System.Windows.Forms.DataGridView();
+            this.btnPrikazi = new System.Windows.Forms.Button();
+            this.txtPretraga = new System.Windows.Forms.TextBox();
             this.KlijentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KorisnickoIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumRodenja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPrikazi = new System.Windows.Forms.Button();
-            this.txtPretraga = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijenti)).BeginInit();
             this.SuspendLayout();
@@ -73,10 +73,33 @@
             this.dgvKlijenti.ReadOnly = true;
             this.dgvKlijenti.Size = new System.Drawing.Size(903, 284);
             this.dgvKlijenti.TabIndex = 0;
-            this.dgvKlijenti.DoubleClick += new System.EventHandler(this.dgvKlijenti_DoubleClick_1);
+            this.dgvKlijenti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKlijenti_CellContentClick_1);
+            // 
+            // btnPrikazi
+            // 
+            this.btnPrikazi.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPrikazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrikazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPrikazi.Location = new System.Drawing.Point(20, 36);
+            this.btnPrikazi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrikazi.Name = "btnPrikazi";
+            this.btnPrikazi.Size = new System.Drawing.Size(129, 42);
+            this.btnPrikazi.TabIndex = 1;
+            this.btnPrikazi.Text = "Prikazi";
+            this.btnPrikazi.UseVisualStyleBackColor = false;
+            this.btnPrikazi.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtPretraga
+            // 
+            this.txtPretraga.Location = new System.Drawing.Point(180, 46);
+            this.txtPretraga.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPretraga.Name = "txtPretraga";
+            this.txtPretraga.Size = new System.Drawing.Size(168, 22);
+            this.txtPretraga.TabIndex = 2;
             // 
             // KlijentID
             // 
+            this.KlijentID.DataPropertyName = "KlijentID";
             this.KlijentID.HeaderText = "KlijentID";
             this.KlijentID.Name = "KlijentID";
             this.KlijentID.ReadOnly = true;
@@ -121,28 +144,6 @@
             this.DatumRodenja.HeaderText = "DatumRodenja";
             this.DatumRodenja.Name = "DatumRodenja";
             this.DatumRodenja.ReadOnly = true;
-            // 
-            // btnPrikazi
-            // 
-            this.btnPrikazi.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnPrikazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPrikazi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPrikazi.Location = new System.Drawing.Point(20, 36);
-            this.btnPrikazi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(129, 42);
-            this.btnPrikazi.TabIndex = 1;
-            this.btnPrikazi.Text = "Prikazi";
-            this.btnPrikazi.UseVisualStyleBackColor = false;
-            this.btnPrikazi.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtPretraga
-            // 
-            this.txtPretraga.Location = new System.Drawing.Point(180, 46);
-            this.txtPretraga.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(168, 22);
-            this.txtPretraga.TabIndex = 2;
             // 
             // FormKlijenti
             // 

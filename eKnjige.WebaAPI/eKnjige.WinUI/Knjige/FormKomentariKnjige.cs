@@ -52,19 +52,29 @@ namespace eKnjige.WinUI.Knjige
         }
         private async void btnTrazi_Click(object sender, EventArgs e)
         {
+
+            string trazi = txtTrazi.Text;
             var result = await _apiservice.get<List<Model.Komentar>>(null);
-            List<Model.Komentar> list = new List<Model.Komentar>();
-            foreach (var i in result)
+            List<Model.Komentar> temp = new List<Model.Komentar>();
+            if (!string.IsNullOrWhiteSpace(trazi))
             {
-                if (i.EKnjigaID==id)
+                foreach (var item in result)
                 {
-                    list.Add(i);
+                    if (item.komentar.Contains(trazi))
+                    {
+
+                        temp.Add(item);
+                    }
+
 
                 }
-
-
+                dgvKomentari.DataSource = temp;
             }
-            dgvKomentari.DataSource = list;
+            else
+            {
+                dgvKomentari.DataSource = result;
+            }
+        
         }
 
         private async void dgvKomentari_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -12,5 +12,7 @@ namespace eKnjige.WebaAPI.Services
         TModel Update(int id, TUpdate request);
 
         bool Remove(int id);
+
+       
     }
 }
