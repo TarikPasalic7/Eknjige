@@ -46,7 +46,6 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KlijentiPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigaDetailPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\KnjigePage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
@@ -66,3 +65,4 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\ref\EKnjige.MobileApp.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.pdb
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\UrediProfilPage.xaml.g.cs

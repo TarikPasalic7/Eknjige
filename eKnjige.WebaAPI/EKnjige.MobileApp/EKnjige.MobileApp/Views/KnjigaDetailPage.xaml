@@ -147,7 +147,7 @@
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="13" />
-                                            <Label Text="Korisnik " 
+                                            <Label Text="{Binding Klijent.KorisnickoIme} " 
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="13" />

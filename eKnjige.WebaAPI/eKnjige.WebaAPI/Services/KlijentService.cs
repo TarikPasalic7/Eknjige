@@ -191,5 +191,35 @@ namespace eKnjige.WebaAPI.Services
 
             return mapper.Map<Model.Klijent>(entity);
         }
+
+      
+
+        public Model.Klijent UpdateProfile(KlijentInsertRequest request)
+        {
+            int KlijentId = Security.BasicAuthenticationHandler.PrijavljeniKlijent.KlijentID;
+
+            var entity = db.Klijenti.Where(x => x.KlijentID == KlijentId).FirstOrDefault();
+
+            //db.Klijenti.Attach(entity);
+            //db.Klijenti.Update(entity);
+
+            if (!string.IsNullOrEmpty(request.LozinkaHash))
+            {
+                if (request.LozinkaHash != request.LozinkaProvjera)
+                {
+                    throw new System.Exception("Lozinke se ne slažu");
+                }
+
+                entity.LozinkaSalt = GenerateSalt();
+                entity.LozinkaHash = GenerateHash(entity.LozinkaSalt, request.LozinkaHash);
+            }
+
+            entity.KorisnickoIme = request.KorisnickoIme;
+           
+
+            db.SaveChanges();
+
+            return mapper.Map<Model.Klijent>(entity);
+        }
     }
 }

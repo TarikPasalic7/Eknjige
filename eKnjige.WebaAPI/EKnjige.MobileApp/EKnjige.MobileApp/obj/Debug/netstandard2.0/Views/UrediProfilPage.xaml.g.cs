@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EKnjige.MobileApp.Views.KlijentiPage.xaml", "Views/KlijentiPage.xaml", typeof(global::EKnjige.MobileApp.Views.KlijentiPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EKnjige.MobileApp.Views.UrediProfilPage.xaml", "Views/UrediProfilPage.xaml", typeof(global::EKnjige.MobileApp.Views.UrediProfilPage))]
 
 namespace EKnjige.MobileApp.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\KlijentiPage.xaml")]
-    public partial class KlijentiPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\UrediProfilPage.xaml")]
+    public partial class UrediProfilPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(KlijentiPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UrediProfilPage));
         }
     }
 }

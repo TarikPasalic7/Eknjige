@@ -20,6 +20,6 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.Klijent Profil();
 
-
+       public Model.Klijent UpdateProfile(Model.KlijentInsertRequest request);
     }
 }

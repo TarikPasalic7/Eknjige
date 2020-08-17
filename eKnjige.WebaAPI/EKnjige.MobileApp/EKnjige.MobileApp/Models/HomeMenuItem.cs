@@ -6,12 +6,11 @@ namespace EKnjige.MobileApp.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About,
-        Klijenti,
         Knjige,
         PredloziKnjigu,
         KorisnickiProfil,
+        UrediProfil,
+        Logout
     }
     public class HomeMenuItem
     {

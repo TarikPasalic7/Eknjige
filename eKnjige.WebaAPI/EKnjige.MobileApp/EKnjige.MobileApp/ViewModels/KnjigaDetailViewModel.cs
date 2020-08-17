@@ -80,7 +80,7 @@ namespace EKnjige.MobileApp.ViewModels
            await _servicekomentari.Insert<Komentar>(request);
 
             KomentariList.Clear();
-            List<Komentar> komentari = await _servicekomentari.get<List<Komentar>>(null);
+            //List<Komentar> komentari = await _servicekomentari.get<List<Komentar>>(null);
             Komentar = null;
             await Init();
         }
@@ -89,6 +89,12 @@ namespace EKnjige.MobileApp.ViewModels
         {
 
             var id = k.KomentarId;
+            if(k.KlijentID==APIService.PrijavljeniKorisnik.KlijentID)
+            {
+                await _servicekomentari.Remove(id);
+                await Init();
+            }
+            
           
         }
 

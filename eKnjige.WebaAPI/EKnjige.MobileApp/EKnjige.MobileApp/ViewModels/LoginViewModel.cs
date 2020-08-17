@@ -65,10 +65,12 @@ namespace EKnjige.MobileApp.ViewModels
                 APIService.PrijavljeniKorisnik = await _service.get<Klijent>(null, "Profil");
                    if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Korisnik")
                 {
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Dobro došli", "OK");
                     Application.Current.MainPage = new MainPage();
                 }
                 else
                 {
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Unijeli ste pogrešnu lozinku ili korisnicko ime", "OK");
                     throw new Exception("Unos nije ispravan");
                 }
                 

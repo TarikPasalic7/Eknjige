@@ -20,12 +20,12 @@ namespace EKnjige.MobileApp.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Klijenti, Title="Klijenti" },
+               
                 new HomeMenuItem {Id = MenuItemType.Knjige, Title="Knjige" },
                 new HomeMenuItem {Id = MenuItemType.PredloziKnjigu, Title="Predlozi Knjigu" },
-                 new HomeMenuItem {Id = MenuItemType.KorisnickiProfil, Title="Korisnicki Profil" }
+                 new HomeMenuItem {Id = MenuItemType.KorisnickiProfil, Title="Korisnicki Profil" },
+                   new HomeMenuItem {Id = MenuItemType.UrediProfil, Title="Uredi Profil" },
+                  new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -37,6 +37,14 @@ namespace EKnjige.MobileApp.Views
                     return;
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                if (id == (int)MenuItemType.Logout)
+                {
+                    APIService.PrijavljeniKorisnik = null;
+                    APIService.username = null;
+                    APIService.password = null;
+                    Application.Current.MainPage = new LoginPage();
+                    return;
+                }
                 await RootPage.NavigateFromMenu(id);
             };
         }

@@ -62,52 +62,12 @@ namespace eKnjige.WebaAPI.Controllers
         }
 
 
-        //Get Autor
-        //[HttpGet]
-        //public ActionResult<List<Model.Klijent>> get()
-        //{
-        //    var list = klijentsv.Get();
-
-        //    return Ok(list);
-        //}
-
-        //[HttpGet]
-        //public ActionResult<List<Model.Klijent>> get([FromQuery]Model.Requests.KlijentiSearchRequest search)
-        //{
-        //    var list = klijentsv.Get(search);
-
-        //    return Ok(list);
-        //}
-        //[HttpGet("{id}")]
-        //public ActionResult<Model.Klijent> GetById(int id)
-        //{
-        //    var klijent = klijentsv.Get(id);
-
-
-
-        //    return klijent;
-        //}
-
-        //[HttpPost]
-        //public ActionResult<Model.Klijent> Insert(Model.KlijentInsertRequest kl)
-        //{
-
-        //    var klijentreq = klijentsv.Insert(kl);
-
-        //    return klijentreq;
-        //}
-
-
-
-
-        //[HttpPut("{id}")]
-        //public ActionResult<Model.Klijent> Update(int id, Model.KlijentInsertRequest request)
-        //{
-
-        //    var klijentupdate = klijentsv.Update(id, request);
-
-        //    return klijentupdate;
-        //}
+        
+        [HttpPut("UpdateProfile")]
+        public Model.Klijent UpdateProfile([FromBody] Model.KlijentInsertRequest request)
+        {
+            return _service.UpdateProfile(request);
+        }
 
     }
 }

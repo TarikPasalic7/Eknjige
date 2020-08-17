@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:EKnjige.MobileApp.ViewModels"
+             x:Class="EKnjige.MobileApp.Views.UrediProfilPage">
+
+    <ContentPage.BindingContext>
+        <vm:UrediProfilViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Label Text="Izmijeni korisnicko ime:" />
+            <Entry Text="{Binding KorisnickoIme}"></Entry>
+            <Label Text="Izmijeni lozinku:" />
+            <Label Text="Nova lozinka :"/>
+            <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
+            <Label Text="Lozinka provjera:"/>
+            <Entry  Text="{Binding LozinkaProvjera}" IsPassword="True"></Entry>
+
+
+
+            <Button Command="{Binding SnimiCommand}" Text="Snimi Profil"
+                    BackgroundColor="RoyalBlue"
+                    TextColor="White"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

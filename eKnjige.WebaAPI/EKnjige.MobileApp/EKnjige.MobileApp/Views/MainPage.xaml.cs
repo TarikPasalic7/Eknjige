@@ -21,7 +21,7 @@ namespace EKnjige.MobileApp.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,15 +30,7 @@ namespace EKnjige.MobileApp.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
-                    case (int)MenuItemType.Klijenti:
-                        MenuPages.Add(id, new NavigationPage(new KlijentiPage()));
-                        break;
+             
                     case (int)MenuItemType.Knjige:
                         MenuPages.Add(id, new NavigationPage(new KnjigePage()));
                         break;
@@ -47,6 +39,12 @@ namespace EKnjige.MobileApp.Views
                         break;
                     case (int)MenuItemType.KorisnickiProfil:
                         MenuPages.Add(id, new NavigationPage(new ProfilPage()));
+                        break;
+                    case (int)MenuItemType.UrediProfil:
+                        MenuPages.Add(id, new NavigationPage(new UrediProfilPage()));
+                        break;
+                    case (int)MenuItemType.Logout:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
                 }
             }

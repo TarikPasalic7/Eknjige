@@ -133,14 +133,7 @@ namespace EKnjige.MobileApp.ViewModels
             try
             {
                 StripeConfiguration.ApiKey="sk_test_coMLyIb6JOSv9IlfMOx5Fj1g0023rONhFx";
-                //var customers = new CustomerService();
-                //var customer = customers.Create(new CustomerCreateOptions
-                //{
-                //    Email = korisnik.Email,
-                //    Description = EKnjiga.Naziv,
-                //    Source = stripeToken.Id
-
-                //});
+            
 
                 var options = new ChargeCreateOptions();
 
@@ -151,8 +144,6 @@ namespace EKnjige.MobileApp.ViewModels
                 options.StatementDescriptor = "Custom descriptor";
                 options.Capture = true;
                 options.ReceiptEmail =korisnik.Email.ToString();
-                //options.Customer=customer.Id;
-                //Make Payment
                 var service = new ChargeService();
                 Charge charge = service.Create(options);
                 UserDialogs.Instance.Alert("Uspješno ste platili knjigu.");
@@ -168,62 +159,85 @@ namespace EKnjige.MobileApp.ViewModels
 
         public async Task KupiKnjigu()
         {
-            CreditCardModel = new CreditCardModel();
-            CreditCardModel.ExpMonth = Convert.ToInt64(ExpMonth);
-            CreditCardModel.ExpYear = Convert.ToInt64(ExpYear);
-            CreditCardModel.Number = Number;
-            CreditCardModel.Cvc = Cvc;
-            CancellationTokenSource tokenSource = new CancellationTokenSource();
-            CancellationToken token = tokenSource.Token;
-            try
-            {
-                UserDialogs.Instance.ShowLoading("Payment processing..");
-                await Task.Run(async () =>
-                {
 
-                    var Token = CreateTokenAsync();
-                    Console.Write("Eknjige" + "Token :" + Token);
-                    if (Token.ToString() != null)
+            var kupovina = await _service.get<List<KupovinaKnjige>>(null);
+            bool ima = false;
+            foreach(var k in kupovina)
+            {
+                if (k.KlijentID == korisnik.KlijentID && EKnjiga.EKnjigaID == k.EKnjigaID)
+                    ima = true;
+
+
+
+            }
+            if (ima == true)
+            {
+
+                await App.Current.MainPage.DisplayAlert("Obavijest", "Knjigu ste vec kupili", "OK");
+            }
+            else
+            {
+                CreditCardModel = new CreditCardModel();
+                CreditCardModel.ExpMonth = Convert.ToInt64(ExpMonth);
+                CreditCardModel.ExpYear = Convert.ToInt64(ExpYear);
+                CreditCardModel.Number = Number;
+                CreditCardModel.Cvc = Cvc;
+                CancellationTokenSource tokenSource = new CancellationTokenSource();
+                CancellationToken token = tokenSource.Token;
+                try
+                {
+                    UserDialogs.Instance.ShowLoading("Payment processing..");
+                    await Task.Run(async () =>
                     {
-                        IsTransectionSuccess = await MakePaymentAsync(Token.Result);
+
+                        var Token = CreateTokenAsync();
+                        Console.Write("Eknjige" + "Token :" + Token);
+                        if (Token.ToString() != null)
+                        {
+                            IsTransectionSuccess = await MakePaymentAsync(Token.Result);
+                        }
+                        else
+                        {
+                            UserDialogs.Instance.Alert("Bad card credentials", null, "OK");
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    UserDialogs.Instance.HideLoading();
+                    UserDialogs.Instance.Alert(ex.Message, null, "OK");
+                    Console.Write("EKnjige" + ex.Message);
+                }
+                finally
+                {
+                    if (IsTransectionSuccess)
+                    {
+
+                        var request = new KupovinaKnjigeRequest()
+                        {
+                            DatumKupovine = DateTime.Now,
+                            EKnjigaID = EKnjiga.EKnjigaID,
+                            KlijentID = korisnik.KlijentID
+
+                        };
+                        await _service.Insert<KupovinaKnjige>(request);
+                        await Navigation.PushAsync(new KnjigePage());
+                        Console.Write("EKnjige" + "Payment Successful ");
+                        UserDialogs.Instance.HideLoading();
                     }
                     else
                     {
-                        UserDialogs.Instance.Alert("Bad card credentials", null, "OK");
+
+                        UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.Alert("Oops, something went wrong", "Payment failed", "OK");
+                        Console.Write("EKnjige" + "Payment Failure ");
                     }
-                });
-            }
-            catch (Exception ex)
-            {
-                UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert(ex.Message, null, "OK");
-                Console.Write("EKnjige" + ex.Message);
-            }
-            finally
-            {
-                if (IsTransectionSuccess)
-                {
-                    
-                    var request = new KupovinaKnjigeRequest()
-                    {
-                        DatumKupovine = DateTime.Now,
-                        EKnjigaID = EKnjiga.EKnjigaID,
-                        KlijentID = korisnik.KlijentID
-
-                    };
-                    await _service.Insert<KupovinaKnjige>(request);
-                    await Navigation.PushAsync(new KnjigePage());
-                    Console.Write("EKnjige" + "Payment Successful ");
-                    UserDialogs.Instance.HideLoading();
                 }
-                else
-                {
 
-                    UserDialogs.Instance.HideLoading();
-                    UserDialogs.Instance.Alert("Oops, something went wrong", "Payment failed", "OK");
-                    Console.Write("EKnjige" + "Payment Failure ");
-                }
+
             }
+
+         
 
         }
 

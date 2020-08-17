@@ -135,9 +135,9 @@ namespace EKnjige.MobileApp.ViewModels
              
 
                 Ocjena = OcjenaBroj;
-                  await _service.Update<EKnjigaInsertRequest>(EKnjiga.EKnjigaID, request);
-              
+                 await _service.Update<EKnjigaInsertRequest>(EKnjiga.EKnjigaID, request);
 
+              await  App.Current.MainPage.DisplayAlert("Obavijest", "Uspješno ste ocjenili knjigu", "OK");
                 UpdateStar();
 
                 //await _serviceOcjene.Insert<Model.Ocjene>(request, "OcijeniRutu");

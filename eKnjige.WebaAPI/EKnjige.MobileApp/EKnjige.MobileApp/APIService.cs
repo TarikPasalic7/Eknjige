@@ -73,19 +73,25 @@ namespace EKnjige.MobileApp
             return result;
         }
 
-        public async Task<T> Insert<T>(object request)
+        public async Task<T> Insert<T>(object request, string actionName = null)
         {
 
 
            
             var url = $"{_apiURL}/{route}";
+            if (actionName != null)
+            {
+                url += "/" + actionName;
+            }
 
-            if(route=="Klijenti")
+            if (route=="Klijenti")
             {
                 return  await url.PostJsonAsync(request).ReceiveJson<T>();
             }
 
-          return  await url.WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
+           
+
+            return  await url.WithBasicAuth(username, password).PostJsonAsync(request).ReceiveJson<T>();
             
         }
 
@@ -96,6 +102,22 @@ namespace EKnjige.MobileApp
             var url = $"{_apiURL}/{route}/{id}";
 
 
+
+            var result = await url.WithBasicAuth(username, password).PutJsonAsync(request).ReceiveJson<T>();
+            return result;
+        }
+
+        public async Task<T> UpdateProfie<T>(object request, string actionName = null)
+        {
+
+
+           
+
+            var url = $"{_apiURL}/{route}";
+            if (actionName != null)
+            {
+                url += "/" + actionName;
+            }
 
             var result = await url.WithBasicAuth(username, password).PutJsonAsync(request).ReceiveJson<T>();
             return result;
