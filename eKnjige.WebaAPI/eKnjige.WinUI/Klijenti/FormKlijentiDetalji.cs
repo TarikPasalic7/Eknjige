@@ -53,24 +53,7 @@ namespace eKnjige.WinUI.Klijenti
                 request.GradID = (cmbGradovi.SelectedItem as Model.Grad).Id;
                 request.SpolID = (cmbSpol.SelectedItem as Model.Spol).SpolID;
                 request.UlogaId = (cmbUloga.SelectedItem as Model.Uloga).UlogaId;
-                //    var idObj = cmbGradovi.SelectedValue;
-              
-                //if (int.TryParse(idObj.ToString(), out int GradID))
-                //{
-                //    request.GradID=GradID;
-                //}
-
-                //var idObj2 = cmbSpol.SelectedValue;
-                //if (int.TryParse(idObj2.ToString(), out int SpolID))
-                //{
-                //    request.SpolID = SpolID;
-                //}
-                //var idObj3 = cmbUloga.SelectedValue;
-                
-                //if (int.TryParse(idObj3.ToString(), out int UlogaId))
-                //{
-                //    request.UlogaId = UlogaId;
-                //}
+        
 
 
 
@@ -108,12 +91,6 @@ namespace eKnjige.WinUI.Klijenti
                 textPasswordPotvrda.Hide();
                 labelPassword.Hide();
                 labelPasswordPotvrda.Hide();
-                // var result =await servicegrad.get<List<Model.Grad>>(null);
-                //cmbGradovi.SelectedItem = klijent.GradID;
-                ////dateDatum.Value = klijent.DatumRodjenja;
-                //cmbGradovi.SelectedValue = klijent.GradID;
-                //await LoadSpol(klijent.SpolID);
-                //await LoadGradovi(klijent.GradID);
                 await LoadSpol();
                 await LoadGradovi();
                 await LoadUloga();

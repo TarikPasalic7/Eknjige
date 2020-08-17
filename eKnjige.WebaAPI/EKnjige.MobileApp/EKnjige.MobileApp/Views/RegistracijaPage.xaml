@@ -13,21 +13,28 @@
     <ContentPage.Content>
         <StackLayout Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
-
+<!--TextChanged="ime_changed"-->
             <Label Text="Ime :" />
-            <Entry Text="{Binding Ime}"></Entry>
+            <Entry  x:Name="Ime"  TextChanged="ime_changed" Text="{Binding Ime}" ReturnType="Next" Unfocused="ime_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_Ime"  IsVisible="{Binding IsError_Ime}"  TextColor="Red" FontSize="13" />
             <Label Text="Prezime :" />
-            <Entry Text="{Binding Prezime}"></Entry>
+            <Entry x:Name="Prezime" Text="{Binding Prezime}" TextChanged="prezime_changed"  Unfocused="prezime_unfocused" ReturnType="Next"></Entry>
+            <Label x:Name="ErrorLabel_Prezime"  IsVisible="{Binding IsError_Prezime}"  TextColor="Red" FontSize="13" />
             <Label Text="Korisničko Ime :" />
-            <Entry Text="{Binding KorisnickoIme}"></Entry>
+            <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme}" TextChanged="korisnickoime_changed"  Unfocused="korisnickoime_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_KorisnickoIme"  IsVisible="{Binding IsError_KorisnickoIme}"  TextColor="Red" FontSize="13" />
             <Label Text="Email :" />
-            <Entry Text="{Binding Email}"></Entry>
+            <Entry x:Name="Email" Text="{Binding Email}" TextChanged="email_changed"  Unfocused="email_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_Email"  IsVisible="{Binding IsError_Email}"  TextColor="Red" FontSize="13" />
             <Label Text="Datum Rodenja :" />
-            <Entry Text="{Binding DatumRodenja}" ></Entry>
-            <Label Text="Password :"/>
-            <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
-            <Label Text="Password Provjera :"/>
-            <Entry  Text="{Binding LozinkaProvjera}" IsPassword="True"></Entry>
+            <Entry x:Name="Datum" Text="{Binding DatumRodenja}" TextChanged="datum_changed"  Unfocused="datum_unfocused" ></Entry>
+            <Label x:Name="ErrorLabel_Datum"  IsVisible="{Binding IsError_Datum}"  TextColor="Red" FontSize="13" />
+            <Label Text="Lozinka :"/>
+            <Entry x:Name="Lozinka" Text="{Binding Lozinka}" IsPassword="True" TextChanged="lozinka_changed"  Unfocused="lozinka_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_Lozinka"  IsVisible="{Binding IsError_Lozinka}"  TextColor="Red" FontSize="13" />
+            <Label Text="Lozinka Provjera :"/>
+            <Entry x:Name="Lozinkap" Text="{Binding LozinkaProvjera}" IsPassword="True" TextChanged="lozinkap_changed"  Unfocused="lozinkap_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_LozinkaProvjera"  IsVisible="{Binding IsError_LozinkaProvjera}"  TextColor="Red" FontSize="13" />
             <Label Text="Grad :"/>
             <Picker ItemsSource="{Binding GradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding Naziv}"></Picker>
             <Label Text="Spol :"/>

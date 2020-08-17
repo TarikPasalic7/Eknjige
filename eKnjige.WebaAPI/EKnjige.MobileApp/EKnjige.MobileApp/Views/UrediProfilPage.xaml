@@ -10,12 +10,15 @@
         <StackLayout Padding="7" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
             <Label Text="Izmijeni korisnicko ime:" />
-            <Entry Text="{Binding KorisnickoIme}"></Entry>
+            <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme}" TextChanged="korisnickoime_changed"  Unfocused="korisnickoime_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_KorisnickoIme"  IsVisible="{Binding IsError_KorisnickoIme}"  TextColor="Red" FontSize="13" />
             <Label Text="Izmijeni lozinku:" />
             <Label Text="Nova lozinka :"/>
-            <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
+            <Entry x:Name="Lozinka" Text="{Binding Lozinka}" IsPassword="True" TextChanged="lozinka_changed"  Unfocused="lozinka_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_Lozinka"  IsVisible="{Binding IsError_Lozinka}"  TextColor="Red" FontSize="13" />
             <Label Text="Lozinka provjera:"/>
-            <Entry  Text="{Binding LozinkaProvjera}" IsPassword="True"></Entry>
+            <Entry x:Name="Lozinkap" Text="{Binding LozinkaProvjera}" IsPassword="True" TextChanged="lozinkap_changed"  Unfocused="lozinkap_unfocused"></Entry>
+            <Label x:Name="ErrorLabel_LozinkaProvjera"  IsVisible="{Binding IsError_LozinkaProvjera}"  TextColor="Red" FontSize="13" />
 
 
 

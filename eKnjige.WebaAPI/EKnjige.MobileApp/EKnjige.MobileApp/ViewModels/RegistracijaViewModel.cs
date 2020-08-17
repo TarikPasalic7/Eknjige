@@ -170,13 +170,7 @@ namespace EKnjige.MobileApp.ViewModels
 
         public async Task Init()
         {
-            //var klijenti = await _service.get<IEnumerable<Klijent>>(null);
-            //klijentilist.Clear();
-            //foreach(var klijent in klijenti)
-            //{
-
-            //    klijentilist.Add(klijent);
-            //}
+          
 
             if (GradoviList.Count == 0)
             {
@@ -198,19 +192,7 @@ namespace EKnjige.MobileApp.ViewModels
                 }
             }
 
-            //if (SelectedGrad != null)
-            //{
-            //    eKnjige.Model.Requests.KlijentiSearchRequest search = new eKnjige.Model.Requests.KlijentiSearchRequest();
-            //    search.GradID = SelectedGrad.Id;
-
-            //    var klijenti = await _service.get<IEnumerable<Klijent>>(search);
-            //    klijentilist.Clear();
-            //    foreach (var klijent in klijenti)
-            //    {
-            //        klijentilist.Add(klijent);
-            //    }
-
-            //}
+           
 
 
 
