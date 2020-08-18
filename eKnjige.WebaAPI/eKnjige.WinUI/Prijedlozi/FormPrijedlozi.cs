@@ -59,14 +59,14 @@ namespace eKnjige.WinUI.Prijedlozi
             if (e.ColumnIndex == 3)
             {
                 id = Convert.ToInt32(dgvPrijedlozi.Rows[e.RowIndex].Cells[0].Value.ToString());
-                 //var odobren = dgvPrijedlozi.Rows[e.RowIndex].Cells[4].Value.ToString();
-               
+                 
 
                     var request = await _apiservice.getbyId<Model.PrijedlogKnjiga>(id);
                 if (request.Odgovoren == false)
                 {
                     request.Odgovoren = true;
-                    request.Opis = "Prijedlog knjige je odobren.";
+                    request.Opis = "Vaša predložena knjiga je odobrena ";
+                    request.PogledaoKorisnik = false;
                     await _apiservice.Update<Model.PrijedlogKnjigaRequest>(id, request);
 
                     MessageBox.Show("Poslana je notifikacija korisniku");

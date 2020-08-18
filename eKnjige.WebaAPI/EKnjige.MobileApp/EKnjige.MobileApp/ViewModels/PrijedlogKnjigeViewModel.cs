@@ -62,11 +62,12 @@ namespace EKnjige.MobileApp.ViewModels
                 KlijentID = APIService.PrijavljeniKorisnik.KlijentID,
                 Naziv = "Autor:" + Autor + "|  Naziv Knjige:" + Naziv,
                 Odgovoren = false,
+                PogledaoKorisnik=false
 
 
             };
-
-           await _service.Insert<PrijedlogKnjiga>(request);
+            await App.Current.MainPage.DisplayAlert("Obavijest", "Uspješno ste poslali vaš prijedlog", "OK");
+            await _service.Insert<PrijedlogKnjiga>(request);
             Autor = null;
             Naziv = null;
 

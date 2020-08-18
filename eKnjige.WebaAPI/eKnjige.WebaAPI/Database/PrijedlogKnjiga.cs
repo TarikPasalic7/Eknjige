@@ -14,6 +14,7 @@ namespace eKnjige.WebaAPI
         public DateTime Datum { get; set; }
         
         public bool Odgovoren { get; set; }
+        public bool PogledaoKorisnik { get; set; }
         public string Naziv { get; set; }
 
         public string Opis { get; set; }

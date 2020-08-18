@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using EKnjige.MobileApp.Models;
+using eKnjige.Model;
 
 namespace EKnjige.MobileApp.Views
 {
@@ -22,6 +23,38 @@ namespace EKnjige.MobileApp.Views
             MasterBehavior = MasterBehavior.Popover;
 
             //MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+        }
+        private readonly APIService _service = new APIService("PrijedlogKnjige");
+        protected async override void OnAppearing()
+        {
+             
+
+            base.OnAppearing();
+        var prijedlozi =await _service.get<List<PrijedlogKnjiga>>(null);
+            int korisnikid = APIService.PrijavljeniKorisnik.KlijentID;
+            
+            foreach(var p in prijedlozi)
+            {
+                if(korisnikid==p.KlijentID && p.Odgovoren==true && p.PogledaoKorisnik==false)
+                {
+                    await App.Current.MainPage.DisplayAlert("Obavijest", p.Opis, "OK");
+                    var request = new PrijedlogKnjigaRequest()
+                    {
+                        Datum = p.Datum,
+                        Naziv = p.Naziv,
+                        KlijentID = p.KlijentID,
+                        Odgovoren = p.Odgovoren,
+                        Opis = p.Opis,
+                        PrijedlogKnjigeID = p.PrijedlogKnjigeID,
+                        PogledaoKorisnik = true
+
+                    };
+                    await _service.Update<PrijedlogKnjiga>(p.PrijedlogKnjigeID, request);
+                }
+
+
+            }
+
         }
 
         public async Task NavigateFromMenu(int id)
