@@ -1,6 +1,9 @@
-﻿using eKnjige.Model;
+﻿
+using eKnjige.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +20,7 @@ namespace EKnjige.MobileApp.ViewModels
         {
 
             DodajCommand = new Command(async () => await DodajPrijedlog());
-
+            
 
         }
         string _Autor = null;
@@ -51,6 +54,9 @@ namespace EKnjige.MobileApp.ViewModels
      
 
         public ICommand DodajCommand { get; set; }
+     
+
+    
 
         public async  Task DodajPrijedlog()
         {

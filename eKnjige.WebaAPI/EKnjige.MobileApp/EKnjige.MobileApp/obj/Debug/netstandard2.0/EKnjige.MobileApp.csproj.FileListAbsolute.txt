@@ -59,10 +59,13 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debu
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\RegistracijaPage.xaml.g.cs
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.AssemblyInfoInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.AssemblyInfo.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CoreCompileInputs.cache
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\ref\EKnjige.MobileApp.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.pdb
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\Views\UrediProfilPage.xaml.g.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\EKnjige.MobileApp.csproj.CoreCompileInputs.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp\obj\Debug\netstandard2.0\XamlC.stamp

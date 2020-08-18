@@ -1,16 +1,25 @@
-﻿using eKnjige.Model;
+﻿
+using eKnjige.Model;
 using eKnjige.Model.Requests;
 using EKnjige.MobileApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace EKnjige.MobileApp.ViewModels
 {
+    public interface IAudioService
+    {
+        void PlayAudioFile(string fileName);
+        void StopAudioFile(string fileName);
+    }
     class ProfilKnjigaViewModel:BaseViewModel
     {
 
@@ -56,6 +65,8 @@ namespace EKnjige.MobileApp.ViewModels
         public ProfilKnjigaViewModel()
         {
             OcijeniStarCommand = new Command<string>(async (Ocjena) => await OcijeniStar(Ocjena));
+            PlayCommand = new Command(async () => await Play());
+            StopCommand = new Command(async () => await Stop());
 
             Star1 = new Star();
             Star2 = new Star();
@@ -67,6 +78,22 @@ namespace EKnjige.MobileApp.ViewModels
         public int Ocjena { get; set; }
         public ICommand OcijeniStarCommand { get; set; }
         public ICommand InitCommand { get; set; }
+        public ICommand PlayCommand { get; set; }
+        public ICommand StopCommand { get; set; }
+
+
+        public async Task Play()
+        {
+
+            DependencyService.Get<IAudioService>().PlayAudioFile("sound.mp3");
+
+        }
+        public async Task Stop()
+        {
+
+            DependencyService.Get<IAudioService>().StopAudioFile("sound.mp3");
+
+        }
 
         private async Task OcijeniStar(string _ocjena)
         {
@@ -140,9 +167,7 @@ namespace EKnjige.MobileApp.ViewModels
               await  App.Current.MainPage.DisplayAlert("Obavijest", "Uspješno ste ocjenili knjigu", "OK");
                 UpdateStar();
 
-                //await _serviceOcjene.Insert<Model.Ocjene>(request, "OcijeniRutu");
-
-                //await UcitajRutaDetails();
+                
             }
         }
 

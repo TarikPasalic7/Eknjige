@@ -12,7 +12,8 @@ using Xamarin.Forms.Xaml;
 namespace EKnjige.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilKnjigaPage : ContentPage
+
+    public partial class ProfilKnjigaPage :  ContentPage
     {
 
         private ProfilKnjigaViewModel model = null;

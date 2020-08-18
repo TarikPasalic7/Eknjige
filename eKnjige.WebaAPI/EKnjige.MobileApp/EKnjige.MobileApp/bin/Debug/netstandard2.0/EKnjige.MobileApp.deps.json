@@ -17,6 +17,7 @@
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265",
           "eKnjige.Model": "1.0.0",
+          "Mono.Android": "0.0.0.0",
           "System.Windows.Forms": "4.0.0.0"
         },
         "runtime": {
@@ -733,6 +734,14 @@
           "eKnjige.Model.dll": {}
         }
       },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "System.Windows.Forms/4.0.0.0": {
         "runtime": {
           "System.Windows.Forms.dll": {
@@ -1225,6 +1234,11 @@
     },
     "eKnjige.Model/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
