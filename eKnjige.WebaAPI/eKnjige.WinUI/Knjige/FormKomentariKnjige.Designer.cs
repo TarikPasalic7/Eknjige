@@ -30,11 +30,11 @@
         {
             this.Komentari = new System.Windows.Forms.GroupBox();
             this.dgvKomentari = new System.Windows.Forms.DataGridView();
+            this.txtTrazi = new System.Windows.Forms.TextBox();
+            this.btnTrazi = new System.Windows.Forms.Button();
             this.KomentarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.komentar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumKomentara = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTrazi = new System.Windows.Forms.TextBox();
-            this.btnTrazi = new System.Windows.Forms.Button();
             this.Komentari.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomentari)).BeginInit();
             this.SuspendLayout();
@@ -67,29 +67,6 @@
             this.dgvKomentari.TabIndex = 0;
             this.dgvKomentari.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKomentari_CellContentClick);
             // 
-            // KomentarId
-            // 
-            this.KomentarId.DataPropertyName = "KomentarId ";
-            this.KomentarId.HeaderText = "KomentarId";
-            this.KomentarId.Name = "KomentarId";
-            this.KomentarId.ReadOnly = true;
-            this.KomentarId.Visible = false;
-            // 
-            // komentar
-            // 
-            this.komentar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.komentar.DataPropertyName = "komentar";
-            this.komentar.HeaderText = "Komentar";
-            this.komentar.Name = "komentar";
-            this.komentar.ReadOnly = true;
-            // 
-            // DatumKomentara
-            // 
-            this.DatumKomentara.DataPropertyName = "DatumKomentara ";
-            this.DatumKomentara.HeaderText = "DatumKomentara ";
-            this.DatumKomentara.Name = "DatumKomentara";
-            this.DatumKomentara.ReadOnly = true;
-            // 
             // txtTrazi
             // 
             this.txtTrazi.Location = new System.Drawing.Point(192, 32);
@@ -110,6 +87,30 @@
             this.btnTrazi.Text = "Trazi";
             this.btnTrazi.UseVisualStyleBackColor = false;
             this.btnTrazi.Click += new System.EventHandler(this.btnTrazi_Click);
+            // 
+            // KomentarId
+            // 
+            this.KomentarId.DataPropertyName = "KomentarId ";
+            this.KomentarId.HeaderText = "KomentarId";
+            this.KomentarId.Name = "KomentarId";
+            this.KomentarId.ReadOnly = true;
+            this.KomentarId.Visible = false;
+            // 
+            // komentar
+            // 
+            this.komentar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.komentar.DataPropertyName = "komentar";
+            this.komentar.HeaderText = "Komentar";
+            this.komentar.Name = "komentar";
+            this.komentar.ReadOnly = true;
+            // 
+            // DatumKomentara
+            // 
+            this.DatumKomentara.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DatumKomentara.DataPropertyName = "DatumKomentara";
+            this.DatumKomentara.HeaderText = "DatumKomentara ";
+            this.DatumKomentara.Name = "DatumKomentara";
+            this.DatumKomentara.ReadOnly = true;
             // 
             // FormKomentariKnjige
             // 

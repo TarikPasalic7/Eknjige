@@ -71,12 +71,6 @@ namespace eKnjige.WinUI.Prijedlozi
 
                     MessageBox.Show("Poslana je notifikacija korisniku");
                 }
-                   
-               
-
-                
-                  
-             
 
             }
         }

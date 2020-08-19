@@ -25,9 +25,9 @@ namespace eKnjige.WinUI.Knjige
 
         public async void dugme()
         {
-            var result = await _apiservice.get<List<Model.Komentar>>(null);
+            //var result = await _apiservice.get<List<Model.Komentar>>(null);
 
-            dgvKomentari.DataSource = result;
+            //dgvKomentari.DataSource = result;
             DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
 
             deletebutton.FlatStyle = FlatStyle.Popup;
@@ -55,10 +55,19 @@ namespace eKnjige.WinUI.Knjige
 
             string trazi = txtTrazi.Text;
             var result = await _apiservice.get<List<Model.Komentar>>(null);
+            var result2 = new List<Model.Komentar>();
+            foreach(var r in result)
+            {
+                if (r.EKnjigaID == id)
+                {
+                    result2.Add(r);
+                }
+            }
+
             List<Model.Komentar> temp = new List<Model.Komentar>();
             if (!string.IsNullOrWhiteSpace(trazi))
             {
-                foreach (var item in result)
+                foreach (var item in result2)
                 {
                     if (item.komentar.Contains(trazi))
                     {
@@ -72,7 +81,7 @@ namespace eKnjige.WinUI.Knjige
             }
             else
             {
-                dgvKomentari.DataSource = result;
+                dgvKomentari.DataSource = result2;
             }
         
         }

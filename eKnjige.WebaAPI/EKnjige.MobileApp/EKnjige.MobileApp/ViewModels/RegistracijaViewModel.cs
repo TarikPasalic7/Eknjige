@@ -155,9 +155,10 @@ namespace EKnjige.MobileApp.ViewModels
             if (novikorisnik != null)
             {
                 await App.Current.MainPage.DisplayAlert("Obavijest", "Uspjesno ste se registrovali", "OK");
-                APIService.password = request.LozinkaHash;
-                APIService.username = request.KorisnickoIme;
-                Application.Current.MainPage = new MainPage();
+                APIService.PrijavljeniKorisnik = null;
+                APIService.username = null;
+                APIService.password = null;
+                Application.Current.MainPage = new LoginPage();
             }
             else
             {
