@@ -38,5 +38,11 @@ namespace EKnjige.MobileApp.Views
            
             await Navigation.PushAsync(new KnjigaDetailPage(item));
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+           
+            await Navigation.PushAsync(new KnjigaPDFPage(model.EKnjiga.Pdffile));
+        }
     }
 }

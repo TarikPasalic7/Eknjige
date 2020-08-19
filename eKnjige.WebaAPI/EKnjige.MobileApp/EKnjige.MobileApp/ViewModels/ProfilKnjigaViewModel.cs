@@ -85,13 +85,13 @@ namespace EKnjige.MobileApp.ViewModels
         public async Task Play()
         {
 
-            DependencyService.Get<IAudioService>().PlayAudioFile("sound.mp3");
+            DependencyService.Get<IAudioService>().PlayAudioFile(EKnjiga.Mp3file);
 
         }
         public async Task Stop()
         {
 
-            DependencyService.Get<IAudioService>().StopAudioFile("sound.mp3");
+            DependencyService.Get<IAudioService>().StopAudioFile(EKnjiga.Mp3file);
 
         }
 

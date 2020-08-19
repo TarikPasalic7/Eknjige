@@ -410,7 +410,7 @@ namespace eKnjige.WinUI.Knjige
                 // to get the only file name
                 string fn = f[(f.Length) - 1];
                 string startuppath = Path.GetDirectoryName(Application.ExecutablePath).Replace("eKnjige.WinUI\\bin\\Debug", string.Empty); ;
-                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\";
+                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\bin\\x86\\Debug\\AppX\\Assets\\";
 
 
                 string dest = startuppath + filepath + fn;
@@ -436,7 +436,7 @@ namespace eKnjige.WinUI.Knjige
              
                 string fn = f[(f.Length) - 1];
                 string startuppath = Path.GetDirectoryName(Application.ExecutablePath).Replace("eKnjige.WinUI\\bin\\Debug", string.Empty); ;
-                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\";
+                string filepath = "EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\bin\\x86\\Debug\\AppX\\Assets\\";
 
                 
                 string dest=startuppath + filepath + fn;
@@ -444,7 +444,7 @@ namespace eKnjige.WinUI.Knjige
                 request.Pdffile = fn;
                 File.Copy(filename, dest, true);
                 checkBoxPdf.Checked = true;
-                // Unos za file
+             
             }
 
         }
