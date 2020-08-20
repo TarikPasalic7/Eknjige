@@ -25,9 +25,7 @@ namespace eKnjige.WinUI.Knjige
 
         public async void dugme()
         {
-            //var result = await _apiservice.get<List<Model.Komentar>>(null);
-
-            //dgvKomentari.DataSource = result;
+            
             DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
 
             deletebutton.FlatStyle = FlatStyle.Popup;

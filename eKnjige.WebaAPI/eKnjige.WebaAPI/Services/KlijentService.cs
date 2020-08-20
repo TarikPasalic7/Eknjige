@@ -97,28 +97,7 @@ namespace eKnjige.WebaAPI.Services
             return mapper.Map<Model.Klijent>(k);
         }
 
-        //public List<Model.Klijent> Get(KlijentiSearchRequest search)
-        //{
-        //    var query = db.Klijenti.AsQueryable();
-
-        //    if (!string.IsNullOrWhiteSpace(search.Ime))
-        //    {
-
-        //        query = query.Where(x => x.Ime.StartsWith(search.Ime));
-        //    }
-
-
-
-        //    if (!string.IsNullOrWhiteSpace(search.Prezime))
-        //    {
-
-        //        query = query.Where(x => x.Prezime.StartsWith(search.Prezime));
-        //    }
-
-
-        //    var list = query.ToList();
-        //    return mapper.Map<List<Model.Klijent>>(list);
-        //}
+      
 
         //***************************************//
         public Model.Klijent Insert(Model.KlijentInsertRequest request)

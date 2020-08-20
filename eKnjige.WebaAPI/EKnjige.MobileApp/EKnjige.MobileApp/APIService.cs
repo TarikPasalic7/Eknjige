@@ -20,7 +20,7 @@ namespace EKnjige.MobileApp
 
 #if DEBUG
 
-        string _apiURL = "http://localhost:58998/api";
+        string _apiURL = "http://localhost:5000/api";
 #endif
 #if RELEASE
 

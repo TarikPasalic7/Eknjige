@@ -20,6 +20,7 @@ namespace eKnjige.WinUI.Komentari
 
             dataGridView1.AutoGenerateColumns = false;
             dugme();
+
         }
 
         private async void btntrazi_Click(object sender, EventArgs e)
@@ -45,13 +46,13 @@ namespace eKnjige.WinUI.Komentari
             {
                 dataGridView1.DataSource = result;
             }
-            dataGridView1.DataSource = result;
+           
+
+       
         }
         public async void dugme()
         {
-            var result = await _apiservice.get<List<Model.Komentar>>(null);
-
-            dataGridView1.DataSource = result;
+         
             DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
 
             deletebutton.FlatStyle = FlatStyle.Popup;

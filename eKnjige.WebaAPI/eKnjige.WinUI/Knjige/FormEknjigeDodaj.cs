@@ -205,10 +205,26 @@ namespace eKnjige.WinUI.Knjige
             textCijena.Text = knjiga.Cijena.ToString();
             textOcjena.Text = knjiga.OcjenaKnjige.ToString();
             textOpis.Text = knjiga.Opis;
-
+            
             byte[] image = knjiga.Slika;
-            MemoryStream ms = new MemoryStream(image);
-            pictureBox1.Image = Image.FromStream(ms);
+            
+                MemoryStream ms = new MemoryStream(image);
+                if(ms.Length==0 && ms.Position==0 && ms.Capacity==0)
+            {
+             
+                string startuppath = Path.GetDirectoryName(Application.ExecutablePath).Replace("eKnjige.WinUI\\bin\\Debug", string.Empty);
+                string s = "eKnjige.WinUI\\no.png";
+                var filename = startuppath + s;
+
+
+                Image imaged = Image.FromFile(filename);
+                pictureBox1.Image = imaged;
+            }
+            else
+            {
+                  pictureBox1.Image = Image.FromStream(ms);
+            }
+            
 
 
 
@@ -365,7 +381,7 @@ namespace eKnjige.WinUI.Knjige
             var result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-
+              
                 var filename = openFileDialog1.FileName;
                 var file = File.ReadAllBytes(filename);
                 request.Slika = file;

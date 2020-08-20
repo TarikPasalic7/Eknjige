@@ -117,10 +117,10 @@ namespace eKnjige.WebaAPI.Services
                 throw new System.Exception();
             }
             catch
-            {/*media => System.Guid.NewGuid()*/
+            {
                 var lista = _context.EKnjige.OrderByDescending(x=>x.OcjenaKnjige).Take(brojRezultata).ToList();
 
-                // ucitavanje slika za svaku igru
+                
                 List<Model.EKnjiga> listaKnjiga = _mapper.Map<List<Model.EKnjiga>>(lista);
              
 

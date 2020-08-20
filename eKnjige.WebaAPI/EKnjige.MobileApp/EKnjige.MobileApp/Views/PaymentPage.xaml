@@ -71,7 +71,7 @@
 
             </Grid>
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" >
-                <Button x:Name="Submit_Button" BorderRadius="0"  Text="Submit" Command="{Binding  SubmitCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+                <Button x:Name="Submit_Button" BorderRadius="0"  Text="Submit" Command="{Binding  SubmitCommand}" BackgroundColor="RoyalBlue" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentView>

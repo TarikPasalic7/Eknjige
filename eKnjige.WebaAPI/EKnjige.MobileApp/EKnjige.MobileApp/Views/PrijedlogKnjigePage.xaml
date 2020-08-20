@@ -17,7 +17,7 @@
             <Entry Text="{Binding Autor}"></Entry>
             <Label Text="Naziv Knjige:"/>
             <Entry  Text="{Binding Naziv}" ></Entry>
-            <Button Command="{Binding  DodajCommand}" Text="Predloži" BackgroundColor="MediumPurple" TextColor="AliceBlue"></Button>
+            <Button Command="{Binding  DodajCommand}" Text="Predloži" BackgroundColor="RoyalBlue" TextColor="AliceBlue"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -25,18 +25,7 @@ namespace eKnjige.WebaAPI
     public class Startup
     {
 
-        //public class BasicAuthDocumentFilter : IDocumentFilter
-        //{
-        //    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
-        //    {
-        //        var securityRequirements = new Dictionary<string, IEnumerable<string>>()
-        //{
-        //    { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
-        //};
-
-        //        swaggerDoc.Security = new[] { securityRequirements };
-        //    }
-        //}
+      
 
         public Startup(IConfiguration configuration)
         {
@@ -45,17 +34,19 @@ namespace eKnjige.WebaAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+      
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+          
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
-      
 
 
-            services.AddDbContext<AppContext>(options =>
-options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
+            var connection = Configuration.GetConnectionString("eKnjigeDB");
+            services.AddDbContext<AppContext>(o => o.UseSqlServer(connection));
+
+//            services.AddDbContext<AppContext>(options =>
+//options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
 
 
 
@@ -65,8 +56,7 @@ options.UseSqlServer(Configuration.GetConnectionString("eKnjigeDB")));
             services.AddScoped<ICRUDService<Model.Grad, Model.Grad, Model.Grad, Model.Grad>, BaseCRUDService<Model.Grad, Model.Grad, eKnjige.WebaAPI.Grad, Model.Grad, Model.Grad>>();
             services.AddScoped<ICRUDService<Model.Spol, Model.Spol, Model.Spol, Model.Spol>, BaseCRUDService<Model.Spol, Model.Spol, eKnjige.WebaAPI.Spol, Model.Spol, Model.Spol>>();
             services.AddScoped<ICRUDService<Model.Kategorija, object, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>, BaseCRUDService<Model.Kategorija, object, eKnjige.WebaAPI.Kategorija, Model.Requests.KategorijaInertRequest, Model.Requests.KategorijaInertRequest>>();
-            //services.AddScoped<ICRUDService<Model.Klijent, Model.Requests.KlijentiSearchRequest, Model.KlijentInsertRequest, Model.KlijentInsertRequest>, KlijentService>();
-          
+
             services.AddScoped<IKlijentService, KlijentService>();
             services.AddScoped<ICRUDService<Model.Uloga, Model.UlogeRequest, Model.UlogeRequest, Model.UlogeRequest>, BaseCRUDService<Model.Uloga, Model.UlogeRequest, Uloga, Model.UlogeRequest, Model.UlogeRequest>>();
             services.AddScoped<ICRUDService<Model.Drzava, Model.Drzava, Model.Drzava, Model.DrzavaRequest>, BaseCRUDService<Model.Drzava,Model.Drzava,eKnjige.WebaAPI.Drzava,Model.Drzava,Model.DrzavaRequest>>();

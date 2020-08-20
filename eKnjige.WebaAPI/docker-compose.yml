@@ -1,0 +1,33 @@
+version: '3'
+services:
+#mssql docker
+  eknjiga-sql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=QWElkj132!
+      - MSSQL_PID=Developer
+    ports:
+      - 1401:1433
+    networks:
+      - eknjigenet
+
+  eknjiga.api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:eKnjigeDB=Server=eknjiga-sql,1433;Database=eKnjige;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+    ports:
+      - 5000:5050
+    networks:
+      - eknjigenet    
+    links:
+      - eknjiga-sql
+    depends_on:
+      - eknjiga-sql
+      
+networks:
+  eknjigenet:
+    driver: bridge      

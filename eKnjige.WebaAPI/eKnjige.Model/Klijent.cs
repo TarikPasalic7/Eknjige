@@ -33,8 +33,8 @@ namespace eKnjige.Model
 
         public int SpolID { get; set; }
 
-      
 
+       
 
         public int GradID { get; set; }
 

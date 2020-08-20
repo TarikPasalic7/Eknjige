@@ -15,9 +15,9 @@
             <Entry Text="{Binding KorisnickoIme}"></Entry>
             <Label Text="Password :"/>
             <Entry  Text="{Binding Lozinka}" IsPassword="True"></Entry>
-            <Button Command="{Binding LoginCommand}" Text="Login" BackgroundColor="MediumPurple" TextColor="White"></Button>
+            <Button Command="{Binding LoginCommand}" Text="Login" BackgroundColor="RoyalBlue" TextColor="White"></Button>
             <Label IsVisible="{Binding IsBusy}" Text="..."/>
-            <Button Command="{Binding RegistracijaCommand}" Text="Registruj se" BackgroundColor="MediumPurple" TextColor="White"></Button>
+            <Button Command="{Binding RegistracijaCommand}" Text="Registruj se" BackgroundColor="RoyalBlue" TextColor="White"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

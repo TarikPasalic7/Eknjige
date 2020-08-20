@@ -1,0 +1,9 @@
+
+Podaci za admina   username:admin
+                   passwoed:admin
+
+Podaci za korisnika username:tarikpasalic
+                    password:Tarikpasal1c
+
+
+

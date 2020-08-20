@@ -37,7 +37,6 @@
             this.pretragaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kategorijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipFajlaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.komentariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prijedloziKnjigaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -60,7 +59,6 @@
             this.knjigeToolStripMenuItem,
             this.kategorijeToolStripMenuItem,
             this.autoriToolStripMenuItem,
-            this.tipFajlaToolStripMenuItem,
             this.komentariToolStripMenuItem,
             this.prijedloziKnjigaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -120,12 +118,6 @@
             this.autoriToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.autoriToolStripMenuItem.Text = "Autori";
             this.autoriToolStripMenuItem.Click += new System.EventHandler(this.autoriToolStripMenuItem_Click);
-            // 
-            // tipFajlaToolStripMenuItem
-            // 
-            this.tipFajlaToolStripMenuItem.Name = "tipFajlaToolStripMenuItem";
-            this.tipFajlaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.tipFajlaToolStripMenuItem.Text = "TipFajla";
             // 
             // komentariToolStripMenuItem
             // 
@@ -261,7 +253,6 @@
         private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem kategorijeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipFajlaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem komentariToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prijedloziKnjigaToolStripMenuItem;
         private System.Windows.Forms.Button buttonKorisnik;

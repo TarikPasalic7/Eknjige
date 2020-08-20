@@ -26,9 +26,7 @@ namespace eKnjige.WinUI.Klijenti
 
         public async void dugme()
         {
-            var result = await _apiservice.get<List<Model.Komentar>>(null);
-
-           dgvKlijenti.DataSource = result;
+           
             DataGridViewButtonColumn deletebutton = new DataGridViewButtonColumn();
             DataGridViewButtonColumn uredibutton = new DataGridViewButtonColumn();
 

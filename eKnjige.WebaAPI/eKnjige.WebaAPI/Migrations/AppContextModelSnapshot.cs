@@ -38,6 +38,29 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("AutorID");
 
                     b.ToTable("Autori");
+
+                    b.HasData(
+                        new
+                        {
+                            AutorID = 1,
+                            Godiste = new DateTime(2020, 8, 20, 21, 41, 21, 362, DateTimeKind.Local).AddTicks(6144),
+                            Ime = "Ivo",
+                            Prezime = "Andric"
+                        },
+                        new
+                        {
+                            AutorID = 2,
+                            Godiste = new DateTime(2020, 8, 20, 21, 41, 21, 366, DateTimeKind.Local).AddTicks(9612),
+                            Ime = "George",
+                            Prezime = "Martin"
+                        },
+                        new
+                        {
+                            AutorID = 3,
+                            Godiste = new DateTime(2020, 8, 20, 21, 41, 21, 366, DateTimeKind.Local).AddTicks(9765),
+                            Ime = "Albert",
+                            Prezime = "Camus"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Database.Uloga", b =>
@@ -56,6 +79,20 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("UlogaId");
 
                     b.ToTable("Uloge");
+
+                    b.HasData(
+                        new
+                        {
+                            UlogaId = 1,
+                            Naziv = "Administrator",
+                            Opis = "Administrator"
+                        },
+                        new
+                        {
+                            UlogaId = 2,
+                            Naziv = "Korisnik",
+                            Opis = "Korisnik"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Drzava", b =>
@@ -71,6 +108,18 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("DrzavaID");
 
                     b.ToTable("Drzave");
+
+                    b.HasData(
+                        new
+                        {
+                            DrzavaID = 1,
+                            Naziv = "BiH"
+                        },
+                        new
+                        {
+                            DrzavaID = 2,
+                            Naziv = "Engleska"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjiga", b =>
@@ -115,6 +164,45 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("AdministratorID");
 
                     b.ToTable("EKnjige");
+
+                    b.HasData(
+                        new
+                        {
+                            EKnjigaID = 1,
+                            AdministratorID = 1,
+                            Cijena = 34f,
+                            MP3Dodan = false,
+                            Naziv = "Sraz kraljeva",
+                            OcjenaKnjige = 5f,
+                            Opis = "Opis	Nakon neočekivanog smaknuća Eddarda Starka, vazali i sljedbenici proglašavaju njegova sina Robba Kraljem na Sjeveru. Okrutni dječak Joffrey sjedi na Željeznom prijestolju i onemogućuje Stannisa i Renlyja Baratheona u pokušajima da zauzmu tron. Četiri pretendenta i samo jedna kruna! Sedam je Kraljevina na rubu razornoga građanskog rata. Krvavocrveni komet na nebu samo potvrđuje nadolazeću katastrofu.",
+                            PDFDodan = true,
+                            Pdffile = "George R. R. Martin 2 - Sraz kraljeva(1999.).pdf"
+                        },
+                        new
+                        {
+                            EKnjigaID = 2,
+                            AdministratorID = 1,
+                            Cijena = 30f,
+                            MP3Dodan = false,
+                            Naziv = "Na Drini ćuprija",
+                            OcjenaKnjige = 4f,
+                            Opis = "Godine 1516. Mehmed paša je, prema vladajućem običaju devširme (tur. prikupljanje), kao dječak pravoslavnih roditelja odveden u osmansku vojsku (tadašnje janjičare), prilikom čega je prešao na islam, da bi se kasnije uzdigao ljestvicama vlasti i postao prvi do sultana. Kao moćnik, odlučio je da u rodnom kraju podigne zadužbinu, veliki kameni most na jedanaest lukova. Roman počinje dugim geografskim opisom višegradskog kraja i navođenjem više legendi o nastanku mosta. Jedna od najpoznatijih legendi svakako je priča o blizancima Stoji i Ostoji. Porijeklo legende je u nacionalnom mitu i epskoj viziji svijeta koja je književni ekvivalent toga mita. Legende su po pravilu paralelne, imaju krišćansku i muslimansku verziju. Kraj romana pada u 1914. godinu kada su trupe austrougarske monarhije, u povlačenju, ozbiljno oštetile most. Sa rušenjem mosta izdiše i Alihodža, jedan od najčešće pominjanih likova, koji simbolizuje kraj starih vremena..",
+                            PDFDodan = true,
+                            Pdffile = "Ivo-Andric-Na-Drini-cuprija.pdf"
+                        },
+                        new
+                        {
+                            EKnjigaID = 3,
+                            AdministratorID = 1,
+                            Cijena = 25f,
+                            MP3Dodan = true,
+                            Mp3file = "STRANAC Alber Kami I deo I,II i III glava.mp3",
+                            Naziv = "Stranac",
+                            OcjenaKnjige = 5f,
+                            Opis = "Psihološki roman Stranac Albert Camus objavio je 1942. godine. Ovaj je pisac unutar teorije egzistencijalizma vrhunski razvio filozofiju apsurda koju dijelimo na fazu apsurda i fazu pobune. Likovi poput Mersaulta i Sizifa ne opiru se apsurdu i ne bježe od besmislenosti života, već ga prihvaćaju i žive život po načelima teorije apsurda.",
+                            PDFDodan = true,
+                            Pdffile = "alber_kami_stranac.pdf"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjigaKategorija", b =>
@@ -137,6 +225,32 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("KategorijaID");
 
                     b.ToTable("EKnjigaKategorije");
+
+                    b.HasData(
+                        new
+                        {
+                            EKnjigaKategorijaID = 1,
+                            EKnjigaID = 1,
+                            KategorijaID = 1
+                        },
+                        new
+                        {
+                            EKnjigaKategorijaID = 2,
+                            EKnjigaID = 2,
+                            KategorijaID = 1
+                        },
+                        new
+                        {
+                            EKnjigaKategorijaID = 3,
+                            EKnjigaID = 3,
+                            KategorijaID = 2
+                        },
+                        new
+                        {
+                            EKnjigaKategorijaID = 4,
+                            EKnjigaID = 2,
+                            KategorijaID = 3
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjigeAutor", b =>
@@ -159,6 +273,26 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("EKnjigaID");
 
                     b.ToTable("EKnjigaAutori");
+
+                    b.HasData(
+                        new
+                        {
+                            EKnjigeAutorID = 1,
+                            AutorID = 1,
+                            EKnjigaID = 2
+                        },
+                        new
+                        {
+                            EKnjigeAutorID = 2,
+                            AutorID = 2,
+                            EKnjigaID = 1
+                        },
+                        new
+                        {
+                            EKnjigeAutorID = 3,
+                            AutorID = 3,
+                            EKnjigaID = 3
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Grad", b =>
@@ -179,6 +313,26 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("DrzavaId");
 
                     b.ToTable("Gradovi");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DrzavaId = 1,
+                            Naziv = "Sarajevo"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DrzavaId = 1,
+                            Naziv = "Bosanska Krupa"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DrzavaId = 1,
+                            Naziv = "Mostar"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Kategorija", b =>
@@ -194,6 +348,23 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("KategorijaID");
 
                     b.ToTable("Kategorije");
+
+                    b.HasData(
+                        new
+                        {
+                            KategorijaID = 1,
+                            Naziv = "Roman"
+                        },
+                        new
+                        {
+                            KategorijaID = 2,
+                            Naziv = "Novela"
+                        },
+                        new
+                        {
+                            KategorijaID = 3,
+                            Naziv = "Naucna fantastika"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Klijent", b =>
@@ -242,6 +413,36 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("UlogaID");
 
                     b.ToTable("Klijenti");
+
+                    b.HasData(
+                        new
+                        {
+                            KlijentID = 1,
+                            DatumRodenja = new DateTime(2020, 8, 20, 21, 41, 21, 367, DateTimeKind.Local).AddTicks(8019),
+                            Email = "adminemail@gmail.com",
+                            GradID = 1,
+                            Ime = "AdminIme",
+                            KorisnickoIme = "admin",
+                            LozinkaHash = "FhbHHN34a5Ds1esUOVrfxM/3n8+X+1b5e5CaTnmPliUnx2i+dVsTEF2lX+GqfKaDTwfI7xnU8Vl27WuUC2c98w==",
+                            LozinkaSalt = "9ObBmhIwc8VyvImh4iDHLw==",
+                            Prezime = "AdminPrezime",
+                            SpolID = 1,
+                            UlogaID = 1
+                        },
+                        new
+                        {
+                            KlijentID = 3,
+                            DatumRodenja = new DateTime(2020, 8, 20, 21, 41, 21, 368, DateTimeKind.Local).AddTicks(4788),
+                            Email = "tarikpasalic@gmail.com",
+                            GradID = 2,
+                            Ime = "Tarik",
+                            KorisnickoIme = "tarikpasalic",
+                            LozinkaHash = "RmrxC+TxcmGNxzNj/wVlHUzuqTO58XZ4iCikUBHXNq5ra5Or2L1VWCHkoB0Lp7VJxw8N+Fo/Ss5JXJceNNqPKA==",
+                            LozinkaSalt = "83VqAXdFhiIljRayFSH9aA==",
+                            Prezime = "Pasalic",
+                            SpolID = 1,
+                            UlogaID = 2
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.KlijentKnjigaOcjena", b =>
@@ -298,6 +499,32 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("KlijentID");
 
                     b.ToTable("Komentari");
+
+                    b.HasData(
+                        new
+                        {
+                            KomentarId = 1,
+                            DatumKomentara = new DateTime(2020, 8, 20, 21, 41, 21, 370, DateTimeKind.Local).AddTicks(5992),
+                            EKnjigaID = 3,
+                            KlijentID = 3,
+                            komentar = "Komentar 1"
+                        },
+                        new
+                        {
+                            KomentarId = 2,
+                            DatumKomentara = new DateTime(2020, 8, 20, 21, 41, 21, 370, DateTimeKind.Local).AddTicks(9591),
+                            EKnjigaID = 3,
+                            KlijentID = 3,
+                            komentar = "Komentar 2"
+                        },
+                        new
+                        {
+                            KomentarId = 3,
+                            DatumKomentara = new DateTime(2020, 8, 20, 21, 41, 21, 370, DateTimeKind.Local).AddTicks(9726),
+                            EKnjigaID = 1,
+                            KlijentID = 3,
+                            komentar = "Komentar"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.KupovinaKnjige", b =>
@@ -323,6 +550,15 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("KlijentID");
 
                     b.ToTable("KupovinaKnjiga");
+
+                    b.HasData(
+                        new
+                        {
+                            KupovinaKnjigeID = 1,
+                            DatumKupovine = new DateTime(2020, 8, 20, 21, 41, 21, 371, DateTimeKind.Local).AddTicks(1130),
+                            EKnjigaID = 3,
+                            KlijentID = 3
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.PrijedlogKnjiga", b =>
@@ -355,6 +591,28 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasIndex("KlijentID");
 
                     b.ToTable("PrijedlogKnjiga");
+
+                    b.HasData(
+                        new
+                        {
+                            PrijedlogKnjigeID = 1,
+                            Datum = new DateTime(2020, 8, 20, 21, 41, 21, 370, DateTimeKind.Local).AddTicks(1552),
+                            KlijentID = 3,
+                            Naziv = " Mesa Selimovic: Dervis i Smrt",
+                            Odgovoren = false,
+                            Opis = "",
+                            PogledaoKorisnik = false
+                        },
+                        new
+                        {
+                            PrijedlogKnjigeID = 2,
+                            Datum = new DateTime(2020, 8, 20, 21, 41, 21, 370, DateTimeKind.Local).AddTicks(5072),
+                            KlijentID = 3,
+                            Naziv = " Lav Tolstoj : Rat i Mir",
+                            Odgovoren = true,
+                            Opis = "Vaš zahtjev je odobren",
+                            PogledaoKorisnik = false
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.Spol", b =>
@@ -370,6 +628,18 @@ namespace eKnjige.WebaAPI.Migrations
                     b.HasKey("SpolID");
 
                     b.ToTable("Spol");
+
+                    b.HasData(
+                        new
+                        {
+                            SpolID = 1,
+                            Tip = "M"
+                        },
+                        new
+                        {
+                            SpolID = 2,
+                            Tip = "Z"
+                        });
                 });
 
             modelBuilder.Entity("eKnjige.WebaAPI.EKnjiga", b =>

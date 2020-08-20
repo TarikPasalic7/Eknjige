@@ -807,9 +807,6 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\eKnj
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csprojAssemblyReference.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.AssemblyInfoInputs.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.AssemblyInfo.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csproj.CoreCompileInputs.cache
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.RazorTargetAssemblyInfo.cache
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\staticwebassets\eKnjige.WebaAPI.StaticWebAssets.Manifest.cache
@@ -817,3 +814,14 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\stat
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.dll
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.pdb
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.genruntimeconfig.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.csproj.CoreCompileInputs.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\obj\Debug\netcoreapp3.1\eKnjige.WebaAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Windows.Forms.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\Accessibility.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Deployment.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Windows.Forms.xml
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\Accessibility.xml
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Deployment.xml
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WebaAPI\bin\Debug\netcoreapp3.1\System.Runtime.Serialization.Formatters.Soap.xml
