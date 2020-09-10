@@ -41,8 +41,16 @@ namespace eKnjige.WebaAPI.Controllers
         }
 
         [Authorize]
+        [HttpDelete("{id}")]
+        public bool Remove(int id)
+        {
+            return _service.Remove(id);
+        }
+
+        [Authorize]
         [HttpPut("{id}")]
         
+
         public Model.Klijent Update(int id, [FromBody]Model.KlijentUpdateRequest request)
         {
             return _service.Update(id, request);
@@ -68,6 +76,7 @@ namespace eKnjige.WebaAPI.Controllers
         {
             return _service.UpdateProfile(request);
         }
+      
 
     }
 }

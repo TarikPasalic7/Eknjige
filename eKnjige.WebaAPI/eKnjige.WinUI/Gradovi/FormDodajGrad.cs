@@ -18,6 +18,7 @@ namespace eKnjige.WinUI.Gradovi
         public FormDodajGrad()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private  void buttonDodajDrzavu_Click(object sender, EventArgs e)
@@ -40,6 +41,8 @@ namespace eKnjige.WinUI.Gradovi
 
         private async void buttonSnimiGrad_Click(object sender, EventArgs e)
         {
+            if (this.ValidateChildren())
+            {
             var idObj = cmbDrzava.SelectedValue;
             Model.Drzava request = new Model.Drzava();
             if (int.TryParse(idObj.ToString(), out int id))
@@ -51,11 +54,37 @@ namespace eKnjige.WinUI.Gradovi
 
             await servicegrad.Insert<Model.Grad>(request);
              MessageBox.Show("Operacija uspjesna");
+
+            }
+           
         }
 
+        private void textNaziv_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textNaziv.Text))
+            {
 
+                errorProvider.SetError(textNaziv, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(textNaziv, null);
+            }
+        }
 
-       
+        private void cmbDrzava_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbDrzava.SelectedValue == null)
+            {
 
+                errorProvider.SetError(cmbDrzava, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbDrzava, null);
+            }
+        }
     }
 }

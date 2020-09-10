@@ -220,6 +220,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(159, 20);
             this.textEmail.TabIndex = 19;
+            
             // 
             // buttonGrad
             // 

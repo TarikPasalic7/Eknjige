@@ -209,12 +209,29 @@ namespace eKnjige.WinUI.Klijenti
 
         }
 
-        private void textKorisnickoIme_Validating(object sender, CancelEventArgs e)
+        private async  void textKorisnickoIme_Validating(object sender, CancelEventArgs e)
         {
+            var korisnickoime = await service.get<List<Klijent>>(null);
+            bool greska = false;
+            foreach(var k in korisnickoime)
+            {
+                if (k.KorisnickoIme == textKorisnickoIme.Text)
+                {
+                    greska = true;
+                    break;
+
+                }
+                   
+            }
             if (string.IsNullOrWhiteSpace(textKorisnickoIme.Text))
             {
 
                 errorProvider.SetError(textKorisnickoIme, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else if (greska == true)
+            {
+                errorProvider.SetError(textKorisnickoIme, "Korisnicko ime vec postoji");
                 e.Cancel = true;
             }
             else
@@ -223,12 +240,30 @@ namespace eKnjige.WinUI.Klijenti
             }
         }
 
-        private void textEmail_Validating(object sender, CancelEventArgs e)
+        private async void textEmail_Validating(object sender, CancelEventArgs e)
         {
+
+            var email = await service.get<List<Klijent>>(null);
+            bool greska = false;
+            foreach (var k in email)
+            {
+                if (k.Email == textEmail.Text)
+                {
+                    greska = true;
+                    break;
+
+                }
+
+            }
             if (string.IsNullOrWhiteSpace(textEmail.Text))
             {
 
                 errorProvider.SetError(textEmail, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else if (greska==true)
+            {
+                errorProvider.SetError(textKorisnickoIme, "Email je vec iskoristen");
                 e.Cancel = true;
             }
             else
@@ -357,5 +392,7 @@ namespace eKnjige.WinUI.Klijenti
                 errorProvider.SetError(cmbUloga, null);
             }
         }
+
+       
     }
 }

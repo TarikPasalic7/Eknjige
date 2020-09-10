@@ -90,7 +90,7 @@
             // 
             // KomentarId
             // 
-            this.KomentarId.DataPropertyName = "KomentarId ";
+            this.KomentarId.DataPropertyName = "KomentarId";
             this.KomentarId.HeaderText = "KomentarId";
             this.KomentarId.Name = "KomentarId";
             this.KomentarId.ReadOnly = true;

@@ -50,6 +50,7 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Klijen
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Klijenti.FormKlijentiDetalji.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormEknjigeDodaj.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKnjige.resources
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKomentariKnjige.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Komentari.FormKomentari.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Prijedlozi.FormPrijedlozi.resources
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Properties.Resources.resources
@@ -58,4 +59,3 @@ C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.csproj.CopyComplete
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.exe
 C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.pdb
-C:\Users\pc\Eknjige\eKnjige.WebaAPI\eKnjige.WinUI\obj\Debug\eKnjige.WinUI.Knjige.FormKomentariKnjige.resources

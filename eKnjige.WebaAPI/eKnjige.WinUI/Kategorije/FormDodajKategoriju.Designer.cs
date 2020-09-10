@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDodajKategoriju = new System.Windows.Forms.Button();
             this.labelNaziv = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDodajKategoriju
@@ -61,6 +64,11 @@
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(142, 20);
             this.txtNaziv.TabIndex = 2;
+            this.txtNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.txtNaziv_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FormDodajKategoriju
             // 
@@ -73,6 +81,7 @@
             this.Controls.Add(this.btnDodajKategoriju);
             this.Name = "FormDodajKategoriju";
             this.Text = "FormDodajKategoriju";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +92,6 @@
         private System.Windows.Forms.Button btnDodajKategoriju;
         private System.Windows.Forms.Label labelNaziv;
         private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -1,11 +1,7 @@
 ﻿using eKnjige.Model;
 using EKnjige.MobileApp.Views;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-//using System.Windows.Forms;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -77,7 +73,7 @@ namespace EKnjige.MobileApp.ViewModels
             }
             catch(Exception ex)
             {
-                //System.Windows.Forms.MessageBox.Show(ex.Message, "Authentikacija", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+               
             }
         }
     }

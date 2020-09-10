@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textNaziv = new System.Windows.Forms.TextBox();
             this.cmbDrzava = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonDodajDrzavu = new System.Windows.Forms.Button();
             this.buttonSnimiGrad = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,6 +54,7 @@
             this.textNaziv.Name = "textNaziv";
             this.textNaziv.Size = new System.Drawing.Size(100, 20);
             this.textNaziv.TabIndex = 1;
+            this.textNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.textNaziv_Validating);
             // 
             // cmbDrzava
             // 
@@ -59,6 +63,7 @@
             this.cmbDrzava.Name = "cmbDrzava";
             this.cmbDrzava.Size = new System.Drawing.Size(121, 21);
             this.cmbDrzava.TabIndex = 2;
+            this.cmbDrzava.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDrzava_Validating);
             // 
             // label2
             // 
@@ -89,6 +94,10 @@
             this.buttonSnimiGrad.UseVisualStyleBackColor = true;
             this.buttonSnimiGrad.Click += new System.EventHandler(this.buttonSnimiGrad_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FormDodajGrad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +113,7 @@
             this.Name = "FormDodajGrad";
             this.Text = "FormDodajGrad";
             this.Load += new System.EventHandler(this.FormDodajGrad_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +127,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonDodajDrzavu;
         private System.Windows.Forms.Button buttonSnimiGrad;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

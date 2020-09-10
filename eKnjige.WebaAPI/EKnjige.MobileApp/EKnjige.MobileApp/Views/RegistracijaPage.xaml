@@ -40,7 +40,7 @@
             <Label Text="Spol :"/>
             <Picker ItemsSource="{Binding SpolList}" SelectedItem="{Binding SelectedSpol}" ItemDisplayBinding="{Binding Tip}"></Picker>
 
-            <Button Command="{Binding RegistracijaCommand}" Text="Registracija"
+            <Button Command="{Binding RegistracijaCommand}"  Text="Registracija"
                     BackgroundColor="MediumPurple"
                     TextColor="White"></Button>
            

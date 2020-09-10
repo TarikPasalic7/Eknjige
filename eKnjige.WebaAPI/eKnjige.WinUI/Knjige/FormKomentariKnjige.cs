@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eKnjige.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace eKnjige.WinUI.Knjige
     {
 
         private readonly APIService _apiservice = new APIService("komentar");
+        private readonly APIService _apiservicekorisnik = new APIService("Klijenti");
+        private readonly APIService _apiserviceknjige = new APIService("eknjiga");
         private int? id = null;
         public FormKomentariKnjige(int? knjigeId = null)
         {
@@ -34,9 +37,14 @@ namespace eKnjige.WinUI.Knjige
             deletebutton.Name = "Izbrisi";
             deletebutton.UseColumnTextForButtonValue = true;
             deletebutton.Text = "Izbrisi";
-
-
             deletebutton.Width = 70;
+
+            DataGridViewTextBoxColumn korisnik = new DataGridViewTextBoxColumn();
+            korisnik.Name = "Korisnik";
+            korisnik.HeaderText = "Korisnik";
+            DataGridViewTextBoxColumn knjiga = new DataGridViewTextBoxColumn();
+            knjiga.Name = "Knjiga";
+            knjiga.HeaderText = "Knjiga";
 
             if (dgvKomentari.Columns.Contains(deletebutton.Name = "Izbrisi"))
             {
@@ -44,6 +52,9 @@ namespace eKnjige.WinUI.Knjige
             }
             else
             {
+               
+                dgvKomentari.Columns.Add(korisnik);
+                dgvKomentari.Columns.Add(knjiga);
                 dgvKomentari.Columns.Add(deletebutton);
             }
 
@@ -81,13 +92,34 @@ namespace eKnjige.WinUI.Knjige
             {
                 dgvKomentari.DataSource = result2;
             }
-        
+
+            foreach (DataGridViewRow item in dgvKomentari.Rows)
+            {
+
+                foreach (var r in result)
+                {
+                    int komentarid = int.Parse(item.Cells[0].Value.ToString());
+                    if (r.KomentarId == komentarid)
+                    {
+                        var k = await _apiservicekorisnik.getbyId<Klijent>(r.KlijentID);
+                        var ek = await _apiserviceknjige.getbyId<EKnjiga>(r.EKnjigaID);
+                        item.Cells[3].Value = k.KorisnickoIme;
+                        item.Cells[4].Value = ek.Naziv;
+                    }
+
+                }
+
+
+
+            }
+
+
         }
 
         private async void dgvKomentari_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int id;
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 5)
             {
                 id = Convert.ToInt32(dgvKomentari.Rows[e.RowIndex].Cells[0].Value.ToString());
                 DialogResult result = MessageBox.Show("Da li zaista zelite izbrisati komentar", "Upozorenje", MessageBoxButtons.YesNo);

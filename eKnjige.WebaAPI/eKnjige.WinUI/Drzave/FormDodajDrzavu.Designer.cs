@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonDrzavaSnimi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textDrzavaNaziv = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDrzavaSnimi
@@ -60,6 +63,11 @@
             this.textDrzavaNaziv.Name = "textDrzavaNaziv";
             this.textDrzavaNaziv.Size = new System.Drawing.Size(143, 20);
             this.textDrzavaNaziv.TabIndex = 2;
+            this.textDrzavaNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.textDrzavaNaziv_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FormDodajDrzavu
             // 
@@ -72,7 +80,7 @@
             this.Controls.Add(this.buttonDrzavaSnimi);
             this.Name = "FormDodajDrzavu";
             this.Text = "FormDodajDrzavu";
-            this.Load += new System.EventHandler(this.FormDodajDrzavu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +91,6 @@
         private System.Windows.Forms.Button buttonDrzavaSnimi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textDrzavaNaziv;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

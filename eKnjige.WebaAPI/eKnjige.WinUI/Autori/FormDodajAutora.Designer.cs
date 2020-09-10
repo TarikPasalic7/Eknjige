@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.Ime = new System.Windows.Forms.Label();
             this.txtAutorIme = new System.Windows.Forms.TextBox();
@@ -35,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateAutor = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -66,6 +69,7 @@
             this.txtAutorIme.Name = "txtAutorIme";
             this.txtAutorIme.Size = new System.Drawing.Size(100, 20);
             this.txtAutorIme.TabIndex = 2;
+            this.txtAutorIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtAutorIme_Validating);
             // 
             // txtAutorPrezime
             // 
@@ -73,6 +77,7 @@
             this.txtAutorPrezime.Name = "txtAutorPrezime";
             this.txtAutorPrezime.Size = new System.Drawing.Size(100, 20);
             this.txtAutorPrezime.TabIndex = 4;
+            this.txtAutorPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtAutorPrezime_Validating);
             // 
             // label1
             // 
@@ -90,6 +95,7 @@
             this.dateAutor.Name = "dateAutor";
             this.dateAutor.Size = new System.Drawing.Size(200, 20);
             this.dateAutor.TabIndex = 5;
+         
             // 
             // label2
             // 
@@ -100,6 +106,10 @@
             this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Datum Rođenja";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FormDodajAutora
             // 
@@ -116,6 +126,7 @@
             this.Controls.Add(this.btnDodaj);
             this.Name = "FormDodajAutora";
             this.Text = "FormDodajAutora";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +141,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateAutor;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

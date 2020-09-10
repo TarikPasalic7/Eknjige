@@ -51,17 +51,17 @@
             this.openFileDialogmp3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogpdf = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewAutori = new System.Windows.Forms.DataGridView();
-            this.dataGridViewKategorije = new System.Windows.Forms.DataGridView();
-            this.buttonAutoriDodaj = new System.Windows.Forms.Button();
-            this.buttonKomentari = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Dodaj = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.AutorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewKategorije = new System.Windows.Forms.DataGridView();
             this.DodajKategoriju = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.KategorijaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAutoriDodaj = new System.Windows.Forms.Button();
+            this.buttonKomentari = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategorije)).BeginInit();
@@ -117,6 +117,7 @@
             this.textOcjena.Name = "textOcjena";
             this.textOcjena.Size = new System.Drawing.Size(100, 20);
             this.textOcjena.TabIndex = 12;
+            this.textOcjena.Validating += new System.ComponentModel.CancelEventHandler(this.textOcjena_Validating);
             // 
             // NazivKnjige
             // 
@@ -133,6 +134,7 @@
             this.textNaziv.Name = "textNaziv";
             this.textNaziv.Size = new System.Drawing.Size(100, 20);
             this.textNaziv.TabIndex = 10;
+           
             this.textNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.textNaziv_Validating);
             // 
             // btnSnimi
@@ -269,6 +271,33 @@
             this.dataGridViewAutori.TabIndex = 31;
             this.dataGridViewAutori.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAutori_CellContentClick);
             // 
+            // Dodaj
+            // 
+            this.Dodaj.HeaderText = "Dodaj";
+            this.Dodaj.Name = "Dodaj";
+            this.Dodaj.Width = 101;
+            // 
+            // AutorID
+            // 
+            this.AutorID.DataPropertyName = "AutorID";
+            this.AutorID.HeaderText = " AutorID";
+            this.AutorID.Name = "AutorID";
+            this.AutorID.Visible = false;
+            // 
+            // Ime
+            // 
+            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ime.DataPropertyName = "Ime";
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            // 
+            // Prezime
+            // 
+            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prezime.DataPropertyName = "Prezime";
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            // 
             // dataGridViewKategorije
             // 
             this.dataGridViewKategorije.AllowUserToAddRows = false;
@@ -283,6 +312,28 @@
             this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
             this.dataGridViewKategorije.TabIndex = 32;
             this.dataGridViewKategorije.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKategorije_CellContentClick);
+            // 
+            // DodajKategoriju
+            // 
+            this.DodajKategoriju.HeaderText = "Dodaj";
+            this.DodajKategoriju.Name = "DodajKategoriju";
+            this.DodajKategoriju.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DodajKategoriju.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DodajKategoriju.TrueValue = "";
+            // 
+            // KategorijaID
+            // 
+            this.KategorijaID.DataPropertyName = "KategorijaID";
+            this.KategorijaID.HeaderText = "KategorijaID";
+            this.KategorijaID.Name = "KategorijaID";
+            this.KategorijaID.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
             // 
             // buttonAutoriDodaj
             // 
@@ -312,55 +363,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // Dodaj
-            // 
-            this.Dodaj.HeaderText = "Dodaj";
-            this.Dodaj.Name = "Dodaj";
-            this.Dodaj.Width = 101;
-            // 
-            // AutorID
-            // 
-            this.AutorID.DataPropertyName = "AutorID";
-            this.AutorID.HeaderText = " AutorID";
-            this.AutorID.Name = "AutorID";
-            this.AutorID.Visible = false;
-            // 
-            // Ime
-            // 
-            this.Ime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ime.DataPropertyName = "Ime";
-            this.Ime.HeaderText = "Ime";
-            this.Ime.Name = "Ime";
-            // 
-            // Prezime
-            // 
-            this.Prezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prezime.DataPropertyName = "Prezime";
-            this.Prezime.HeaderText = "Prezime";
-            this.Prezime.Name = "Prezime";
-            // 
-            // DodajKategoriju
-            // 
-            this.DodajKategoriju.HeaderText = "Dodaj";
-            this.DodajKategoriju.Name = "DodajKategoriju";
-            this.DodajKategoriju.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DodajKategoriju.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DodajKategoriju.TrueValue = "";
-            // 
-            // KategorijaID
-            // 
-            this.KategorijaID.DataPropertyName = "KategorijaID";
-            this.KategorijaID.HeaderText = "KategorijaID";
-            this.KategorijaID.Name = "KategorijaID";
-            this.KategorijaID.Visible = false;
-            // 
-            // Naziv
-            // 
-            this.Naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Naziv.DataPropertyName = "Naziv";
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
             // 
             // FormEknjigeDodaj
             // 

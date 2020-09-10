@@ -236,40 +236,99 @@ namespace eKnjige.WinUI.Knjige
         private async void btnSnimi_Click(object sender, EventArgs e)
         {
 
+            if (this.ValidateChildren())
+            {
 
-
-
-
-            request.Naziv = textNaziv.Text;
+                request.Naziv = textNaziv.Text;
                 request.Cijena = float.Parse(textCijena.Text);
                 request.OcjenaKnjige = float.Parse(textOcjena.Text);
                 request.AdministratorID = APIService.PrijavljeniKorisnik.KlijentID;
                 request.Opis = textOpis.Text;
-            
 
-           
 
-            if (id.HasValue)
-            {
-                var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
-                request.Slika = knjiga.Slika;
-               
-                var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
-                foreach (var item in Alist)
+
+                if (id.HasValue)
                 {
-                    bool tacan = false;
+                    var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
-                    foreach(var item2 in  knjigaautori )
-                    if (item2.EKnjigaID==knjiga.EKnjigaID && item2.AutorID==item.AutorID)
+                    request.Slika = knjiga.Slika;
+
+                    var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
+                    foreach (var item in Alist)
                     {
+                        bool tacan = false;
 
-                            tacan = true;
-                            break;
+                        foreach (var item2 in knjigaautori)
+                            if (item2.EKnjigaID == knjiga.EKnjigaID && item2.AutorID == item.AutorID)
+                            {
+
+                                tacan = true;
+                                break;
+                            }
+
+                        if (tacan == false)
+                        {
+
+                            Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
+                            {
+                                AutorID = item.AutorID,
+                                EKnjigaID = knjiga.EKnjigaID
+                            };
+
+                            await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
+                        }
+
                     }
 
-                    if (tacan == false)
+                    var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
+
+                    foreach (var item in Klist)
                     {
+                        bool tacan = false;
+
+                        foreach (var item2 in knjigakategorije)
+                            if (item2.EKnjigaID == knjiga.EKnjigaID && item2.KategorijaID == item.KategorijaID)
+                            {
+
+                                tacan = true;
+                                break;
+                            }
+
+                        if (tacan == false)
+                        {
+
+                            Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
+                            {
+                                KategorijaID = item.KategorijaID,
+                                EKnjigaID = knjiga.EKnjigaID
+                            };
+
+                            await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+                        }
+
+                    }
+
+
+                    await _apiservice.Update<Model.EKnjiga>(id, request);
+                }
+                else
+                {
+
+                    if (checkBoxMP3.Checked == true)
+                    {
+                        request.MP3Dodan = true;
+                    }
+                    if (checkBoxPdf.Checked == true)
+                    {
+                        request.PDFDodan = true;
+                    }
+
+                    var knjiga = await _apiservice.Insert<Model.EKnjiga>(request);
+
+                    foreach (var item in Alist)
+                    {
+
 
                         Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
                         {
@@ -278,102 +337,47 @@ namespace eKnjige.WinUI.Knjige
                         };
 
                         await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
+
+
+
                     }
 
-                }
-
-                var knjigakategorije = await _kategorijaKnjigaservice.get<List<Model.EKnjigaKategorija>>(null);
-
-                foreach (var item in Klist)
-                {
-                    bool tacan = false;
-
-                    foreach (var item2 in knjigakategorije)
-                        if (  item2.EKnjigaID == knjiga.EKnjigaID && item2.KategorijaID == item.KategorijaID)
-                        {
-
-                            tacan = true;
-                            break;
-                        }
-
-                    if (tacan == false )
+                    foreach (var item in Klist)
                     {
 
-                        Model.EKnjigaKategorijaRequest kategorija= new Model.EKnjigaKategorijaRequest()
+
+                        Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
                         {
                             KategorijaID = item.KategorijaID,
                             EKnjigaID = knjiga.EKnjigaID
                         };
 
                         await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
+
+
+
                     }
 
-                }
 
 
-                await _apiservice.Update<Model.EKnjiga>(id, request);
-            }
-            else
-            {
-                
-                if (checkBoxMP3.Checked == true)
-                {
-                    request.MP3Dodan = true;
-                }
-                if (checkBoxPdf.Checked == true)
-                {
-                    request.PDFDodan = true;
-                }
 
-                var knjiga =await _apiservice.Insert<Model.EKnjiga>(request);
-              
-                foreach(var item in Alist)
-                {
-                   
 
-                        Model.EKnjigeAutorRequest autor = new Model.EKnjigeAutorRequest()
-                        {
-                            AutorID = item.AutorID,
-                            EKnjigaID = knjiga.EKnjigaID
-                        };
-
-                        await _autorKnjigaservice.Insert<Model.EKnjigeAutor>(autor);
-                    
-                  
-
-                }
-
-                foreach (var item in Klist)
-                {
-                    
-
-                        Model.EKnjigaKategorijaRequest kategorija = new Model.EKnjigaKategorijaRequest()
-                        {
-                            KategorijaID=item.KategorijaID,
-                            EKnjigaID = knjiga.EKnjigaID
-                        };
-
-                        await _kategorijaKnjigaservice.Insert<Model.EKnjigaKategorija>(kategorija);
-                    
 
 
                 }
-
-       
-
-
-              
+                MessageBox.Show("Operacija uspjesna");
+                DialogResult = DialogResult.OK;
+                Close();
 
 
             }
-            MessageBox.Show("Operacija uspjesna");
-            DialogResult = DialogResult.OK;
-            Close();
-
-            
 
 
-    }
+
+
+
+
+        }
 
         private  void btnSlika_Click(object sender, EventArgs e)
         {
@@ -656,5 +660,23 @@ namespace eKnjige.WinUI.Knjige
                 errorProvider.SetError(dataGridViewAutori, null);
             }
         }
+
+     
+
+        private void textOcjena_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textOcjena.Text))
+            {
+
+                errorProvider.SetError(textOcjena, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(textOcjena, null);
+            }
+        }
+
+     
     }
 }

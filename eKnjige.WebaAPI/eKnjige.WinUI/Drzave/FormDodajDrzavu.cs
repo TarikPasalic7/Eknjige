@@ -16,11 +16,14 @@ namespace eKnjige.WinUI.Drzave
         public FormDodajDrzavu()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private async void buttonDrzavaSnimi_Click(object sender, EventArgs e)
         {
-            var insert = new Model.DrzavaRequest()
+            if (this.ValidateChildren())
+            {
+             var insert = new Model.DrzavaRequest()
             {
                 Naziv = textDrzavaNaziv.Text
             };
@@ -37,6 +40,9 @@ namespace eKnjige.WinUI.Drzave
             {
                 MessageBox.Show("Greška");
             }
+
+            }
+         
      
 
             
@@ -45,9 +51,18 @@ namespace eKnjige.WinUI.Drzave
 
         }
 
-        private void FormDodajDrzavu_Load(object sender, EventArgs e)
+        private void textDrzavaNaziv_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textDrzavaNaziv.Text))
+            {
 
+                errorProvider.SetError(textDrzavaNaziv, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(textDrzavaNaziv, null);
+            }
         }
     }
 }

@@ -102,6 +102,7 @@ namespace eKnjige.WebaAPI.Services
         //***************************************//
         public Model.Klijent Insert(Model.KlijentInsertRequest request)
         {
+         
 
             var k = mapper.Map<Klijent>(request);
 
@@ -200,5 +201,24 @@ namespace eKnjige.WebaAPI.Services
 
             return mapper.Map<Model.Klijent>(entity);
         }
+
+        public bool Remove(int id)
+        {
+            var entity = db.Klijenti.Find(id);
+            if (entity != null)
+            {
+                db.Klijenti.Remove(entity);
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+               return false;
+            }
+           
+        }
+
+
+       
     }
 }
