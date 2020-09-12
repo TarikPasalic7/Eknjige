@@ -91,6 +91,12 @@ namespace eKnjige.WinUI.Klijenti
                 if (result == DialogResult.Yes)
                 {
                     await _apiservice.Remove(id);
+                    var search = new KlijentiSearchRequest();
+                    search.Ime = txtPretraga.Text;
+                    var res = await _apiservice.get<List<Model.Klijent>>(search);
+                    
+                    dgvKlijenti.DataSource = null;
+                    dgvKlijenti.DataSource = res;
                     dugme();
                     MessageBox.Show("Uspjesno ste izbrisali korisnika");
                 }

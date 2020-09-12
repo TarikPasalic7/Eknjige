@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEknjigeDodaj));
             this.label3 = new System.Windows.Forms.Label();
             this.textOpis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,9 +72,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(20, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(46, 21);
             this.label3.TabIndex = 17;
             this.label3.Text = "Opis";
             // 
@@ -88,9 +90,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 150);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(210, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(56, 21);
             this.label2.TabIndex = 15;
             this.label2.Text = "Cijena";
             // 
@@ -98,16 +101,17 @@
             // 
             this.textCijena.Location = new System.Drawing.Point(23, 143);
             this.textCijena.Name = "textCijena";
-            this.textCijena.Size = new System.Drawing.Size(100, 20);
+            this.textCijena.Size = new System.Drawing.Size(152, 20);
             this.textCijena.TabIndex = 14;
             this.textCijena.Validating += new System.ComponentModel.CancelEventHandler(this.textCijena_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 88);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(210, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(62, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "Ocjena";
             // 
@@ -115,34 +119,34 @@
             // 
             this.textOcjena.Location = new System.Drawing.Point(23, 81);
             this.textOcjena.Name = "textOcjena";
-            this.textOcjena.Size = new System.Drawing.Size(100, 20);
+            this.textOcjena.Size = new System.Drawing.Size(152, 20);
             this.textOcjena.TabIndex = 12;
             this.textOcjena.Validating += new System.ComponentModel.CancelEventHandler(this.textOcjena_Validating);
             // 
             // NazivKnjige
             // 
             this.NazivKnjige.AutoSize = true;
-            this.NazivKnjige.Location = new System.Drawing.Point(158, 30);
+            this.NazivKnjige.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NazivKnjige.Location = new System.Drawing.Point(210, 29);
             this.NazivKnjige.Name = "NazivKnjige";
-            this.NazivKnjige.Size = new System.Drawing.Size(34, 13);
+            this.NazivKnjige.Size = new System.Drawing.Size(52, 21);
             this.NazivKnjige.TabIndex = 11;
             this.NazivKnjige.Text = "Naziv";
             // 
             // textNaziv
             // 
-            this.textNaziv.Location = new System.Drawing.Point(23, 23);
+            this.textNaziv.Location = new System.Drawing.Point(23, 31);
             this.textNaziv.Name = "textNaziv";
-            this.textNaziv.Size = new System.Drawing.Size(100, 20);
+            this.textNaziv.Size = new System.Drawing.Size(152, 20);
             this.textNaziv.TabIndex = 10;
-           
             this.textNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.textNaziv_Validating);
             // 
             // btnSnimi
             // 
             this.btnSnimi.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSnimi.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSnimi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSnimi.Location = new System.Drawing.Point(1196, 537);
+            this.btnSnimi.Location = new System.Drawing.Point(1239, 537);
             this.btnSnimi.Name = "btnSnimi";
             this.btnSnimi.Size = new System.Drawing.Size(155, 56);
             this.btnSnimi.TabIndex = 18;
@@ -169,15 +173,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(946, 40);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(946, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.Size = new System.Drawing.Size(46, 21);
             this.label4.TabIndex = 21;
             this.label4.Text = "Slika";
             // 
             // btnSlika
             // 
             this.btnSlika.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSlika.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSlika.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSlika.Location = new System.Drawing.Point(1067, 78);
             this.btnSlika.Name = "btnSlika";
@@ -194,9 +200,10 @@
             // checkBoxMP3
             // 
             this.checkBoxMP3.AutoSize = true;
+            this.checkBoxMP3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxMP3.Location = new System.Drawing.Point(23, 462);
             this.checkBoxMP3.Name = "checkBoxMP3";
-            this.checkBoxMP3.Size = new System.Drawing.Size(48, 17);
+            this.checkBoxMP3.Size = new System.Drawing.Size(65, 25);
             this.checkBoxMP3.TabIndex = 23;
             this.checkBoxMP3.Text = "MP3";
             this.checkBoxMP3.UseVisualStyleBackColor = true;
@@ -204,9 +211,10 @@
             // checkBoxPdf
             // 
             this.checkBoxPdf.AutoSize = true;
+            this.checkBoxPdf.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxPdf.Location = new System.Drawing.Point(198, 462);
             this.checkBoxPdf.Name = "checkBoxPdf";
-            this.checkBoxPdf.Size = new System.Drawing.Size(47, 17);
+            this.checkBoxPdf.Size = new System.Drawing.Size(64, 25);
             this.checkBoxPdf.TabIndex = 24;
             this.checkBoxPdf.Text = "PDF";
             this.checkBoxPdf.UseVisualStyleBackColor = true;
@@ -214,10 +222,11 @@
             // buttonKategorijeKnjige
             // 
             this.buttonKategorijeKnjige.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonKategorijeKnjige.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKategorijeKnjige.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonKategorijeKnjige.Location = new System.Drawing.Point(774, 253);
             this.buttonKategorijeKnjige.Name = "buttonKategorijeKnjige";
-            this.buttonKategorijeKnjige.Size = new System.Drawing.Size(75, 33);
+            this.buttonKategorijeKnjige.Size = new System.Drawing.Size(110, 33);
             this.buttonKategorijeKnjige.TabIndex = 25;
             this.buttonKategorijeKnjige.Text = "Kategorije";
             this.buttonKategorijeKnjige.UseVisualStyleBackColor = false;
@@ -226,10 +235,11 @@
             // buttonmp3file
             // 
             this.buttonmp3file.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonmp3file.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonmp3file.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonmp3file.Location = new System.Drawing.Point(23, 508);
+            this.buttonmp3file.Location = new System.Drawing.Point(12, 508);
             this.buttonmp3file.Name = "buttonmp3file";
-            this.buttonmp3file.Size = new System.Drawing.Size(75, 23);
+            this.buttonmp3file.Size = new System.Drawing.Size(99, 32);
             this.buttonmp3file.TabIndex = 29;
             this.buttonmp3file.Text = "MP3 file";
             this.buttonmp3file.UseVisualStyleBackColor = false;
@@ -238,10 +248,11 @@
             // buttonpdffile
             // 
             this.buttonpdffile.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonpdffile.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonpdffile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonpdffile.Location = new System.Drawing.Point(186, 508);
             this.buttonpdffile.Name = "buttonpdffile";
-            this.buttonpdffile.Size = new System.Drawing.Size(75, 23);
+            this.buttonpdffile.Size = new System.Drawing.Size(99, 32);
             this.buttonpdffile.TabIndex = 30;
             this.buttonpdffile.Text = "PDF file";
             this.buttonpdffile.UseVisualStyleBackColor = false;
@@ -338,6 +349,7 @@
             // buttonAutoriDodaj
             // 
             this.buttonAutoriDodaj.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonAutoriDodaj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAutoriDodaj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonAutoriDodaj.Location = new System.Drawing.Point(877, 560);
             this.buttonAutoriDodaj.Name = "buttonAutoriDodaj";
@@ -350,7 +362,7 @@
             // buttonKomentari
             // 
             this.buttonKomentari.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonKomentari.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonKomentari.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKomentari.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonKomentari.Location = new System.Drawing.Point(1160, 317);
             this.buttonKomentari.Name = "buttonKomentari";
@@ -392,8 +404,9 @@
             this.Controls.Add(this.textOcjena);
             this.Controls.Add(this.NazivKnjige);
             this.Controls.Add(this.textNaziv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEknjigeDodaj";
-            this.Text = "FormEknjigeDodaj";
+            this.Text = "Knjige Detalji";
             this.Load += new System.EventHandler(this.FormEknjigeDodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutori)).EndInit();

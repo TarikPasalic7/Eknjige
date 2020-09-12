@@ -27,6 +27,7 @@ namespace EKnjige.MobileApp.Views
             {
                 EKnjiga = eknjiga
             };
+            
         }
         protected override void OnAppearing()
         {
@@ -35,6 +36,7 @@ namespace EKnjige.MobileApp.Views
             ErrorLabel_Cvv.IsVisible = false;
             ErrorLabel_Month.IsVisible = false;
             ErrorLabel_Year.IsVisible = false;
+            
         }
 
         private void Number_changed(object sender, TextChangedEventArgs e)

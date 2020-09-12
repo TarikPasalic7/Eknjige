@@ -21,13 +21,17 @@ namespace EKnjige.MobileApp.Views
            
             InitializeComponent();
             BindingContext = model = new ProfilViewModel();
+            
         }
 
         protected async override void OnAppearing()
         {
+            
 
             base.OnAppearing();
             await model.Init();
+            
+            
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

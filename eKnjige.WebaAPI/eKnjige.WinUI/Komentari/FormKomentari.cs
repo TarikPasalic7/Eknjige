@@ -127,6 +127,55 @@ namespace eKnjige.WinUI.Komentari
                 {
                    await _apiservice.Remove(id);
                     dugme();
+                    dataGridView1.DataSource = null;
+                    string trazi = txtTrazi.Text;
+                    var re = await _apiservice.get<List<Model.Komentar>>(null);
+
+
+
+
+                    var temp = new List<Model.Komentar>();
+                    if (!string.IsNullOrWhiteSpace(trazi))
+                    {
+                        foreach (var item in re)
+                        {
+                            if (item.komentar.Contains(trazi))
+                            {
+
+                                temp.Add(item);
+                            }
+
+
+                        }
+                        dataGridView1.DataSource = temp;
+
+
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = re;
+                    }
+
+                    foreach (DataGridViewRow item in dataGridView1.Rows)
+                    {
+
+                        foreach (var r in re)
+                        {
+                            int komentarid = int.Parse(item.Cells[0].Value.ToString());
+                            if (r.KomentarId == komentarid)
+                            {
+                                var k = await _apiservicekorisnik.getbyId<Klijent>(r.KlijentID);
+                                var ek = await _apiserviceknjige.getbyId<EKnjiga>(r.EKnjigaID);
+                                item.Cells[3].Value = k.KorisnickoIme;
+                                item.Cells[4].Value = ek.Naziv;
+                            }
+
+                        }
+
+
+
+                    }
+                    
                     MessageBox.Show("Uspjesno ste izbrisali komentar");
                 }
                else if (result == DialogResult.No)

@@ -17,13 +17,19 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Knjige"
+            <StackLayout Orientation="Horizontal">
+                <Label Text="E-Knjige Shop"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                    Padding="0,20,0,0"
-                   FontSize="Header"
+                   FontSize="50"
                    TextColor="RoyalBlue"
-                   FontAttributes="Bold"/>
+                   FontAttributes="Italic"/>
+                <Image   VerticalOptions="EndAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                  HeightRequest="80" WidthRequest="70"  Source="cartv.png"></Image>
+            </StackLayout>
+           
             <Picker ItemsSource="{Binding KategorijaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}"></Picker>
             <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>

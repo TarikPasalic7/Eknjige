@@ -40,14 +40,15 @@ namespace eKnjige.WinUI.Klijenti
             {
 
                 var request = new KlijentInsertRequest();
-
+           
+                request.LozinkaHash = textPassword.Text;
+                request.LozinkaProvjera = textPasswordPotvrda.Text;
                 request.Ime = textIme.Text;
                 request.Prezime = textPrezime.Text;
                 request.KorisnickoIme = textKorisnickoIme.Text;
                 request.Email = textEmail.Text;
                 //request.DatumRodenja = DateTime.Now;
-                request.LozinkaHash = textPassword.Text;
-                request.LozinkaProvjera = textPasswordPotvrda.Text;
+                
                 request.DatumRodenja = dateDatum.Value;
                
                 request.GradID = (cmbGradovi.SelectedItem as Model.Grad).Id;
@@ -229,7 +230,7 @@ namespace eKnjige.WinUI.Klijenti
                 errorProvider.SetError(textKorisnickoIme, "Obavezno Polje");
                 e.Cancel = true;
             }
-            else if (greska == true)
+            else if (greska == true && id==null)
             {
                 errorProvider.SetError(textKorisnickoIme, "Korisnicko ime vec postoji");
                 e.Cancel = true;
@@ -286,11 +287,21 @@ namespace eKnjige.WinUI.Klijenti
         private async void buttonGrad_Click(object sender, EventArgs e)
         {
             FormDodajGrad form = new FormDodajGrad();
+            
+               
             if (form.ShowDialog() == DialogResult.OK)
             {
-                var listgradovi = await servicegrad.get<List<Model.Grad>>(null);
-                cmbGradovi.DataSource = listgradovi;
+
+
+                //var listgradovi = await servicegrad.get<List<Model.Grad>>(null);
+                //cmbGradovi.DataSource = listgradovi;
+
+                await LoadGradovi();
+
             }
+
+            
+
 
 
         }
@@ -304,7 +315,9 @@ namespace eKnjige.WinUI.Klijenti
             var hasUpperChar = new Regex(@"[A-Z]+");
             var hasMinimum8Chars = new Regex(@".{8,}");
 
-            if (string.IsNullOrWhiteSpace(textPassword.Text))
+            if (id == null)
+            {
+               if (string.IsNullOrWhiteSpace(textPassword.Text))
             {
                
                 errorProvider.SetError(textPassword, "Obavezno Polje");
@@ -324,19 +337,26 @@ namespace eKnjige.WinUI.Klijenti
                 }
             }
 
+
+            }
+
+          
+
         }
 
         private void textPasswordPotvrda_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textPasswordPotvrda.Text))
+            if (id == null)
             {
+               if (string.IsNullOrWhiteSpace(textPasswordPotvrda.Text) && id==null)
+                 {
 
                 errorProvider.SetError(textPasswordPotvrda, "Obavezno Polje");
                 e.Cancel = true;
-            }
+                }
             else
             {
-                if (textPassword.Text == textPasswordPotvrda.Text)
+                if (textPassword.Text == textPasswordPotvrda.Text && id==null)
                 {
                     errorProvider.SetError(textPasswordPotvrda, null);
                 }
@@ -347,6 +367,9 @@ namespace eKnjige.WinUI.Klijenti
                 }
                
             }
+
+            }
+           
         }
 
         private void cmbGradovi_Validating(object sender, CancelEventArgs e)

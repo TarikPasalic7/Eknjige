@@ -25,19 +25,21 @@
                 <RowDefinition  Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <!--<ColumnDefinition Width="auto"></ColumnDefinition>-->
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="WhiteSmoke">
-             
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="WhiteSmoke">
 
-                <Image   HeightRequest="400" WidthRequest="350"  Source="{Binding EKnjiga.Slika, Converter={StaticResource imgConv}}" ></Image>
-                <Button Command="{Binding KupiCommand}" Text="Kupi"  WidthRequest="50"  BackgroundColor="LightSeaGreen" TextColor="White" FontSize="Large"></Button>
+               
+                <Image x:Name="Slika"  HeightRequest="200" WidthRequest="150"  Source="{Binding EKnjiga.Slika, Converter={StaticResource imgConv}}" ></Image>
+                <Button Command="{Binding KupiCommand}" Text="Kupi"  WidthRequest="20"  HeightRequest="40" BackgroundColor="LightSeaGreen" TextColor="White" FontSize="Medium"></Button>
             </StackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="LightSteelBlue" Orientation="Vertical">
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="LightSteelBlue" Orientation="Vertical">
                 <StackLayout Spacing="10" Padding="5" Orientation="Horizontal" >
                     <Label Text="Naziv knjige :" 
                                            LineBreakMode="NoWrap" 
@@ -109,10 +111,10 @@
 
 
             </StackLayout>
-            <StackLayout Margin="5" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="RoyalBlue"  >
+            <StackLayout Margin="5" Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="RoyalBlue"  >
                 <Label Text="Komentari" TextColor="White" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
             </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="0">
+            <StackLayout Grid.Row="3" Grid.Column="0" WidthRequest="250">
                
                
                 <Entry Text="{Binding Komentar }">
@@ -121,14 +123,14 @@
                
                 
             </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="1">
-        
-               
-                    <Button Command="{Binding DodajCommand}" Text="Dodaj"   WidthRequest="40" BackgroundColor="RoyalBlue" TextColor="White" ></Button>
+            <StackLayout Grid.Row="3" Grid.Column="1">
+
+
+                <Button Command="{Binding DodajCommand}" Text="Dodaj"  HeightRequest="30" WidthRequest="20" BackgroundColor="RoyalBlue" TextColor="White" FontSize="10" ></Button>
                 
 
             </StackLayout>
-            <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+            <StackLayout Grid.Row="4" Grid.ColumnSpan="2">
                 <ListView  ItemsSource="{Binding KomentariList}" SelectedItem="{Binding SelectedKomentar}"   >
                     <ListView.ItemTemplate>
                         <DataTemplate>

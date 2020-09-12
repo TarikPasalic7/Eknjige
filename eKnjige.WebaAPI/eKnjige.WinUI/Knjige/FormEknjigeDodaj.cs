@@ -129,13 +129,13 @@ namespace eKnjige.WinUI.Knjige
             if (knjiga.MP3Dodan == true)
             {
                 checkBoxMP3.Checked=true;
-                buttonmp3file.Hide();
+               
 
             }
             if (knjiga.PDFDodan == true)
             {
                 checkBoxPdf.Checked=true;
-                buttonpdffile.Hide();
+               
 
             }
 
@@ -235,6 +235,14 @@ namespace eKnjige.WinUI.Knjige
 
         private async void btnSnimi_Click(object sender, EventArgs e)
         {
+            if(checkBoxPdf.Checked==false && checkBoxMP3.Checked==false)
+            {
+               MessageBox.Show("Morate unijeti PDF ili MP3 fajl");
+                return;
+
+            }
+               
+
 
             if (this.ValidateChildren())
             {

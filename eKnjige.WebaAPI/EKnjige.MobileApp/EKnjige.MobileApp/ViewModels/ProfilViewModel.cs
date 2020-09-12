@@ -59,7 +59,7 @@ namespace EKnjige.MobileApp.ViewModels
                 var eknjigaautorilist = await _serviceKnjigeAutor.get<List<EKnjigeAutor>>(null);
 
                 List<EknjigaMobile> knjigamobileList = await _serviceknjige.get<List<EknjigaMobile>>(null);
-
+        
 
             Klijent korisnik = await _service.getbyId<Klijent>(APIService.PrijavljeniKorisnik.KlijentID);
             ImePrezime = korisnik.Ime + " "+ korisnik.Prezime;

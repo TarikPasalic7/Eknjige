@@ -107,6 +107,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\sound.mp3" />
+    <Content Include="carts.png" />
+    <Content Include="cartt.png" />
+    <Content Include="cartv.png" />
+    <Content Include="nob.png" />
+    <Content Include="nobook.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

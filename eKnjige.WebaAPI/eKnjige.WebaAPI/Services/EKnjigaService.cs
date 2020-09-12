@@ -81,13 +81,13 @@ namespace eKnjige.WebaAPI.Services
 
             entity.Slika = request.Slika;
             entity.Opis = request.Opis;
-            if (request.PDFDodan == true)
+            if (string.IsNullOrEmpty(request.Pdffile))
             {
                 entity.PDFDodan = true;
                 entity.Pdffile = request.Pdffile;
 
             }
-            if (request.MP3Dodan == true)
+            if (string.IsNullOrEmpty(request.Mp3file))
             {
                 entity.MP3Dodan = true;
                 entity.Mp3file = request.Mp3file;

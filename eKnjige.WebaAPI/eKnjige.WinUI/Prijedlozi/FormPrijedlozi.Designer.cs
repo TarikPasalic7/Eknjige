@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrijedlozi));
             this.buttonTrazi = new System.Windows.Forms.Button();
             this.textBoxTrazi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,8 +43,8 @@
             // 
             // buttonTrazi
             // 
-            this.buttonTrazi.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTrazi.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonTrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTrazi.Location = new System.Drawing.Point(12, 34);
             this.buttonTrazi.Name = "buttonTrazi";
             this.buttonTrazi.Size = new System.Drawing.Size(106, 34);
@@ -54,9 +55,9 @@
             // 
             // textBoxTrazi
             // 
-            this.textBoxTrazi.Location = new System.Drawing.Point(149, 42);
+            this.textBoxTrazi.Location = new System.Drawing.Point(139, 43);
             this.textBoxTrazi.Name = "textBoxTrazi";
-            this.textBoxTrazi.Size = new System.Drawing.Size(146, 20);
+            this.textBoxTrazi.Size = new System.Drawing.Size(182, 20);
             this.textBoxTrazi.TabIndex = 2;
             // 
             // groupBox1
@@ -127,11 +128,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(773, 453);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBoxTrazi);
             this.Controls.Add(this.buttonTrazi);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrijedlozi";
             this.Text = "FormPrijedlozi";
             this.groupBox1.ResumeLayout(false);

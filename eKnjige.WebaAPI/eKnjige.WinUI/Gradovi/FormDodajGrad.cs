@@ -21,11 +21,17 @@ namespace eKnjige.WinUI.Gradovi
             this.AutoValidate = AutoValidate.Disable;
         }
 
-        private  void buttonDodajDrzavu_Click(object sender, EventArgs e)
+        private async void buttonDodajDrzavu_Click(object sender, EventArgs e)
         {
             FormDodajDrzavu form = new FormDodajDrzavu();
-
-             form.Show();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+              
+                var result = await servicedrzava.get<List<Model.Drzava>>(null);
+                cmbDrzava.DataSource = result;
+                
+            }
+                
         }
 
         private async void FormDodajGrad_Load(object sender, EventArgs e)
@@ -54,7 +60,8 @@ namespace eKnjige.WinUI.Gradovi
 
             await servicegrad.Insert<Model.Grad>(request);
              MessageBox.Show("Operacija uspjesna");
-
+                DialogResult = DialogResult.OK;
+                Close();
             }
            
         }
