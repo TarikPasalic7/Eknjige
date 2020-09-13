@@ -51,7 +51,8 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </RefreshView>
-  
+   
+    
     <Label Text="eEknjige" HorizontalOptions="Center" TextColor="White"  FontSize="50" VerticalOptions="Center"></Label>
 
 </ContentPage>

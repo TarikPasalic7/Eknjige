@@ -22,16 +22,26 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                    Padding="0,20,0,0"
-                   FontSize="50"
-                   TextColor="RoyalBlue"
-                   FontAttributes="Italic"/>
+                   FontSize="35"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
                 <Image   VerticalOptions="EndAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                   HeightRequest="80" WidthRequest="70"  Source="cartv.png"></Image>
             </StackLayout>
-           
-            <Picker ItemsSource="{Binding KategorijaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}"></Picker>
-            <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected">
+            <SearchBar TextChanged="SearchBar_TextChanged"></SearchBar>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Kategorije:" 
+                   FontSize="20"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                       Margin="5"
+                       VerticalTextAlignment="End"/>
+                
+                <Picker x:Name="Knjigelist" ItemsSource="{Binding KategorijaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}" WidthRequest="200" HorizontalOptions="CenterAndExpand" ></Picker>
+            </StackLayout>
+            
+            <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected" BackgroundColor="WhiteSmoke">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

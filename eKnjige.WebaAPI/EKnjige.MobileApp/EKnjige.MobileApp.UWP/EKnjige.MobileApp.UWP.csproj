@@ -110,6 +110,7 @@
     <Content Include="carts.png" />
     <Content Include="cartt.png" />
     <Content Include="cartv.png" />
+    <Content Include="nba.png" />
     <Content Include="nob.png" />
     <Content Include="nobook.jpg" />
     <Content Include="Properties\Default.rd.xml" />

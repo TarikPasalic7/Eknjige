@@ -30,7 +30,7 @@
             </StackLayout>
          
 
-            <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected" >
+            <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected"  BackgroundColor="WhiteSmoke">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

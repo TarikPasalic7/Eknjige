@@ -34,5 +34,26 @@ namespace EKnjige.MobileApp.Views
             var item = e.SelectedItem as EknjigaMobile;
             await Navigation.PushAsync(new KnjigaDetailPage(item));
         }
+
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            APIService api = new APIService("eknjiga");
+            List<EknjigaMobile> list =new List<EknjigaMobile>( model.KnjigaList);
+            if (!string.IsNullOrEmpty(e.NewTextValue))
+            {
+               foreach(var k in list)
+                {
+                    if (!k.Naziv.Contains(e.NewTextValue))
+                        model.KnjigaList.Remove(k);
+
+                }
+
+            }
+            else
+            {
+               await model.Init();
+            }
+        }
     }
 }

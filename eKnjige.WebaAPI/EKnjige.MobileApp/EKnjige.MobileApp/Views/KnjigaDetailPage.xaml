@@ -123,10 +123,10 @@
                
                 
             </StackLayout>
-            <StackLayout Grid.Row="3" Grid.Column="1">
+            <StackLayout Grid.Row="3" Grid.Column="1" WidthRequest="20">
 
 
-                <Button Command="{Binding DodajCommand}" Text="Dodaj"  HeightRequest="30" WidthRequest="20" BackgroundColor="RoyalBlue" TextColor="White" FontSize="10" ></Button>
+                <Button Command="{Binding DodajCommand}" Text="Dodaj"  HeightRequest="30" WidthRequest="20" BackgroundColor="RoyalBlue" TextColor="White" FontSize="15" ></Button>
                 
 
             </StackLayout>

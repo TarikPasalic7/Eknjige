@@ -66,14 +66,15 @@ namespace EKnjige.MobileApp.ViewModels
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Obavijest", "Unijeli ste pogrešnu lozinku ili korisnicko ime", "OK");
-                    throw new Exception("Unos nije ispravan");
+                    //await App.Current.MainPage.DisplayAlert("Obavijest", "Unijeli ste pogrešnu lozinku ili korisnicko ime", "OK");
+                    //throw new Exception("Unos nije ispravan");
                 }
                 
             }
             catch(Exception ex)
             {
-               
+                await App.Current.MainPage.DisplayAlert("Obavijest", "Unijeli ste pogrešnu lozinku ili korisnicko ime", "OK");
+
             }
         }
     }

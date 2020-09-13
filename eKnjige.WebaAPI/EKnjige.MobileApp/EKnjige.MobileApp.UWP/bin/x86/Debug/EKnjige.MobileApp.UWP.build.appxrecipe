@@ -616,6 +616,9 @@
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\cartv.png">
       <PackagePath>cartv.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\nba.png">
+      <PackagePath>nba.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pc\Eknjige\eKnjige.WebaAPI\EKnjige.MobileApp\EKnjige.MobileApp.UWP\nob.png">
       <PackagePath>nob.png</PackagePath>
     </AppxPackagedFile>
