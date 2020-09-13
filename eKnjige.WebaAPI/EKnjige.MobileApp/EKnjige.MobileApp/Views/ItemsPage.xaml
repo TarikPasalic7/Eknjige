@@ -53,6 +53,6 @@
     </RefreshView>
    
     
-    <Label Text="eEknjige" HorizontalOptions="Center" TextColor="White"  FontSize="50" VerticalOptions="Center"></Label>
+    <Label Text="E-Knjige" HorizontalOptions="Center" TextColor="White"  FontSize="50" VerticalOptions="Center"></Label>
 
 </ContentPage>
