@@ -281,6 +281,7 @@
             this.dataGridViewAutori.Size = new System.Drawing.Size(345, 246);
             this.dataGridViewAutori.TabIndex = 31;
             this.dataGridViewAutori.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAutori_CellContentClick);
+          
             // 
             // Dodaj
             // 
@@ -323,6 +324,7 @@
             this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
             this.dataGridViewKategorije.TabIndex = 32;
             this.dataGridViewKategorije.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKategorije_CellContentClick);
+           
             // 
             // DodajKategoriju
             // 

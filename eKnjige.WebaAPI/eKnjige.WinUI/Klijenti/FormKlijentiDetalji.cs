@@ -36,6 +36,12 @@ namespace eKnjige.WinUI.Klijenti
         private async void btnSnimi_Click(object sender, EventArgs e)
         {
 
+          
+
+
+          
+
+
             if (this.ValidateChildren())
             {
 
@@ -54,26 +60,103 @@ namespace eKnjige.WinUI.Klijenti
                 request.GradID = (cmbGradovi.SelectedItem as Model.Grad).Id;
                 request.SpolID = (cmbSpol.SelectedItem as Model.Spol).SpolID;
                 request.UlogaId = (cmbUloga.SelectedItem as Model.Uloga).UlogaId;
-        
 
-
+                var klijenti = await service.get<List<Klijent>>(null);
+               
 
 
                 if (id.HasValue)
                 {
-                    await service.Update<Model.Klijent>(id, request);
+                    var klijent = await service.getbyId<Klijent>(id);
+                    bool greska = false;
+                    bool greska2 = false;
 
+
+
+                    foreach (var k in klijenti)
+                    {
+
+                        if (k.Email == textEmail.Text && k.Email!=klijent.Email)
+                        {
+                            greska = true;
+                            break;
+
+                        }
+                        if (k.KorisnickoIme == textKorisnickoIme.Text && k.KorisnickoIme!=klijent.KorisnickoIme)
+                        {
+                            greska2 = true;
+                            break;
+
+                        }
+
+                    }
+                    if (greska == true)
+                    {
+                        MessageBox.Show("Email je vec iskorišten");
+                        return;
+
+                    }
+                    if (greska2 == true)
+                    {
+                        MessageBox.Show("Korisnicko ime je vec iskorišteno");
+                        return;
+
+                    }
+
+                    await service.Update<Model.Klijent>(id, request);
+                        MessageBox.Show("Operacija uspjesna");
+                        Close();
+                    
+
+                   
                 }
                 else
                 {
+                    bool greska = false;
+                    bool greska2 = false;
+
+
+
+                    foreach (var k in klijenti)
+                    {
+
+                        if (k.Email == textEmail.Text)
+                        {
+                            greska = true;
+                            break;
+
+                        }
+                        if (k.KorisnickoIme == textKorisnickoIme.Text)
+                        {
+                            greska2 = true;
+                            break;
+
+                        }
+
+                    }
+                    if (greska == true)
+                    {
+                        MessageBox.Show("Email je vec iskorišten");
+                        return;
+
+                    }
+                    if (greska2 == true)
+                    {
+                        MessageBox.Show("Korisnicko ime je vec iskorišteno");
+                        return;
+
+                    }
+
 
                     await service.Insert<Model.Klijent>(request);
+                    MessageBox.Show("Operacija uspjesna");
+                    Close();
                 }
-                MessageBox.Show("Operacija uspjesna");
+               
             }
 
-          
-          
+            
+
 
         }
         private async void FormKlijentiDetalji_Load(object sender, EventArgs e)
@@ -209,30 +292,14 @@ namespace eKnjige.WinUI.Klijenti
             }
 
         }
-
-        private async  void textKorisnickoIme_Validating(object sender, CancelEventArgs e)
+      
+        private   void textKorisnickoIme_Validating(object sender, CancelEventArgs e)
         {
-            var korisnickoime = await service.get<List<Klijent>>(null);
-            bool greska = false;
-            foreach(var k in korisnickoime)
-            {
-                if (k.KorisnickoIme == textKorisnickoIme.Text)
-                {
-                    greska = true;
-                    break;
-
-                }
-                   
-            }
+          
             if (string.IsNullOrWhiteSpace(textKorisnickoIme.Text))
             {
 
                 errorProvider.SetError(textKorisnickoIme, "Obavezno Polje");
-                e.Cancel = true;
-            }
-            else if (greska == true && id==null)
-            {
-                errorProvider.SetError(textKorisnickoIme, "Korisnicko ime vec postoji");
                 e.Cancel = true;
             }
             else
@@ -241,48 +308,7 @@ namespace eKnjige.WinUI.Klijenti
             }
         }
 
-        private async void textEmail_Validating(object sender, CancelEventArgs e)
-        {
-
-            var email = await service.get<List<Klijent>>(null);
-            bool greska = false;
-            foreach (var k in email)
-            {
-                if (k.Email == textEmail.Text)
-                {
-                    greska = true;
-                    break;
-
-                }
-
-            }
-            if (string.IsNullOrWhiteSpace(textEmail.Text))
-            {
-
-                errorProvider.SetError(textEmail, "Obavezno Polje");
-                e.Cancel = true;
-            }
-            else if (greska==true)
-            {
-                errorProvider.SetError(textKorisnickoIme, "Email je vec iskoristen");
-                e.Cancel = true;
-            }
-            else
-            {
-                try
-                {
-                    MailAddress mail = new MailAddress(textEmail.Text);
-                }
-                catch (Exception)
-                {
-                  
-                    errorProvider.SetError(textEmail,"Pogrešan format");
-                     e.Cancel = true;
-                }
-               
-               
-            }
-        }
+      
 
         private async void buttonGrad_Click(object sender, EventArgs e)
         {
@@ -374,8 +400,8 @@ namespace eKnjige.WinUI.Klijenti
 
         private void cmbGradovi_Validating(object sender, CancelEventArgs e)
         {
-
-            if (cmbGradovi.SelectedValue==null)
+            var item = (cmbGradovi.SelectedItem as Model.Grad).Id;
+            if (item==0)
             {
 
                 errorProvider.SetError(cmbGradovi, "Obavezno Polje");
@@ -390,7 +416,8 @@ namespace eKnjige.WinUI.Klijenti
 
         private void cmbSpol_Validating(object sender, CancelEventArgs e)
         {
-            if (cmbSpol.SelectedValue == null)
+            var item = (cmbSpol.SelectedItem as Model.Spol).SpolID;
+            if (item ==0)
             {
 
                 errorProvider.SetError(cmbSpol, "Obavezno Polje");
@@ -404,7 +431,8 @@ namespace eKnjige.WinUI.Klijenti
 
         private void cmbUloga_Validating(object sender, CancelEventArgs e)
         {
-            if (cmbUloga.SelectedValue == null)
+            var item = (cmbUloga.SelectedItem as Model.Uloga).UlogaId;
+            if (item==0)
             {
 
                 errorProvider.SetError(cmbUloga, "Obavezno Polje");
@@ -416,6 +444,36 @@ namespace eKnjige.WinUI.Klijenti
             }
         }
 
-       
+        private   void textEmail_Validating_1(object sender, CancelEventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(textEmail.Text))
+            {
+
+                errorProvider.SetError(textEmail, "Obavezno Polje");
+                e.Cancel = true;
+            }
+            else
+            {
+                
+                    errorProvider.SetError(textEmail, null);
+                
+            }
+            //else
+            //{
+            //    try
+            //    {
+            //        MailAddress mail = new MailAddress(textEmail.Text);
+            //    }
+            //    catch (Exception)
+            //    {
+
+            //        errorProvider.SetError(textEmail, "Pogrešan format");
+            //        e.Cancel = true;
+            //    }
+
+
+            //}
+        }
     }
 }

@@ -231,6 +231,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(162, 20);
             this.textEmail.TabIndex = 19;
+            this.textEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textEmail_Validating_1);
             // 
             // buttonGrad
             // 

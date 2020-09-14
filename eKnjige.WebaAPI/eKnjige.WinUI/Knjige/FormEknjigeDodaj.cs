@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -242,14 +243,33 @@ namespace eKnjige.WinUI.Knjige
 
             }
                
-
+            
 
             if (this.ValidateChildren())
             {
+                float val;
+                if (float.TryParse(textOcjena.Text, out val))
+                {
+                    request.OcjenaKnjige = float.Parse(textOcjena.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Morate unijeti broj");
+                    return;
+                }
+                if (float.TryParse(textCijena.Text, out val))
+                {
+                    request.OcjenaKnjige = float.Parse(textCijena.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Morate unijeti broj");
+                    return;
+                }
 
                 request.Naziv = textNaziv.Text;
                 request.Cijena = float.Parse(textCijena.Text);
-                request.OcjenaKnjige = float.Parse(textOcjena.Text);
+               
                 request.AdministratorID = APIService.PrijavljeniKorisnik.KlijentID;
                 request.Opis = textOpis.Text;
 
@@ -260,7 +280,17 @@ namespace eKnjige.WinUI.Knjige
                 {
                     var knjiga = await _apiservice.getbyId<Model.EKnjiga>(id);
 
-                    request.Slika = knjiga.Slika;
+                    byte[] image = knjiga.Slika;
+
+                    MemoryStream ms = new MemoryStream(image);
+                    if (!(ms.Length == 0 && ms.Position == 0 && ms.Capacity == 0))
+                    {
+                        request.Slika = knjiga.Slika;
+                    }
+                   
+
+
+                    
 
                     var knjigaautori = await _autorKnjigaservice.get<List<Model.EKnjigeAutor>>(null);
                     foreach (var item in Alist)
@@ -322,6 +352,35 @@ namespace eKnjige.WinUI.Knjige
                 }
                 else
                 {
+                    bool tacana = false;
+                    bool tacank = false;
+                    foreach(DataGridViewRow d in dataGridViewAutori.Rows)
+                    {
+                        var vrijednost = d.Cells[0].Value.ToString();
+                        if (vrijednost == "True")
+                        {
+                            tacana = true;
+                            break;
+
+                        }
+
+                    }
+                    foreach (DataGridViewRow d in dataGridViewKategorije.Rows)
+                    {
+                        var vrijednost = d.Cells[0].Value.ToString();
+                        if (vrijednost == "")
+                        {
+                            tacank = true;
+                            break;
+
+                        }
+
+                    }
+                    if(tacank==false || tacana == false) {
+                        MessageBox.Show("Morate imati barem jednog autora i kategoriju");
+                        return;
+
+                    }
 
                     if (checkBoxMP3.Checked == true)
                     {
@@ -641,33 +700,9 @@ namespace eKnjige.WinUI.Knjige
             }
         }
 
-        private void dataGridViewKategorije_Validating(object sender, CancelEventArgs e)
-        {
-            if (dataGridViewKategorije.SelectedRows == null)
-            {
+       
 
-                errorProvider.SetError(dataGridViewKategorije, "Obavezno dodati barem jednu kategoriju");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(dataGridViewKategorije, null);
-            }
-        }
-
-        private void dataGridViewAutori_Validating(object sender, CancelEventArgs e)
-        {
-            if (dataGridViewAutori.SelectedRows == null)
-            {
-
-                errorProvider.SetError(dataGridViewAutori, "Obavezno dodati barem jednog autora");
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider.SetError(dataGridViewAutori, null);
-            }
-        }
+    
 
      
 
@@ -685,6 +720,33 @@ namespace eKnjige.WinUI.Knjige
             }
         }
 
-     
+        //private void dataGridViewKategorije_Validating_1(object sender, CancelEventArgs e)
+        //{
+        //    if (dataGridViewKategorije.SelectedCells.Count == 0)
+        //    {
+
+        //        errorProvider.SetError(dataGridViewKategorije, "Obavezno dodati barem jednu kategoriju");
+        //        e.Cancel = true;
+        //    }
+        //    else
+        //    {
+        //        errorProvider.SetError(dataGridViewKategorije, null);
+        //    }
+
+        //}
+
+        //private void dataGridViewAutori_Validating_1(object sender, CancelEventArgs e)
+        //{   
+        //    if (dataGridViewAutori.SelectedRows.Count== 0)
+        //    {
+
+        //        errorProvider.SetError(dataGridViewAutori, "Obavezno dodati barem jednog autora");
+        //        e.Cancel = true;
+        //    }
+        //    else
+        //    {
+        //        errorProvider.SetError(dataGridViewAutori, null);
+        //    }
+        //}
     }
 }
