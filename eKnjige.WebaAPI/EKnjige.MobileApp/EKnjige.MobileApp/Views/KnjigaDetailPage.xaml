@@ -97,7 +97,7 @@
 
                     <Label Text="Opis:" 
                                            LineBreakMode="NoWrap" 
-                             WidthRequest="300"
+                             WidthRequest="310"
                                                 VerticalTextAlignment="Center"
                            
                            FontAttributes="Bold"
@@ -109,7 +109,7 @@
                                                VerticalTextAlignment="End"
                                              HorizontalOptions="FillAndExpand"
                                        VerticalOptions="FillAndExpand"
-                                           HeightRequest="150"
+                                           HeightRequest="220"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="8"
                                           FontAttributes="Bold"
