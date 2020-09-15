@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace eKnjige.WebaAPI.Services
 {
-    public class KlijentService :IKlijentService
+    public class KlijentService : IKlijentService
     {
 
         private readonly AppContext db;
@@ -25,7 +25,7 @@ namespace eKnjige.WebaAPI.Services
         }
 
 
-        public  List<Model.Klijent> Get(KlijentiSearchRequest search)
+        public List<Model.Klijent> Get(KlijentiSearchRequest search)
         {
             var query = db.Set<Klijent>().AsQueryable();
 
@@ -73,7 +73,7 @@ namespace eKnjige.WebaAPI.Services
 
         public Model.Klijent Authenticiraj(string username, string pass)
         {
-            var user = db.Klijenti.Include(x=>x.Uloga).Include(x=>x.Grad.Drzava).FirstOrDefault(x => x.KorisnickoIme == username);
+            var user = db.Klijenti.Include(x => x.Uloga).Include(x => x.Grad.Drzava).FirstOrDefault(x => x.KorisnickoIme == username);
 
             if (user != null)
             {
@@ -97,12 +97,12 @@ namespace eKnjige.WebaAPI.Services
             return mapper.Map<Model.Klijent>(k);
         }
 
-      
+
 
         //***************************************//
         public Model.Klijent Insert(Model.KlijentInsertRequest request)
         {
-         
+
 
             var k = mapper.Map<Klijent>(request);
 
@@ -145,9 +145,9 @@ namespace eKnjige.WebaAPI.Services
             k.SpolID = request.SpolID;
             k.GradID = request.GradID;
             k.UlogaID = request.UlogaId;
-            
+
             k.Email = request.Email;
-            
+
             //k = mapper.Map<Klijent>(request);
 
 
@@ -161,8 +161,8 @@ namespace eKnjige.WebaAPI.Services
             var query = db.Klijenti.AsQueryable();
 
 
-            
-            query = query.Where(x => x.KlijentID==Security.BasicAuthenticationHandler.PrijavljeniKlijent.KlijentID);
+
+            query = query.Where(x => x.KlijentID == Security.BasicAuthenticationHandler.PrijavljeniKlijent.KlijentID);
 
             query = query.Include(x => x.Grad.Drzava);
             query = query.Include(x => x.Uloga);
@@ -172,7 +172,7 @@ namespace eKnjige.WebaAPI.Services
             return mapper.Map<Model.Klijent>(entity);
         }
 
-      
+
 
         public Model.Klijent UpdateProfile(KlijentInsertRequest request)
         {
@@ -195,7 +195,7 @@ namespace eKnjige.WebaAPI.Services
             }
 
             entity.KorisnickoIme = request.KorisnickoIme;
-           
+
 
             db.SaveChanges();
 
@@ -204,17 +204,9 @@ namespace eKnjige.WebaAPI.Services
 
         public bool Remove(int id)
         {
-            List<KupovinaKnjige> dbklijentikupovina = db.KupovinaKnjiga.ToList();
-            foreach(KupovinaKnjige d in dbklijentikupovina)
-            {
-                if(d.KlijentID==id)
-                {
-                  
-                    db.KupovinaKnjiga.Remove(d);
-                    db.SaveChanges();
-                }
-               
-            }
+            
+            
+           
             
             var entity = db.Klijenti.Find(id);
             if (entity != null)
@@ -225,12 +217,12 @@ namespace eKnjige.WebaAPI.Services
             }
             else
             {
-               return false;
+                return false;
             }
-           
-        }
 
+        }
+    }
 
        
-    }
+    
 }

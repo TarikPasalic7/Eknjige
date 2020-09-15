@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eKnjige.Model;
 using eKnjige.Model.Requests;
 using Flurl;
 using Flurl.Http;
@@ -17,6 +18,7 @@ namespace eKnjige.WinUI.Klijenti
     {
 
         private readonly APIService _apiservice = new APIService("klijenti");
+        private readonly APIService _apiservicekupovina = new APIService("KupovinaKnjige");
         public FormKlijenti()
         {
             InitializeComponent();
@@ -90,6 +92,19 @@ namespace eKnjige.WinUI.Klijenti
                 DialogResult result = MessageBox.Show("Da li zaista zelite izbrisati korisnika", "Upozorenje", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
+                    var kupobinalist = await _apiservicekupovina.get<List<KupovinaKnjige>>(null);
+                    if (kupobinalist != null)
+                    {
+                        foreach (var ku in kupobinalist)
+                        {
+                            if (ku.KlijentID == id)
+                            {
+                                await _apiservicekupovina.Remove(ku.KupovinaKnjigeID);
+                            }
+                        }
+                    }
+                   
+
                     await _apiservice.Remove(id);
                     var search = new KlijentiSearchRequest();
                     search.Ime = txtPretraga.Text;
