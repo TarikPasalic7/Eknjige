@@ -76,7 +76,7 @@ namespace EKnjige.MobileApp.ViewModels
                     var request = new KlijentInsertRequest
                     {
 
-
+                        KlijentID=korisnikrequest.KlijentID,
                         DatumRodenja = korisnikrequest.DatumRodenja,
                         SpolID = korisnikrequest.SpolID,
                         Email = korisnikrequest.Email,
@@ -125,7 +125,13 @@ namespace EKnjige.MobileApp.ViewModels
                     await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinka mora imati brojeve,velika slova i minimum 8 karaktera", "OK");
                     return;
                 }
+                if (lozinkaprovjera==lozinka)
+                {
 
+
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Nisu iste lozinke", "OK");
+                    return;
+                }
 
                 await _service.UpdateProfie<Klijent>(request,"UpdateProfile");
                     APIService.password = lozinka;
@@ -138,7 +144,7 @@ namespace EKnjige.MobileApp.ViewModels
                 var request = new KlijentInsertRequest
                 {
 
-
+                    KlijentID=korisnikrequest.KlijentID,
                     DatumRodenja = korisnikrequest.DatumRodenja,
                     SpolID = korisnikrequest.SpolID,
                     Email = korisnikrequest.Email,

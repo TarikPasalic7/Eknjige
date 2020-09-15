@@ -204,6 +204,18 @@ namespace eKnjige.WebaAPI.Services
 
         public bool Remove(int id)
         {
+            List<KupovinaKnjige> dbklijentikupovina = db.KupovinaKnjiga.ToList();
+            foreach(KupovinaKnjige d in dbklijentikupovina)
+            {
+                if(d.KlijentID==id)
+                {
+                  
+                    db.KupovinaKnjiga.Remove(d);
+                    db.SaveChanges();
+                }
+               
+            }
+            
             var entity = db.Klijenti.Find(id);
             if (entity != null)
             {

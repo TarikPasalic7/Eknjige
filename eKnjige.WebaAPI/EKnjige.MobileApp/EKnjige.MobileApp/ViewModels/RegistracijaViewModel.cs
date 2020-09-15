@@ -176,7 +176,12 @@ namespace EKnjige.MobileApp.ViewModels
                     await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinka mora imati brojeve,velika slova i minimum 8 karaktera", "OK");
                     greska = true;
                 }
-               
+                if (request.LozinkaHash != request.LozinkaProvjera)
+                {
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinke nisu iste ", "OK");
+                    greska = true;
+                }
+
                 var korisnici = await _service.get<List<Klijent>>(null);
                 foreach(var k in korisnici)
                 {

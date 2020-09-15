@@ -127,13 +127,13 @@ namespace eKnjige.WinUI.Knjige
             var kategorije = await _Kategorijaapiservice.get<List<Model.Kategorija>>(null);
            
 
-            if (knjiga.MP3Dodan == true)
+            if (!string.IsNullOrEmpty( knjiga.Mp3file))
             {
                 checkBoxMP3.Checked=true;
                
 
             }
-            if (knjiga.PDFDodan == true)
+            if (!string.IsNullOrEmpty(knjiga.Pdffile))
             {
                 checkBoxPdf.Checked=true;
                
@@ -259,7 +259,7 @@ namespace eKnjige.WinUI.Knjige
                 }
                 if (float.TryParse(textCijena.Text, out val))
                 {
-                    request.OcjenaKnjige = float.Parse(textCijena.Text);
+                    request.Cijena= float.Parse(textCijena.Text);
                 }
                 else
                 {
@@ -268,7 +268,7 @@ namespace eKnjige.WinUI.Knjige
                 }
 
                 request.Naziv = textNaziv.Text;
-                request.Cijena = float.Parse(textCijena.Text);
+                
                
                 request.AdministratorID = APIService.PrijavljeniKorisnik.KlijentID;
                 request.Opis = textOpis.Text;

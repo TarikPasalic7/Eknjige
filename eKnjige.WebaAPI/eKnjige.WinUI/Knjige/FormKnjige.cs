@@ -30,7 +30,12 @@ namespace eKnjige.WinUI.Knjige
             var search = new Model.Requests.eKnjigeSearchRequest();
             search.Naziv = textPrikazi.Text;
             var result = await _apiservice.get<List<Model.EKnjiga>>(search);
+            foreach(var r in result)
+            {
+               
+                r.OcjenaKnjige=(float)Math.Round(r.OcjenaKnjige * 10f) / 10f;
 
+            }
             dgvKnjige.DataSource= result;
         }
 

@@ -107,8 +107,8 @@ namespace EKnjige.MobileApp.ViewModels
                     {
                         if (item.KategorijaID == SelectedKategorija.KategorijaID && m.EKnjigaID==item.EKnjigaID)
                         {
-                          
 
+                            m.OcjenaKnjige = (float)Math.Round(m.OcjenaKnjige * 10f) / 10f;
 
                             KnjigaList.Add(m);
                         }
@@ -134,8 +134,7 @@ namespace EKnjige.MobileApp.ViewModels
                 
                 foreach (var e in knjigamobileList)
                 {
-                    //e.Kategorije = null;
-                    //e.Kategorije = new List<Kategorija>();
+                    
                     foreach (var kk in eknjigakategorijaList)
                     {
 
@@ -152,8 +151,7 @@ namespace EKnjige.MobileApp.ViewModels
                 }
                 foreach (var e in knjigamobileList)
                 {
-                    //e.Autori = null;
-                    //e.Autori = new List<Autor>();
+                    
                     foreach (var ea in eknjigaautorilist)
                     {
 
@@ -172,9 +170,10 @@ namespace EKnjige.MobileApp.ViewModels
 
                 foreach (var item in knjigamobileList)
                 {
-                    
-                        
-                        KnjigaList.Add(item);
+
+                    item.OcjenaKnjige = (float)Math.Round(item.OcjenaKnjige * 10f) / 10f;
+
+                    KnjigaList.Add(item);
                     
 
                 }

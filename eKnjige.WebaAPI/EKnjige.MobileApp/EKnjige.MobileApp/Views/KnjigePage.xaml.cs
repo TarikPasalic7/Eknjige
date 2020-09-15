@@ -39,7 +39,11 @@ namespace EKnjige.MobileApp.Views
         {
             
             APIService api = new APIService("eknjiga");
-            List<EknjigaMobile> list =new List<EknjigaMobile>( model.KnjigaList);
+            APIService _serviceKnjigeAutor = new APIService("EKnjigaAutor");
+           APIService _serviceEknjigeKategorija = new APIService("EKnjigaKategorija");
+             APIService _serviceKategorije = new APIService("Kategorija");
+         APIService _serviceAutori = new APIService("Autor");
+        List<EknjigaMobile> list =new List<EknjigaMobile>( model.KnjigaList);
             if (!string.IsNullOrEmpty(e.NewTextValue))
             {
                foreach(var k in list)
@@ -53,10 +57,46 @@ namespace EKnjige.MobileApp.Views
             else
             {
                 var klist = await api.get<List<EknjigaMobile>>(null);
+                var eknjigaautorilist = await _serviceKnjigeAutor.get<List<EKnjigeAutor>>(null);
+                var eknjigakategorijaList = await _serviceEknjigeKategorija.get<List<EKnjigaKategorija>>(null);
                 foreach (var k in klist)
                 {
-                   
-                        model.KnjigaList.Add(k);
+
+                    foreach (var kk in eknjigakategorijaList)
+                    {
+
+                        if (kk.EKnjigaID == k.EKnjigaID)
+                        {
+                            var kategorija = await _serviceKategorije.getbyId<Kategorija>(kk.KategorijaID);
+
+                            k.Kategorije += kategorija.Naziv;
+                            k.Kategorije += "  ";
+                        }
+                    }
+
+
+                }
+                foreach (var k in klist)
+                {
+
+                    foreach (var ea in eknjigaautorilist)
+                    {
+
+                        if (ea.EKnjigaID == k.EKnjigaID)
+                        {
+                            var autor = await _serviceAutori.getbyId<Autor>(ea.AutorID);
+
+                            k.Autori += autor.Ime + " " + autor.Prezime + ",";
+                        }
+                    }
+
+
+                }
+
+                foreach (var k in klist)
+                {
+                    k.OcjenaKnjige = (float)Math.Round(k.OcjenaKnjige * 10f) / 10f;
+                    model.KnjigaList.Add(k);
 
                 }
                 //await model.Init();
