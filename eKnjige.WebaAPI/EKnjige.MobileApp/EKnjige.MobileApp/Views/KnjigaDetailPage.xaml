@@ -40,7 +40,7 @@
                 <Button Command="{Binding KupiCommand}" Text="Kupi"  WidthRequest="20"  HeightRequest="40" BackgroundColor="LightSeaGreen" TextColor="White" FontSize="Medium"></Button>
             </StackLayout>
             <StackLayout Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="LightSteelBlue" Orientation="Vertical">
-                <StackLayout Spacing="10" Padding="5" Orientation="Horizontal" >
+                <StackLayout Spacing="15" Padding="5" Orientation="Horizontal" >
                     <Label Text="Naziv knjige :" 
                                            LineBreakMode="NoWrap" 
                                            VerticalTextAlignment="Center"
@@ -93,19 +93,27 @@
                     </Label>
                    
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Spacing="10" Padding="5" >
+                <StackLayout Orientation="Horizontal" Spacing="10" Padding="5" VerticalOptions="FillAndExpand" >
 
                     <Label Text="Opis:" 
                                            LineBreakMode="NoWrap" 
+                             WidthRequest="300"
                                                 VerticalTextAlignment="Center"
+                           
+                           FontAttributes="Bold"
                                            Style="{DynamicResource ListItemTextStyle}" 
-                                           FontSize="21" />
+                                           FontSize="20" />
 
-                    <Label Text="{Binding Opis}" 
+                    <Label Text="{Binding EKnjiga.Opis}" 
                                            LineBreakMode="WordWrap"
                                                VerticalTextAlignment="End"
+                                             HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="FillAndExpand"
+                                           HeightRequest="150"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
-                                           FontSize="13"
+                                           FontSize="8"
+                                          FontAttributes="Bold"
+                         
                                />
                 </StackLayout>
 

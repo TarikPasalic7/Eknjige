@@ -38,7 +38,7 @@
                        Margin="5"
                        VerticalTextAlignment="End"/>
                 
-                <Picker x:Name="Knjigelist" ItemsSource="{Binding KategorijaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}" WidthRequest="200" HorizontalOptions="CenterAndExpand" ></Picker>
+                <Picker x:Name="Knjigelist" ItemsSource="{Binding KategorijaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}" WidthRequest="250" HorizontalOptions="CenterAndExpand" ></Picker>
             </StackLayout>
             
             <ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected" BackgroundColor="WhiteSmoke">

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -69,6 +70,7 @@ namespace EKnjige.MobileApp.ViewModels
                 if (string.IsNullOrEmpty(korisnickoime))
                 {
                     korisnickoime = korisnikrequest.KorisnickoIme;
+                  
                 }
 
                     var request = new KlijentInsertRequest
@@ -93,14 +95,43 @@ namespace EKnjige.MobileApp.ViewModels
                     if (lozinka != lozinkaprovjera)
                     {
                         await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinke nisu iste", "OK");
+                    return;
                     }
-                    else
+               
+                    var korisnici = await _service.get<List<Klijent>>(null);
+                    foreach (var k in korisnici)
                     {
-                    await _service.UpdateProfie<Klijent>(request,"UpdateProfile");
+                        if (korisnickoime == k.KorisnickoIme && korisnickoime != korisnikrequest.KorisnickoIme)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Obavijest", "Korisnicko ime koje ste unijeli vec postoji", "OK");
+                            return;
+
+                        }
+                    }
+                var hasNumber = new Regex(@"[0-9]+");
+                var hasUpperChar = new Regex(@"[A-Z]+");
+                var hasMinimum8Chars = new Regex(@".{8,}");
+               if (!hasNumber.IsMatch(lozinka) || !hasUpperChar.IsMatch(lozinka) || !hasMinimum8Chars.IsMatch(Lozinka))
+                {
+
+
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinka mora imati brojeve,velika slova i minimum 8 karaktera", "OK");
+                   return;
+                }
+                if (!hasNumber.IsMatch(lozinkaprovjera) || !hasUpperChar.IsMatch(lozinkaprovjera) || !hasMinimum8Chars.IsMatch(lozinkaprovjera))
+                {
+
+
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Lozinka mora imati brojeve,velika slova i minimum 8 karaktera", "OK");
+                    return;
+                }
+
+
+                await _service.UpdateProfie<Klijent>(request,"UpdateProfile");
                     APIService.password = lozinka;
                     APIService.username = korisnickoime;
                     await App.Current.MainPage.DisplayAlert("Obavijest", "Uspjesno ste promjenili lozinku", "OK");
-                }
+                
                 }
             else
             {
@@ -121,7 +152,21 @@ namespace EKnjige.MobileApp.ViewModels
 
 
                 };
+                if(string.IsNullOrEmpty( korisnickoime))
+                {
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Korisnicko ime mora sadrzavati barem jedan karakter", "OK");
+                    return;
+                }
+                var korisnici = await _service.get<List<Klijent>>(null);
+                foreach(var k in korisnici)
+                {
+                    if(korisnickoime==k.KorisnickoIme && korisnickoime!=korisnikrequest.KorisnickoIme)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Obavijest", "Korisnicko ime koje ste unijeli vec postoji", "OK");
+                        return;
 
+                    }
+                }
                 await _service.Update<Klijent>(id, request);
                 APIService.username = korisnickoime;
                 await App.Current.MainPage.DisplayAlert("Obavijest", "Uspjesno ste promijenili korisnicko ime", "OK");

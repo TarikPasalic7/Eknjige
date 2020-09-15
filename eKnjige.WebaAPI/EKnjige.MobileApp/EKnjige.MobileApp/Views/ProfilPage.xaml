@@ -15,15 +15,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="10">
         
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
                 <Label Text="Korisnik :"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                   FontSize="Header"
+                   FontSize="Medium"
                        VerticalTextAlignment="Center"/>
-                <Label Text="{Binding KorisnickoIme}" FontSize="Header" FontAttributes="Bold" TextColor="RoyalBlue" VerticalTextAlignment="Center" >
+                <Label Text="{Binding KorisnickoIme}" FontSize="Medium" FontAttributes="Bold" TextColor="RoyalBlue" VerticalTextAlignment="Center" >
 
                 </Label>
               

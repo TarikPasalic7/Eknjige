@@ -142,7 +142,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
-                                    <StackLayout Orientation="Horizontal" BackgroundColor="RoyalBlue">
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="RoyalBlue" Margin="4">
                                         <Image Source="{Binding Slika, Converter={StaticResource imgConv}}" HeightRequest="220" WidthRequest="170" />
                                     </StackLayout>
                                     <StackLayout Orientation="Vertical" Spacing="20">

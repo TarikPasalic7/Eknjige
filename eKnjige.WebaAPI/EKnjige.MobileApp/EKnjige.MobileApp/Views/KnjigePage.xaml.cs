@@ -52,7 +52,14 @@ namespace EKnjige.MobileApp.Views
             }
             else
             {
-               await model.Init();
+                var klist = await api.get<List<EknjigaMobile>>(null);
+                foreach (var k in klist)
+                {
+                   
+                        model.KnjigaList.Add(k);
+
+                }
+                //await model.Init();
             }
         }
     }

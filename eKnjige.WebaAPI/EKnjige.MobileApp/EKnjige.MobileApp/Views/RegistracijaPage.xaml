@@ -41,7 +41,7 @@
             <Picker ItemsSource="{Binding SpolList}" SelectedItem="{Binding SelectedSpol}" ItemDisplayBinding="{Binding Tip}"></Picker>
 
             <Button Command="{Binding RegistracijaCommand}"  Text="Registracija"
-                    BackgroundColor="MediumPurple"
+                    BackgroundColor="RoyalBlue"
                     TextColor="White"></Button>
            
         </StackLayout>
