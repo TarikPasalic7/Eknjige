@@ -93,9 +93,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(210, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
+            this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Cijena";
+            this.label2.Text = "Cijena (KM)";
             // 
             // textCijena
             // 
@@ -281,7 +281,6 @@
             this.dataGridViewAutori.Size = new System.Drawing.Size(345, 246);
             this.dataGridViewAutori.TabIndex = 31;
             this.dataGridViewAutori.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAutori_CellContentClick);
-          
             // 
             // Dodaj
             // 
@@ -324,7 +323,6 @@
             this.dataGridViewKategorije.Size = new System.Drawing.Size(246, 246);
             this.dataGridViewKategorije.TabIndex = 32;
             this.dataGridViewKategorije.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKategorije_CellContentClick);
-           
             // 
             // DodajKategoriju
             // 

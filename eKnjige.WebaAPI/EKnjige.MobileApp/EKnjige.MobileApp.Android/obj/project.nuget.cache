@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "i1o/f8am1Ab6kRk5eSuI10UFVZR61YQh0CRVN/Z/YJXjERQ87QlyoDsCxSRuqCDsWUqO+Hwhb32s3A1A4Xj9jw==",
+  "dgSpecHash": "+3P8aNhy2nnjpiyhfwDABlFL9uXx3/xwzR6wKpCGl8PMY6jrLLzoKpfkaLS4cT0uspA+QCclF5BwFhEWjWM+4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\EKnjige.MobileApp\\EKnjige.MobileApp.Android\\EKnjige.MobileApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",

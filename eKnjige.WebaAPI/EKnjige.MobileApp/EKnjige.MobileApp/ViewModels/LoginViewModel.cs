@@ -61,7 +61,7 @@ namespace EKnjige.MobileApp.ViewModels
                 APIService.PrijavljeniKorisnik = await _service.get<Klijent>(null, "Profil");
                    if (APIService.PrijavljeniKorisnik.Uloga.Naziv == "Korisnik")
                 {
-                    await App.Current.MainPage.DisplayAlert("Obavijest", "Dobro došli", "OK");
+                    await App.Current.MainPage.DisplayAlert("Obavijest", "Dobrodošli", "OK");
                     Application.Current.MainPage = new MainPage();
                 }
                 else

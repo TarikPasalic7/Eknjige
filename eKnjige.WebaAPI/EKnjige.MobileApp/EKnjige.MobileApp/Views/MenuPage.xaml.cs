@@ -25,7 +25,8 @@ namespace EKnjige.MobileApp.Views
                 new HomeMenuItem {Id = MenuItemType.PredloziKnjigu, Title="Predlozi Knjigu" },
                  new HomeMenuItem {Id = MenuItemType.KorisnickiProfil, Title="Korisnicki Profil" },
                    new HomeMenuItem {Id = MenuItemType.UrediProfil, Title="Uredi Profil" },
-                  new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" }
+                  new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" },
+                   new HomeMenuItem {Id = MenuItemType.Klijentlista, Title="KlijentLista" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

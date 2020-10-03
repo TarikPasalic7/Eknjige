@@ -10,7 +10,8 @@ namespace EKnjige.MobileApp.Models
         PredloziKnjigu,
         KorisnickiProfil,
         UrediProfil,
-        Logout
+        Logout,
+        Klijentlista
     }
     public class HomeMenuItem
     {

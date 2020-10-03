@@ -79,6 +79,9 @@ namespace EKnjige.MobileApp.Views
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
+                    case (int)MenuItemType.Klijentlista:
+                        MenuPages.Add(id, new NavigationPage(new ListaKorisnikaPage()));
+                        break;
                 }
             }
 

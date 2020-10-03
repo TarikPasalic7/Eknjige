@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:EKnjige.MobileApp.ViewModels"
+             x:Class="EKnjige.MobileApp.Views.ListaKorisnikaPage">
+    <ContentPage.BindingContext>
+        <vm:KnjigeViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+       
+        <StackLayout>
+            <StackLayout>
+                <Picker></Picker>
+                <StackLayout Orientation="Horizontal" >
+                    <DatePicker></DatePicker>
+                    <DatePicker></DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox ></CheckBox>
+                    <Label Text="Potencijalno maliciozno" 
+                                           LineBreakMode="NoWrap" 
+                                                VerticalTextAlignment="Center"
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="21" />
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Pristup korisniku" 
+                                           LineBreakMode="NoWrap" 
+                                                VerticalTextAlignment="Center"
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="21" />
+
+            <!--<ListView ItemsSource="{Binding KnjigaList}" ItemSelected="ListView_ItemSelected"  BackgroundColor="WhiteSmoke">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout Padding="10" Orientation="Horizontal" Spacing="20">
+                                <TableView >
+                                    
+                                    
+                                </TableView>
+
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <Button Text="Ponisti malicioznost"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

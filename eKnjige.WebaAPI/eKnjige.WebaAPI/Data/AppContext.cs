@@ -377,12 +377,13 @@ namespace eKnjige.WebaAPI.Data
         public DbSet<KupovinaKnjige> KupovinaKnjiga { get; set; }
         public DbSet<PrijedlogKnjiga> PrijedlogKnjiga { get; set; }
         public DbSet<Spol> Spol { get; set; }
-  
+        public DbSet<RSII25092020> RSII25092020 { get; set; }
+
 
         public DbSet<Komentar> Komentari { get; set; }
 
         public DbSet<Database.Uloga> Uloge { get; set; }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

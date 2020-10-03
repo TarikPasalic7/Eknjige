@@ -1,4 +1,5 @@
-version: '3'
+version: '3.4'
+
 services:
 #mssql docker
   eknjiga-sql:
@@ -9,7 +10,7 @@ services:
       - SA_PASSWORD=QWElkj132!
       - MSSQL_PID=Developer
     ports:
-      - 1433:1433
+      - 1401:1433
     networks:
       - eknjigenet
 
@@ -20,7 +21,7 @@ services:
     environment:
       - ConnectionStrings:eKnjigeDB=Server=eknjiga-sql,1433;Database=eKnjige;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
-      - 5000:5050
+      - 5000:5000
     networks:
       - eknjigenet    
     links:

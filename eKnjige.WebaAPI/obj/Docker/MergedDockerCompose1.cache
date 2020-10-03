@@ -1,0 +1,33 @@
+networks:
+  eknjigenet:
+    driver: bridge
+services:
+  eknjiga-sql:
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      SA_PASSWORD: QWElkj132!
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      eknjigenet: null
+    ports:
+    - published: 1401
+      target: 1433
+    restart: unless-stopped
+  eknjiga.api:
+    build:
+      context: C:\Users\pc\Eknjige\eKnjige.WebaAPI
+    depends_on:
+      eknjiga-sql:
+        condition: service_started
+    environment:
+      ConnectionStrings:eKnjigeDB: Server=eknjiga-sql,1433;Database=eKnjige;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+    links:
+    - eknjiga-sql
+    networks:
+      eknjigenet: null
+    ports:
+    - published: 5050
+      target: 5050
+    restart: unless-stopped
+version: '3.4'

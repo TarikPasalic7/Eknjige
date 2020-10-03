@@ -135,7 +135,7 @@
             // 
             this.Cijena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Cijena.DataPropertyName = "Cijena";
-            this.Cijena.HeaderText = "Cijena";
+            this.Cijena.HeaderText = "Cijena (KM)";
             this.Cijena.Name = "Cijena";
             this.Cijena.ReadOnly = true;
             // 

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EzslofUAVNF3LOMApMgUrZE8YegSfDCMq7xSAIY5HQNmQRmZGEV5ntU0RDHx49CLRd/jk5RUhqCWy7f/2/k4fA==",
+  "dgSpecHash": "AdEQp0yp+aL6+Z13mSpcmDLqwJNtBe6C8m3mwzccMlY/nvqb9NJxXfrKhOXRsktkX1ePgAAiUuFr6h+fcHxCXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\EKnjige.MobileApp\\EKnjige.MobileApp.UWP\\EKnjige.MobileApp.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\coding4fun.toolkit.controls\\2.1.8\\coding4fun.toolkit.controls.2.1.8.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gd/Hz/llVFpzfdzRaI9GGcdVtzp41JB1ea7Y4+IrTCHFO2GtktN5Ad4NgqrQFYa5W47m9rm3HFrLJW7AZmcUtg==",
+  "dgSpecHash": "g86tEPXeVQxcLbXjcMsLRmIZrtTkgqAqqNjxQddo5DzQ7SeYpbwlhg4auVIGx4dtjUuo/WZZk1seGKJiikyF0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Eknjige\\eKnjige.WebaAPI\\eKnjige.Model\\eKnjige.Model.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

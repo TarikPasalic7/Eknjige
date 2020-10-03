@@ -1,0 +1,1 @@
+C:\Users\pc\Eknjige\eKnjige.WebaAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

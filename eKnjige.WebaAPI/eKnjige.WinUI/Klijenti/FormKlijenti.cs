@@ -17,8 +17,11 @@ namespace eKnjige.WinUI.Klijenti
     public partial class FormKlijenti : Form
     {
 
+        private readonly APIService _apiservicekomentari = new APIService("komentar");
         private readonly APIService _apiservice = new APIService("klijenti");
         private readonly APIService _apiservicekupovina = new APIService("KupovinaKnjige");
+        private readonly APIService _apiserviceprijedlogknjige = new APIService("prijedlogknjige");
+        private readonly APIService _apiserviceeknjigaocjena = new APIService("eknjigaocjena");
         public FormKlijenti()
         {
             InitializeComponent();
@@ -73,7 +76,7 @@ namespace eKnjige.WinUI.Klijenti
         {
 
             var search = new KlijentiSearchRequest();
-            search.Ime = txtPretraga.Text;
+            search.KorisnickoIme= txtPretraga.Text;
             var result = await _apiservice.get<List<Model.Klijent>>(search);
 
             dgvKlijenti.DataSource = result;
@@ -93,6 +96,9 @@ namespace eKnjige.WinUI.Klijenti
                 if (result == DialogResult.Yes)
                 {
                     var kupobinalist = await _apiservicekupovina.get<List<KupovinaKnjige>>(null);
+                    var komentarilist = await _apiservicekomentari.get<List<Komentar>>(null);
+                    var prijedlogknjige = await _apiserviceprijedlogknjige.get<List<PrijedlogKnjiga>>(null);
+                    var eknjigaocjenalist = await _apiserviceeknjigaocjena.get<List<KlijentKnjigaOcjena>>(null);
                     if (kupobinalist != null)
                     {
                         foreach (var ku in kupobinalist)
@@ -103,7 +109,37 @@ namespace eKnjige.WinUI.Klijenti
                             }
                         }
                     }
-                   
+                    if (komentarilist != null)
+                    {
+                        foreach (var ku in komentarilist)
+                        {
+                            if (ku.KlijentID == id)
+                            {
+                                await _apiservicekomentari.Remove(ku.KomentarId);
+                            }
+                        }
+                    }
+                    if (prijedlogknjige != null)
+                    {
+                        foreach (var ku in prijedlogknjige)
+                        {
+                            if (ku.KlijentID == id)
+                            {
+                                await _apiserviceprijedlogknjige.Remove(ku.PrijedlogKnjigeID);
+                            }
+                        }
+                    }
+                    if (eknjigaocjenalist != null)
+                    {
+                        foreach (var ku in eknjigaocjenalist)
+                        {
+                            if (ku.KlijentID == id)
+                            {
+                                await _apiserviceeknjigaocjena.Remove(ku.KlijentKnjigaOcijenaID);
+                            }
+                        }
+                    }
+
 
                     await _apiservice.Remove(id);
                     var search = new KlijentiSearchRequest();

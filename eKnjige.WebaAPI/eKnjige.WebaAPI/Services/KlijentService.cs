@@ -44,6 +44,11 @@ namespace eKnjige.WebaAPI.Services
                 query = query.Where(x => x.Prezime.StartsWith(search.Prezime));
             }
 
+            if (!string.IsNullOrWhiteSpace(search.KorisnickoIme))
+            {
+
+                query = query.Where(x => x.KorisnickoIme.StartsWith(search.KorisnickoIme));
+            }
 
             var list = query.ToList();
             return mapper.Map<List<Model.Klijent>>(list);
